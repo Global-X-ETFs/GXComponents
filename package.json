@@ -1,5 +1,5 @@
 {
-  "name": "gxcomponents",
+  "name": "@global-x-etfs/gxcomponents",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
