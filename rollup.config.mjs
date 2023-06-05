@@ -34,13 +34,10 @@ export default [
                 "process.env.NODE_ENV": JSON.stringify("production"),
             }),
             resolve(),
-            commonjs(),
-            typescript({ tsconfig: "./tsconfig.json" }),
             postcss({
                 config: {
                     path: "./postcss.config.js",
                 },
-                extensions: [".css"],
                 minimize: true,
                 inject: {
                     insertAt: "top",
@@ -49,7 +46,9 @@ export default [
                 modules: false,
                 purge: true
             }),
-            terser(),
+            commonjs(),
+            typescript({ tsconfig: "./tsconfig.json" }),
+           
         ],
     },
     {
