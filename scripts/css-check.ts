@@ -2,7 +2,7 @@ import recursive from "recursive-readdir";
 import { blue, bold } from "kolorist";
 
 // TODO: Change to relative path
-recursive("./lib", ["stories"], (error, files) => {
+recursive("./components", ["stories"], (error, files) => {
   if (error) {
     // eslint-disable-next-line no-console
     console.error(error);

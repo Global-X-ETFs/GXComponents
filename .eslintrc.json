@@ -1,5 +1,8 @@
 {
-  "extends": "@frontside",
+  "extends": [
+    "@frontside",
+    "plugin:storybook/recommended"
+  ],
   "rules": {
     "eol-last": "off",
     "@typescript-eslint/no-extra-semi": "off",
@@ -13,5 +16,7 @@
     "no-console": "warn",
     "prefer-let/prefer-let": "off"
   },
-  "ignorePatterns": ["playground"]
+  "ignorePatterns": [
+    "playground"
+  ]
 }
