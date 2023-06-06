@@ -17,6 +17,7 @@
     "prefer-let/prefer-let": "off"
   },
   "ignorePatterns": [
-    "playground"
+    "playground",
+    "dist"
   ]
 }

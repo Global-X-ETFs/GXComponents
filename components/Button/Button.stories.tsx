@@ -27,7 +27,7 @@ export const Primary: Story = {
   },
 };
 
-Primary.play = async ({args,  canvasElement }) => {
+Primary.play = async ({canvasElement }) => {
   const canvas = within(canvasElement);
   await userEvent.click(canvas.getByRole("button"));
 };
