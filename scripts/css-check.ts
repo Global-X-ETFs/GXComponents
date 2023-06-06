@@ -8,7 +8,7 @@ recursive("./lib", ["stories"], (error, files) => {
     console.error(error);
   } else {
     files.forEach((file) => {
-      if (file.endsWith(".css") && !file.endsWith(".module.css")) {
+      if (file.endsWith(".css") && !file.endsWith(".module.css") && !file.endsWith("index.css")) {
         let fileName = file?.split(".").slice(0, -1).join(".");
 
         throw new Error(
