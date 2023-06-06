@@ -6,13 +6,13 @@ import React from "react";
 import { cn } from "../utils";
 
 const buttonVariants = cva(
-    "Button",
+    "text-white p-2 rounded-md text-black p-2 rounded-md",
     {
     variants: {
         variant: {
-            primary: "bg-red-500 text-white p-2 rounded-md hover:bg-red-600",
+            primary: "bg-red-500 hover:bg-red-600",
             secondary:
-                "bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600",
+                "bg-blue-500 hover:bg-blue-600",
         },
     },
     defaultVariants: {
@@ -23,7 +23,6 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
