@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - "**"
+      - "main"
 
 jobs:
   build:
@@ -19,3 +19,6 @@ jobs:
       - run: npm run lint
       - run: npm run check
       - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
