@@ -1,6 +1,6 @@
 {
   "name": "@global-x-etfs/gxcomponents",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -18,7 +18,8 @@
     "check": "tsc",
     "release": "npm run check && npm run build && changeset publish",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_b22337bbd87023b"
   },
   "dependencies": {
     "@storybook/addon-a11y": "^7.0.18",
@@ -44,6 +45,7 @@
     "@vitejs/plugin-react": "^3.0.1",
     "autoprefixer": "^10.4.14",
     "chalk": "^5.2.0",
+    "chromatic": "^6.18.0",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "esbuild-css-modules-plugin": "^2.7.1",
@@ -66,5 +68,7 @@
     "vite-plugin-css-injected-by-js": "^2.4.0",
     "vite-plugin-dts": "^1.7.1",
     "vitest": "^0.28.4"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@global-x-etfs/gxcomponents@1.0.9"
 }
