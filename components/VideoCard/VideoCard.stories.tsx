@@ -24,3 +24,13 @@ export const BasicVideoCard: Story = {
     },
 };
 
+
+export const RightToLeftVideoCard: Story = {
+    args: {
+        title: "A Conversation About Personalized Medicine with Luba Greenwood",
+        link: "https://www.youtube.com/watch?v=7Pq-S557XQU",
+        imageSrc: "https://www.globalxetfs.com/content/files/230328-Lis-Personal_Medicine-copy.png",
+        imageAlt: "A picture of Luba Greenwood",
+        textdirection: "rtl"
+    }
+};

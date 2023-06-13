@@ -4,7 +4,7 @@ import React from "react";
 import { cn } from "../utils";
 
 const buttonVariants = cva(
-    "text-white p-2 rounded-md text-black p-2 rounded-md",
+    "text-white p-2 rounded-md",
     {
     variants: {
         variant: {
