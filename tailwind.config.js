@@ -9,6 +9,7 @@ export default {
         extend: {
             colors: {
                 "accent": "#ff5400",
+                "accent-hover": "#cc4300",
                 "gxgray": "#d2d3d1",
                 "white-hover": "#f4f4f4",
             },
