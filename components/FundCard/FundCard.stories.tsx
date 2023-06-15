@@ -1,11 +1,7 @@
 import { Meta } from "@storybook/react";
 import type { StoryObj } from "@storybook/react";
 
-import {FundCard} from "./FundCard";
-import {FundCardHeader} from "./FundCardHeader";
-import {FundCardTitle} from "./FundCardTitle";
-import {FundCardSubTitle} from "./FundCardSubTitle";
-import {FundCardImage} from "./FundCardImage";
+import FundCard from "./FundCard";
 
 
 const meta = {
@@ -19,46 +15,89 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
-export const EmptyCard: Story = {
+
+export const BOTZFund: Story = {
   args: {
+    src: "/BotzLogo.svg",
+    alt: "Botz Logo",
+    title: "Robotics & Aritifical Intelligence ETF",
+    subtitle: "BOTZ",
+  },
+};
+
+export const AIQFund: Story = {
+  args: {
+    src: '/AIQLogo.svg',
+    alt: "AIQ Logo",
+    title: "Artificial Intelligence & Technology ETF",
+    subtitle: "AIQ",
+  },
+};
+
+export const PAVEFund: Story = {
+  args: {
+    src: '/PAVELogo.svg',
+    alt: "PAVE Logo",
+    title: "U.S. Infrastructure Development ETF",
+    subtitle: "PAVE",
+  },
+};
+
+export const EMCFund: Story = {
+  args: {
+    src: '/EMCLogo.svg',
+    alt: "EMC Logo",
+    title: "Emerging Markets Great Consumer ETF",
+    subtitle: "EMC",
+  },
+};
+
+export const QYLDFund: Story = {
+  args: {
+    src: '/QYLDLogo.svg',
+    alt: "QYLD Logo",
+    title: "Nasdaq 100 Covered Call ETF",
+    subtitle: "QYLD",
   },
 };
 
 
-export const TopAccentBorder: Story = {
-    args: {
-        border: "top_accent",
-    },
+export const MissingImage: Story = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore  
+  args: {
+    alt: "Robotics & Aritifical Intelligence ETF",
+    title: "Missing Image",
+    subtitle: "MISS",
+  },
 };
 
-
-export const FundTitle: Story = {
-    args: {
-        children: (
-            <FundCardHeader>
-                <FundCardTitle>
-                    Robotics & Artificial Intelligence ETF
-                </FundCardTitle>
-            </FundCardHeader>
-        ),
-    },
+export const MissingTitle: Story = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  args: {
+    src: '/BotzLogo.svg',
+    alt: "Botz Logo",
+    subtitle: "BOTZ",
+  },
 };
 
-export const Fund: Story = {
-    args: {
-        children: (
-            <>
-                <FundCardImage src="BotzLogo.svg" alt={"This is an image"} />
-                <FundCardHeader>                    
-                    <FundCardTitle>
-                        Robotics & Artificial Intelligence ETF
-                    </FundCardTitle>    
-                    <FundCardSubTitle>
-                        BOTZ
-                    </FundCardSubTitle>                
-                </FundCardHeader>
-            </>
-        ),
-    },
+export const MissingSubtitle: Story = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  args: {
+    src: '/BotzLogo.svg',
+    alt: "Botz Logo",
+    title: "Robotics & Aritifical Intelligence ETF",
+  },
+};
+
+export const MissingAltText: Story = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  args: {
+    src: '/BotzLogo.svg',
+    title: "Robotics & Aritifical Intelligence ETF",
+    subtitle: "BOTZ",
+  },
 };
