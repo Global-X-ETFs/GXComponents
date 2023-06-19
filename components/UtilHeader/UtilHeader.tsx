@@ -1,21 +1,29 @@
 import React from "react";
 import { cn } from "../utils";
 
-
 export interface UtilHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-    left?: React.ReactNode[];
-    right?: React.ReactNode[];
+  left?: React.ReactNode[];
+  right?: React.ReactNode[];
 }
 
 const UtilHeader = React.forwardRef<HTMLDivElement, UtilHeaderProps>(
-    ({ className, left, right, ...props }, ref) => {
-        return (
-            <div ref={ref} className={cn("flex bg-gxdarkgray justify-between w-full lg:px-[30px] py-[5px]", className)}>
-                {left && <div className="flex items-center group">{left}</div>}
-                {right && <div className="flex items-center group">{right}</div>}
-            </div>
-        );
-    }
+  ({ className, left, right, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          "flex w-full justify-between bg-gxdarkgray py-[5px] lg:px-[30px]",
+          className
+        )}
+        {...props}
+      >
+        {left && <div className="group flex items-center">{left}</div>}
+        {right && <div className="group flex items-center">{right}</div>}
+      </div>
+    );
+  }
 );
+
+UtilHeader.displayName = "UtilHeader";
 
 export default UtilHeader;
