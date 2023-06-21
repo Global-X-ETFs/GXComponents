@@ -1,6 +1,6 @@
 {
   "name": "@global-x-etfs/gxcomponents",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -75,6 +75,5 @@
     "vite-plugin-dts": "^1.7.1",
     "vitest": "^0.28.4"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "@global-x-etfs/gxcomponents@1.0.9"
+  "readme": "ERROR: No README data found!"
 }
