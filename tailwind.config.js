@@ -11,7 +11,7 @@ export default {
                 "accent": "#ff5400",
                 "gxgray": "#d2d3d1",
                 "white-hover": "#f4f4f4",
-                "gxdarkgray": "#03242b"
+                "marine": "#03242b"
             },
             boxShadow: {
                 'card': "0 6px 9px 0 rgba(41,52,56,.17)"

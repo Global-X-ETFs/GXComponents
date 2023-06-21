@@ -3,7 +3,6 @@
 
 import { Meta } from "@storybook/react";
 import type { StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
 import UtilHeaderItem from "./UtilHeaderItem"
 import { __ContactSVG } from "../../utils";
 
@@ -45,7 +44,7 @@ export const WithIconRight: Story = {
 }
 
 export const MultipleIcons: Story = {
-    render: (args) => (
+    render: () => (
         <div className="flex">
             <UtilHeaderItem position={"right"}>Model Portfolios</UtilHeaderItem>
             <UtilHeaderItem position={"right"}>Institutional</UtilHeaderItem>
