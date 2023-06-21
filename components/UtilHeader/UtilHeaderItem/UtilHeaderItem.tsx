@@ -1,10 +1,8 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { cn } from "../../utils";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import UtilHeaderItemIcon, {
-  UtilHeaderItemIconProps,
-} from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
+import UtilHeaderItemIcon from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
 
 const utilHeaderItemVariants = cva(
   "text-xs leading-3 text-white items-center font-proxima",
@@ -54,4 +52,4 @@ const UtilHeaderItem = React.forwardRef<HTMLAnchorElement, UtilHeaderItemProps>(
   }
 );
 
-export default UtilHeaderItem;
+export { UtilHeaderItem };
