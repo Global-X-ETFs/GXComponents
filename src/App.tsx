@@ -48,7 +48,7 @@ function App() {
             <FundCardSubTitle>BOTZ</FundCardSubTitle>
           </FundCardHeader>
         </FundCard>
-        <Button>Click Me</Button>
+        <Button variant="link" afterContent="arrow">Primary</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

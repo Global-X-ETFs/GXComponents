@@ -53,4 +53,4 @@ const UtilHeaderItem = React.forwardRef<HTMLAnchorElement, UtilHeaderItemProps>(
 
 UtilHeaderItem.displayName = "UtilHeaderItem";
 
-export default { UtilHeaderItem };
+export { UtilHeaderItem };

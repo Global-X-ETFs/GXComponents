@@ -26,4 +26,4 @@ const UtilHeader = React.forwardRef<HTMLDivElement, UtilHeaderProps>(
 
 UtilHeader.displayName = "UtilHeader";
 
-export default { UtilHeader };
+export { UtilHeader };

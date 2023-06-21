@@ -2,15 +2,27 @@
 
 Component library for Global X ETF web applications
 
+## Preview
+https://main--648098206c33ff26c99a7620.chromatic.com/
+
+To view feature branches, replace <'branch-name'> with the branch the feature is deployed to.
+
+	https://<branch-name>--648098206c33ff26c99a7620.chromatic.com/
+
+
+<br/>
+<br/>
+<br/>
+
 ## Usage 
 
-**Install tailwind by following this guide:**
+**Install tailwind:**
 ##
 https://tailwindcss.com/docs/guides/nextjs
 ##
 Or if not using NextJS, check out their other installation procedures
 
-**Install GXComponents using:**
+**Install GXComponents:**
 
 `npm i @global-x-etfs/gxcomponents`
 
@@ -29,10 +41,22 @@ Or if not using NextJS, check out their other installation procedures
 			...
 		]
 
+<br/>
+<br/>
+<br/>
+
 ## Current Components
 
- - Button  
-
+| Component | Availability |	
+|-|-|
+|[Button](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-button--docs) | ✔️ |
+|[Fund Card](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-fundcard--docs)| ❌ |
+|[Video Card](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-videocard--docs) | ❌ |
+|[Input](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-input--docs) | ❌ |
+ 
+<br/>
+<br/>
+<br/>
   
 
 # Contributing
@@ -44,6 +68,11 @@ Or if not using NextJS, check out their other installation procedures
  - https://www.typescriptlang.org/ 
  - https://storybook.js.org/ - Library for displaying and testing UI components 
  - https://cva.style/docs - Allows us to create stuff like primary/secondary default options, different sizes etc...
+ - https://www.chromatic.com/ - Deploys Storybook for us, as well as manages UI Reviews.
+
+
+<!-- 
+We don't use React Server Components yet. 
 
 ## Server Side Rendering
 
@@ -57,8 +86,11 @@ To make that component interactive and render only on the client-side, place `"u
 
 Without the above, it probably will work on most React based frameworks, however for future proofing as NextJS pushes their AppDir changes, separating components out based on interactivity is vital.
 
-You can read more about it here https://nextjs.org/docs/getting-started/react-essentials
+You can read more about it here https://nextjs.org/docs/getting-started/react-essentials -->
 
+<br/>
+<br/>
+<br/>
 
 ## Scripts
 | Command| Description  |
@@ -66,14 +98,17 @@ You can read more about it here https://nextjs.org/docs/getting-started/react-es
 | build | Bundles the package |
 | dev | Runs a Vite test project, you can add your own components in App.tsx to see how they look |
 | storybook| Opens StorybookJS to display components, runs in watch mode so will adjust as you save it|
-| build-storybook | Builds out Storybook for deployment (not used atm) |
 | lint | Runs a linter, worth checking before deployment to ensure simple mistakes are fixed |
 | test | TODO |
+
+<br/>
+<br/>
+<br/>
 
 ## Deployment
 
 Make sure you bump up the package.json version before deployment or else the build will fail.
-*todo - automate this*
+*TODO - automate this*
 
 When you commit to main, it will trigger a github action here: https://github.com/Global-X-ETFs/GXComponents/actions
 
@@ -87,4 +122,9 @@ If builds pass, update your package.json on the **consuming project**, to includ
 	    )
     }
 
-Tada, you've now got your own custom component! 🥳
+	
+<br/>
+<br/>
+<br/>
+
+***Tada***, you've now got your own custom component! 🥳

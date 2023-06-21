@@ -1,6 +1,5 @@
 import type { Meta } from "@storybook/react";
 import type { StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
 import { Button } from "./Button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
@@ -10,7 +9,20 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      options: ["primary", "secondary"],
+      name: "Variant",
+      description: "The type of button",
+      defaultValue: "link",
+      options: ["link", "transparent"],
+    },
+    afterContent: {
+      name: "After Content",
+      description: "Adds content to the end of the Button",
+    },
+    children: {
+      name: "Children",
+      description: "The text of the button",
+      type: "string",
+      defaultValue: "Click Me",
     },
   },
 } satisfies Meta<typeof Button>;
@@ -19,23 +31,33 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
-export const Primary: Story = {
+export const Link: Story = {
   args: {
-    variant: "primary",
+    variant: "link",
     children: "Click Me",
     // eslint-disable-next-line no-console
     onClick: () => console.log("Clicked!"),
   },
 };
 
-Primary.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByRole("button"));
+export const LinkWithArrow: Story = {
+  args: {
+    variant: "link",
+    afterContent: "arrow",
+    children: "Click Me",
+    // eslint-disable-next-line no-console
+    onClick: () => console.log("Clicked!"),
+  },
 };
 
-export const Secondary: Story = {
+export const Transparent: Story = {
+  parameters: {
+    backgrounds: {
+      default: "dark",
+    },
+  },
   args: {
-    variant: "secondary",
+    variant: "transparent",
     children: "Click Me",
     // eslint-disable-next-line no-console
     onClick: () => console.log("Clicked!"),
