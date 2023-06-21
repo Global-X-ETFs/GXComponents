@@ -1,6 +1,10 @@
 {
-  "extends": [
-    "@frontside",
+  "extends": [    
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:storybook/recommended"
   ],
   "rules": {
@@ -14,10 +18,16 @@
     "object-curly-spacing": "off",
     "semi": "off",
     "no-console": "warn",
-    "prefer-let/prefer-let": "off"
+    "prefer-let/prefer-let": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "ignorePatterns": [
     "playground",
     "dist"
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

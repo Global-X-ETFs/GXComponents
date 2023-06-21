@@ -1,20 +1,18 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { cn } from "../../utils";
-import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import UtilHeaderItemIcon, {
-  UtilHeaderItemIconProps,
-} from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
+import type { VariantProps } from "class-variance-authority";
+import UtilHeaderItemIcon from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
 
 const utilHeaderItemVariants = cva(
-  "text-xs leading-3 text-white items-center font-proxima",
+  "items-center font-proxima text-xs leading-3 text-white",
   {
     variants: {
       position: {
         left: "ml-[10px]",
-        right: `before:content-['|'] before:text-white before:text-lg
-             before:font-proxima before:leading-3 before:p-[10px] before:last:hidden 
-             md:p-0 p-[10px]`,
+        right: `p-[10px] before:p-[10px] before:font-proxima
+             before:text-lg before:leading-3 before:text-white before:content-['|'] 
+             before:last:hidden md:p-0`,
       },
       isVisibleMobile: {
         true: "",
@@ -47,11 +45,12 @@ const UtilHeaderItem = React.forwardRef<HTMLAnchorElement, UtilHeaderItemProps>(
         )}
       >
         {icon && <UtilHeaderItemIcon src={icon} />}
-        {/* <div className={cn(utilHeaderItemVariants({position}), className)}>{children}</div> */}
         <div> {children} </div>
       </a>
     );
   }
 );
 
-export default UtilHeaderItem;
+UtilHeaderItem.displayName = "UtilHeaderItem";
+
+export { UtilHeaderItem };
