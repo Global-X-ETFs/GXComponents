@@ -4,21 +4,25 @@ import React from "react";
 import { cn } from "../utils";
 
 const fundCardHeaderVariants = cva(
-    "py-[12px] px-[15px] self-center overflow-hidden ",
-    {
-        variants: {}
-    }
+  "self-center overflow-hidden px-[15px] py-[12px] ",
+  {
+    variants: {},
+  }
 );
 
-export interface FundCardHeaderProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof fundCardHeaderVariants> { }
+export interface FundCardHeaderProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof fundCardHeaderVariants> {}
 const FundCardHeader = React.forwardRef<HTMLDivElement, FundCardHeaderProps>(
-    ({ className, ...props }, ref) => {
-        return (
-            <div ref={ref} className={cn(fundCardHeaderVariants({ className }))}>
-                {props.children}
-            </div>
-        );
-    }
+  ({ className, ...props }, ref) => {
+    return (
+      <div ref={ref} className={cn(fundCardHeaderVariants({ className }))}>
+        {props.children}
+      </div>
+    );
+  }
 );
 
-export  {FundCardHeader};
+FundCardHeader.displayName = "FundCardHeader";
+
+export { FundCardHeader };

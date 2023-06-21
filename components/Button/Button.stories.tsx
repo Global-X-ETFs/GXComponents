@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import type { StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { Button } from "./Button";
@@ -7,12 +7,12 @@ import { Button } from "./Button";
 const meta = {
   title: "Components/Button",
   component: Button,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
       options: ["primary", "secondary"],
-    }
-  }
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -23,20 +23,21 @@ export const Primary: Story = {
   args: {
     variant: "primary",
     children: "Click Me",
+    // eslint-disable-next-line no-console
     onClick: () => console.log("Clicked!"),
   },
 };
 
-Primary.play = async ({canvasElement }) => {
+Primary.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   await userEvent.click(canvas.getByRole("button"));
 };
-
 
 export const Secondary: Story = {
   args: {
     variant: "secondary",
     children: "Click Me",
+    // eslint-disable-next-line no-console
     onClick: () => console.log("Clicked!"),
   },
 };

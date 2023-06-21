@@ -1,14 +1,25 @@
-import { Button, FundCard, FundCardHeader, FundCardImage, FundCardSubTitle, FundCardTitle } from "../components";
+import {
+  Button,
+  FundCard,
+  FundCardHeader,
+  FundCardImage,
+  FundCardSubTitle,
+  FundCardTitle,
+} from "../components";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src="/vite.svg" className="logo" alt="Vite logo" width="100px" />
         </a>
-        <a href="https://github.com/moishinetzer/pbandj" target="_blank">
+        <a
+          href="https://github.com/moishinetzer/pbandj"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img
             src="/pbandj.png"
             className="logo pbandj"
@@ -16,7 +27,7 @@ function App() {
             width="200px"
           />
         </a>
-        <a href="https://reactjs.org" target="_blank">
+        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
           <img
             src="/react.svg"
             className="logo react"
@@ -34,9 +45,7 @@ function App() {
             <FundCardTitle>
               Robotics & Artificial Intelligence ETF
             </FundCardTitle>
-            <FundCardSubTitle>
-              BOTZ
-            </FundCardSubTitle>
+            <FundCardSubTitle>BOTZ</FundCardSubTitle>
           </FundCardHeader>
         </FundCard>
         <Button>Click Me</Button>
