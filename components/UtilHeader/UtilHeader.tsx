@@ -12,7 +12,7 @@ const UtilHeader = React.forwardRef<HTMLDivElement, UtilHeaderProps>(
       <div
         ref={ref}
         className={cn(
-          "flex w-full justify-between bg-marine py-[5px] lg:px-[30px]",
+          "flex h-9 w-full justify-between bg-marine px-4 py-1 lg:px-7.5",
           className
         )}
         {...props}

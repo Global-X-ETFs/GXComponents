@@ -19,9 +19,24 @@ export default {
             },
             fontSize: {
                 'xs': '11px',
+                'sm': '12px',
                 'md': '13px',
                 'lg': '16px',
-            }
+            },
+            width: {
+                2.25: '0.55rem',
+            },
+            padding: {
+                7.5: '1.875rem',
+            },
+            screens: {
+                xs: '0px',
+                sm: '576px',
+                md: '768px',
+                lg: '992px',
+                xl: '1200px'
+            },
+            
         },
         fontFamily: {
             'sans': ['Brown', 'sans-serif'],
