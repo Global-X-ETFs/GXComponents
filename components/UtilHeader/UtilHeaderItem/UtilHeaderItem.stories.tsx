@@ -33,10 +33,24 @@ export const WithIconLeft: Story = {
   },
 };
 
+export const WithoutIconLeft: Story = {
+  args: {
+    children: "Contact",
+    position: "left",
+  },
+};
+
 export const WithIconRight: Story = {
   args: {
     children: "Contact",
     icon: __ContactSVG(),
+    position: "right",
+  },
+};
+
+export const WitoutIconRight: Story = {
+  args: {
+    children: "Contact",
     position: "right",
   },
 };

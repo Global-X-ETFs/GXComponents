@@ -15,7 +15,7 @@ const UtilHeaderItemIcon = React.forwardRef<
     <span
       ref={ref}
       className={cn(
-        "mx-[10px] my-auto inline-flex h-[14px] w-[14px] fill-white align-middle",
+        "mx-1.5 my-auto inline-flex w-2.25 fill-white align-middle",
         className
       )}
       {...props}
