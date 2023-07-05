@@ -1,5 +1,4 @@
 import "./index.css";
-import "./preflight.css";
 
 export * from "./FundCard";
 
