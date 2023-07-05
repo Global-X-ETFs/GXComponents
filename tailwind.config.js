@@ -1,49 +1,67 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    mode: "jit",
-    content: [
+  mode: "jit",
+  important: true, // Only while we are migrating to Tailwind
+  content: [
     "./index.html",
-     "./components/**/*.{js,ts,jsx,tsx}"
-    ],
-    theme: {
-        extend: {
-            colors: {
-                "accent": "#ff5400",
-                "accent-hover": "#cc4300",
-                "gxgray": "#d2d3d1",
-                "white-hover": "#f4f4f4",
-                "marine": "#03242b"
-            },
-            boxShadow: {
-                'card': "0 6px 9px 0 rgba(41,52,56,.17)"
-            },
-            fontSize: {
-                'xs': '11px',
-                'sm': '12px',
-                'md': '13px',
-                'lg': '16px',
-            },
-            width: {
-                2.25: '0.55rem',
-            },
-            padding: {
-                7.5: '1.875rem',
-            },
-            screens: {
-                xs: '0px',
-                sm: '576px',
-                md: '768px',
-                lg: '992px',
-                xl: '1200px'
-            },
-            
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@global-x-etfs/gxcomponents/dist/index.js",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        orange: "#FF5400",
+        "orange-hover": "#CC4300",
+        darkblue: "#03242B",
+        marine: "#002F37",
+        sea: "#8EB1B2",
+        granite: "#606060",
+        earth: "#3D3935",
+        neutral: {
+          100: "#727272",
+          200: "#8E8E8E",
+          300: "#A9A9A8",
+          400: "#BCBEBC",
+          500: "#D2D3D1",
+          600: "#E5E6E5",
+          700: "#F4F4F4",
         },
-        fontFamily: {
-            'sans': ['Brown', 'sans-serif'],
-            'serif': ['Brown', 'serif'],
-            'mono': ['Brown', 'monospace'],
-            'proxima': ['Metorpolis', 'sans-serif'], // Proxima Nova Font Family - TODO change to proxima nova
-        }
+      },
+      boxShadow: {
+        card: "0 6px 9px 0 rgba(41,52,56,.17)",
+      },
+      fontSize: {
+        xs: "11px",
+        sm: "12px",
+        md: "14px",
+        lg: "16px",
+      },
+      width: {
+        2.25: "0.55rem",
+        17.5: "4.375rem",
+      },
+      padding: {
+        3.75: "0.9375rem",
+        7.5: "1.875rem",
+      },
+      screens: {
+        xs: "0px",
+        sm: "576px",
+        md: "768px",
+        lg: "992px",
+        xl: "1200px",
+      },
     },
-    plugins: [],
+    fontFamily: {
+      sans: ["Brown", "sans-serif"],
+      serif: ["Brown", "serif"],
+      mono: ["Brown", "monospace"],
+      proxima: ["Metorpolis", "sans-serif"], // Proxima Nova Font Family - TODO change to proxima nova
+    },
+  },
+  corePlugins: {
+    preflight: false, // Tailwind pre ships border-box (which is a good thing) but it conflicts with our global css in other projects
+  },
+  plugins: [],
 };

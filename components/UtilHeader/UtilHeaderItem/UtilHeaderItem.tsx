@@ -1,11 +1,11 @@
 import React from "react";
-import { cn } from "../../utils";
+import cn from "../../Utils/cn";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import UtilHeaderItemIcon from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
+import { UtilHeaderItemIcon } from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
 
 const utilHeaderItemVariants = cva(
-  "cursor-pointer items-center font-proxima text-xs leading-3 text-white",
+  "preflight cursor-pointer items-center font-proxima text-xs leading-3 text-white",
   {
     variants: {
       position: {
@@ -44,7 +44,7 @@ const UtilHeaderItem = React.forwardRef<HTMLDivElement, UtilHeaderItemProps>(
           className
         )}
       >
-        {icon && <UtilHeaderItemIcon src={icon} />}
+        {icon && <UtilHeaderItemIcon> {icon} </UtilHeaderItemIcon>}
         <div> {children} </div>
       </div>
     );

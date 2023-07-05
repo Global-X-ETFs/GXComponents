@@ -13,6 +13,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const BOTZFundSingapore: Story = {
+  args: {
+    src: "/BotzLogo.svg",
+    alt: "Botz Logo",
+    title: "Robotics & Aritifical Intelligence ETF",
+    subtitle: "BOTZ",
+  },
+};
+
 export const BOTZFund: Story = {
   args: {
     src: "/BotzLogo.svg",

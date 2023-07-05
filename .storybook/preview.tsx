@@ -1,4 +1,5 @@
 import "../components/index.css";
+import "../components/preflight.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
