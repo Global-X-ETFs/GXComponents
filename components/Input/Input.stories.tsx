@@ -29,3 +29,14 @@ export const Secondary: Story = {
     variant: "secondary",
   },
 };
+
+export const PrimaryEmail: Story = {
+  args: {
+    variant: "primary",
+    type: "email",
+    label: "Email",
+    promptMessage: "What is your email address?",
+    errorMessage: "Must be in the format of name@domain.com",
+    required: true,
+  },
+};

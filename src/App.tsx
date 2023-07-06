@@ -1,11 +1,4 @@
-import {
-  Button,
-  FundCard,
-  FundCardHeader,
-  FundCardImage,
-  FundCardSubTitle,
-  FundCardTitle,
-} from "../components";
+import { Button } from "../components";
 import "./App.css";
 
 function App() {
@@ -39,16 +32,9 @@ function App() {
       <h2>Presents</h2>
       <h1>Vite + React</h1>
       <div className="card">
-        <FundCard>
-          <FundCardImage src="BotzLogo.svg" alt={"This is an image"} />
-          <FundCardHeader>
-            <FundCardTitle>
-              Robotics & Artificial Intelligence ETF
-            </FundCardTitle>
-            <FundCardSubTitle>BOTZ</FundCardSubTitle>
-          </FundCardHeader>
-        </FundCard>
-        <Button variant="link" afterContent="arrow">Primary</Button>
+        <Button variant="link" afterContent="arrow">
+          Primary
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
