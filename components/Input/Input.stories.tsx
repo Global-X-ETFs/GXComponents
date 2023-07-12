@@ -40,3 +40,11 @@ export const PrimaryEmail: Story = {
     required: true,
   },
 };
+
+export const PrimaryHint: Story = {
+  args: {
+    variant: "primary",
+    label: "Hint",
+    hintMessage: "This is a hint",
+  },
+};

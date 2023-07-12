@@ -23,6 +23,7 @@ export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
   label?: string;
+  hintMessage?: string;
   promptMessage?: string;
   errorMessage?: string;
 }
@@ -31,6 +32,7 @@ export interface InputProps
  * Input component
  * @param {string} type - Type of the input (text, password, email, etc...)
  * @param {string} label - Label for the input
+ * @param {string} hintMessage - Hint message for the input
  * @param {string} promptMessage - Prompt message for the input
  * @param {string} errorMessage - Error message for the input
  * @param {string} variant - Variant of the input (primary, secondary)
@@ -41,6 +43,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       className,
       variant,
       label,
+      hintMessage,
       errorMessage,
       promptMessage,
       required,
@@ -64,15 +67,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={cn(inputVariants({ variant, className }))}
           />
 
+          {hintMessage && (
+            <p className={`hidden text-sm text-orange peer-focus:block`}>
+              {hintMessage}
+            </p>
+          )}
+
           {promptMessage && (
             <p
-              className={`block not-italic text-orange peer-invalid:hidden peer-focus:invisible`}
+              className={`block text-orange peer-invalid:hidden peer-focus:invisible`}
             >
               {promptMessage}
             </p>
           )}
           {errorMessage && (
-            <p className={`hidden not-italic text-orange peer-invalid:block`}>
+            <p className={`hidden text-orange peer-invalid:block`}>
               {errorMessage}
             </p>
           )}
