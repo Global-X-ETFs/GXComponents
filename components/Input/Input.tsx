@@ -37,7 +37,15 @@ export interface InputProps
  */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
-    { className, variant, label, errorMessage, promptMessage, ...props },
+    {
+      className,
+      variant,
+      label,
+      errorMessage,
+      promptMessage,
+      required,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -46,13 +54,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {label && (
             <div className="text-md leading-5">
               <label className="text-granite">{label}</label>
-              {props.required && <span className="ml-1 text-orange">*</span>}
+              {required && <span className="ml-1 text-orange">*</span>}
             </div>
           )}
 
           <input
             ref={ref}
-            type={props.type}
+            {...props}
             className={cn(inputVariants({ variant, className }))}
           />
 
