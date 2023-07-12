@@ -12,6 +12,9 @@ const inputVariants = cva(
           "bg-neutral-700 invalid:text-orange hover:bg-neutral-600 active:bg-neutral-600",
         secondary: "bg-blue-500 hover:bg-blue-600",
       },
+      textTransform: {
+        uppercase: "uppercase",
+      },
     },
     defaultVariants: {
       variant: "primary",
@@ -42,6 +45,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     {
       className,
       variant,
+      textTransform,
       label,
       hintMessage,
       errorMessage,
@@ -64,7 +68,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             {...props}
-            className={cn(inputVariants({ variant, className }))}
+            className={cn(inputVariants({ variant, textTransform, className }))}
           />
 
           {hintMessage && (

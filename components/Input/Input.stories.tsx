@@ -48,3 +48,29 @@ export const PrimaryHint: Story = {
     hintMessage: "This is a hint",
   },
 };
+
+export const PrimaryError: Story = {
+  args: {
+    variant: "primary",
+    label: "Error",
+    errorMessage: "This is an error",
+    value: "not an email address",
+    type: "email",
+  },
+};
+
+export const CapitaliseText: Story = {
+  args: {
+    variant: "primary",
+    label: "Capitalise Text Automatically",
+    textTransform: "uppercase",
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    variant: "primary",
+    label: "Disabled",
+    disabled: true,
+  },
+};
