@@ -12,6 +12,9 @@ const inputVariants = cva(
           "bg-neutral-700 invalid:text-orange hover:bg-neutral-600 active:bg-neutral-600",
         secondary: "bg-blue-500 hover:bg-blue-600",
       },
+      textTransform: {
+        uppercase: "uppercase",
+      },
     },
     defaultVariants: {
       variant: "primary",
@@ -23,6 +26,7 @@ export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
   label?: string;
+  hintMessage?: string;
   promptMessage?: string;
   errorMessage?: string;
 }
@@ -31,13 +35,24 @@ export interface InputProps
  * Input component
  * @param {string} type - Type of the input (text, password, email, etc...)
  * @param {string} label - Label for the input
+ * @param {string} hintMessage - Hint message for the input
  * @param {string} promptMessage - Prompt message for the input
  * @param {string} errorMessage - Error message for the input
  * @param {string} variant - Variant of the input (primary, secondary)
  */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
-    { className, variant, label, errorMessage, promptMessage, ...props },
+    {
+      className,
+      variant,
+      textTransform,
+      label,
+      hintMessage,
+      errorMessage,
+      promptMessage,
+      required,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -46,25 +61,31 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {label && (
             <div className="text-md leading-5">
               <label className="text-granite">{label}</label>
-              {props.required && <span className="ml-1 text-orange">*</span>}
+              {required && <span className="ml-1 text-orange">*</span>}
             </div>
           )}
 
           <input
             ref={ref}
-            type={props.type}
-            className={cn(inputVariants({ variant, className }))}
+            {...props}
+            className={cn(inputVariants({ variant, textTransform, className }))}
           />
+
+          {hintMessage && (
+            <p className={`hidden text-sm text-orange peer-focus:block`}>
+              {hintMessage}
+            </p>
+          )}
 
           {promptMessage && (
             <p
-              className={`block not-italic text-orange peer-invalid:hidden peer-focus:invisible`}
+              className={`block text-orange peer-invalid:hidden peer-focus:invisible`}
             >
               {promptMessage}
             </p>
           )}
           {errorMessage && (
-            <p className={`hidden not-italic text-orange peer-invalid:block`}>
+            <p className={`hidden text-orange peer-invalid:block`}>
               {errorMessage}
             </p>
           )}
