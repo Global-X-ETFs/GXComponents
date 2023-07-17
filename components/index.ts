@@ -13,3 +13,5 @@ export * from "./UtilHeader";
 export * from "./Card";
 
 export * from "./LoadingSpinner";
+
+export * from "./Table";

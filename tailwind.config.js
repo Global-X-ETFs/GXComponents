@@ -34,7 +34,9 @@ export default {
       fontSize: {
         xs: "11px",
         sm: "12px",
+        ms: "13px",
         md: "14px",
+        ml: "15px",
         lg: "16px",
       },
       width: {
@@ -57,7 +59,7 @@ export default {
       sans: ["Brown", "sans-serif"],
       serif: ["Brown", "serif"],
       mono: ["Brown", "monospace"],
-      proxima: ["Metorpolis", "sans-serif"], // Proxima Nova Font Family - TODO change to proxima nova
+      proxima: ["ProximaNova", "sans-serif"],
     },
   },
   corePlugins: {

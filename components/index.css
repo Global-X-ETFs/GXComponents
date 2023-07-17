@@ -59,43 +59,22 @@
 }
 
 @font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Regular.woff2') format('woff2');
+    font-family: 'ProximaNova';
+    src: url('../assets/fonts/ProximaNova-CondensedRegular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Bold.woff2') format('woff2');
-    font-weight: bold;
+    font-family: 'ProximaNova';
+    src: url('../assets/fonts/ProximaNova-CondensedBold.otf') format('opentype');
+    font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-RegularItalic.woff2') format('woff2');
+    font-family: 'ProximaNova';
+    src: url('../assets/fonts/ProximaNova-RegularItalic.otf') format('opentype');
     font-weight: normal;
     font-style: italic;
 }
