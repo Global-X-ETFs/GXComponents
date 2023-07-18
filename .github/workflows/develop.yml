@@ -11,14 +11,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Bumping version
-        uses: jpb06/bump-package@latest
-        with:
-          major-keywords: BREAKING CHANGE
-          minor-keywords: feat,minor
-          patch-keywords: fix,chore
-          should-default-to-patch: true
-
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
