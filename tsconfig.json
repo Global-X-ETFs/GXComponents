@@ -16,8 +16,9 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "noUnusedLocals": true,
+    "isolatedModules": true,
     "jsx": "react-jsx",
   },
   "include": ["components"],
-  "exclude": ["components/**/**.stories.tsx"],
+  "exclude": ["components/**/**.stories.tsx", "node_modules", "dist"],
 }

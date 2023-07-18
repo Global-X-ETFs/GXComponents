@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && run-s build:*",
+    "build": "rm -rf dist && run-s build:* && cp tailwind.config.js dist/tailwind.config.js",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "test": "vitest run",
