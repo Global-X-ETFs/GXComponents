@@ -19,6 +19,7 @@ jobs:
 
       - run: npm install
       - run: npm run build
+      - run: npm version prerelease --preid=${GITHUB_REF##*/}
       - run: npm publish --tag ${GITHUB_REF##*/}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
