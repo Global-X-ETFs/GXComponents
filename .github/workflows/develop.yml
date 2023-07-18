@@ -21,7 +21,7 @@ jobs:
       - run: npm run build
       - run: git config --global user.email "cbradley@globalxetfs.com"
       - run: git config --global user.name "Connor Bradley"
-      - run: npm version prerelease --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
+      - run: npm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
       - run: npm publish --tag ${GITHUB_REF##*/}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
