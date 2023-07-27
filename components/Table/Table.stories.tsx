@@ -18,6 +18,7 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
 //Net Assets (%)	Ticker	Name	SEDOL	Market Price ($)	Shares Held	Market Value ($)
 // 13.02	MSFT	MICROSOFT CORP	2588173	342.66	3,118,757	1,068,673,273.62
 // 12.37	AAPL	APPLE INC	2046251	190.54	5,328,341	1,015,262,094.14
@@ -145,7 +146,7 @@ export const NoHeader: Story = {
   ),
 };
 
-export const WithFooter: Story = {
+export const WithCaption: Story = {
   render: () => (
     <Table>
       <TableCaption>
