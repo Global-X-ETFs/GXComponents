@@ -193,3 +193,67 @@ export const WithCaption: Story = {
     </Table>
   ),
 };
+
+export const PrimaryLoading: Story = {
+  render: () => (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[150px]">Net Assets (%)</TableHead>
+          <TableHead>Ticker</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>SEDOL</TableHead>
+          <TableHead>Market Price ($)</TableHead>
+          <TableHead>Shares Held</TableHead>
+          <TableHead>Market Value ($)</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell loading>13.02</TableCell>
+          <TableCell loading>MSFT</TableCell>
+          <TableCell loading className="font-bold">
+            MICROSOFT CORP
+          </TableCell>
+          <TableCell loading>2588173</TableCell>
+          <TableCell loading>342.66</TableCell>
+          <TableCell loading>3,118,757</TableCell>
+          <TableCell loading>1,068,673,273.62</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell loading>12.37</TableCell>
+          <TableCell loading>AAPL</TableCell>
+          <TableCell loading className="font-bold">
+            APPLE INC
+          </TableCell>
+          <TableCell loading>2046251</TableCell>
+          <TableCell loading>190.54</TableCell>
+          <TableCell loading>5,328,341</TableCell>
+          <TableCell loading>1,015,262,094.14</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell loading>7.56</TableCell>
+          <TableCell loading>NVDA</TableCell>
+          <TableCell loading className="font-bold">
+            NVIDIA CORP
+          </TableCell>
+          <TableCell loading>2379504</TableCell>
+          <TableCell loading>459.77</TableCell>
+          <TableCell loading>1,349,517</TableCell>
+          <TableCell loading>620,467,431.09</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell loading>7.07</TableCell>
+          <TableCell loading>AMZN</TableCell>
+          <TableCell loading className="font-bold">
+            AMAZON.COM INC
+          </TableCell>
+          <TableCell loading>2000019</TableCell>
+          <TableCell loading>134.30</TableCell>
+          <TableCell loading>4,320,036</TableCell>
+          <TableCell loading>580,180,834.80</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  ),
+};
