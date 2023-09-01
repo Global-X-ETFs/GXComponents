@@ -21,6 +21,6 @@ export const BlankPrintHero: Story = {
       title: "Q2 2023 Overlap Analysis",
       subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
     },
-    imageURL: "https://via.placeholder.com/50",
+    imageURL: "/logo.png",
   },
 };
