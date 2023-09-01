@@ -5,7 +5,7 @@ import type { VariantProps } from "class-variance-authority";
 import { UtilHeaderItemIcon } from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
 
 const utilHeaderItemVariants = cva(
-  "preflight cursor-pointer items-center font-proxima text-xs leading-3 text-white",
+  "preflight cursor-pointer items-center text-xs leading-3 text-white",
   {
     variants: {
       position: {

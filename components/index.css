@@ -3,99 +3,78 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-thinitalic.woff') format('woff');
-    font-weight: 100;
-    font-style: italic;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-thinitalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-lightitalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-lightitalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-bolditalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-bolditalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Brown';
-    src: url('../assets/fonts/lineto-brown-blackitalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
+  font-family: "Brown";
+  src: url("/fonts/lineto-brown-blackitalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "ProximaNova";
+  src: url("/fonts/ProximaNova-CondensedRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "ProximaNova";
+  src: url("/fonts/ProximaNova-CondensedBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-RegularItalic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: italic;
+  font-family: "ProximaNova";
+  src: url("/fonts/ProximaNova-RegularItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
 }
