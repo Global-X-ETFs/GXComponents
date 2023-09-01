@@ -3,76 +3,60 @@
 Component library for Global X ETF web applications
 
 ## Preview
+
 https://main--648098206c33ff26c99a7620.chromatic.com/
 
 To view feature branches, replace <'branch-name'> with the branch the feature is deployed to.
 
-	https://<branch-name>--648098206c33ff26c99a7620.chromatic.com/
-
+    https://<branch-name>--648098206c33ff26c99a7620.chromatic.com/
 
 <br/>
 <br/>
 <br/>
 
-## Usage 
+## Usage
 
-**Install tailwind:**
-##
+### Install tailwind:
+
 https://tailwindcss.com/docs/guides/nextjs
-##
+
 Or if not using NextJS, check out their other installation procedures
 
-**Install GXComponents:**
+### Add .npmrc:
+
+`@global-x-etfs:registry=https://npm.pkg.github.com/`
+`//npm.pkg.github.com/:\_authToken=NPM_AUTH_TOKEN_HERE`
+
+You can find the npm auth token in either github secrets or messaging Connor
+
+### Install GXComponents:
 
 `npm i @global-x-etfs/gxcomponents`
 
-**Add the below to your tailwind.config.js file:**
+### Add stylesheets:
 
+Import globals.scss and reference it in the Layout
 
-	 // tailwind.config.js
-	 module.exports  = {
+Import preflight.scss and reference it in the Layout
 
-		content: [
-			...
-		    require("path").join(
-				require.resolve("@global-x-etfs/gxcomponents"),
-				"../**/*.{html,js,cjs,ts}"
-			),
-			...
-		]
+Optional: Add .preflight to the `<body>` tag to import tailwindCSS's recommended default stylings.
+(recommended for new projects)
 
 <br/>
 <br/>
 <br/>
-
-## Current Components
-
-| Component | Availability |	
-|-|-|
-|[Button](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-button--docs) | ✔️ |
-|[Fund Card](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-fundcard--docs)| ❌ |
-|[Video Card](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-videocard--docs) | ❌ |
-|[Input](https://main--648098206c33ff26c99a7620.chromatic.com/?path=/docs/components-input--docs) | ❌ |
- 
-<br/>
-<br/>
-<br/>
-  
-
-# Contributing
 
 ## Built With...
 
- - https://github.com/moishinetzer/pbandj - Tool to create a component library
- - https://tailwindcss.com/ - A lightweight css framework
- - https://www.typescriptlang.org/ 
- - https://storybook.js.org/ - Library for displaying and testing UI components 
- - https://cva.style/docs - Allows us to create stuff like primary/secondary default options, different sizes etc...
- - https://www.chromatic.com/ - Deploys Storybook for us, as well as manages UI Reviews.
+- https://github.com/moishinetzer/pbandj - Tool to create a component library
+- https://tailwindcss.com/ - A lightweight css framework
+- https://www.typescriptlang.org/
+- https://storybook.js.org/ - Library for displaying and testing UI components
+- https://cva.style/docs - Allows us to create stuff like primary/secondary default options, different sizes etc...
+- https://www.chromatic.com/ - Deploys Storybook for us, as well as manages UI Reviews.
 
-
-<!-- 
-We don't use React Server Components yet. 
+<!--
+We don't use React Server Components yet.
 
 ## Server Side Rendering
 
@@ -93,13 +77,14 @@ You can read more about it here https://nextjs.org/docs/getting-started/react-es
 <br/>
 
 ## Scripts
-| Command| Description  |
-|--|--|
-| build | Bundles the package |
-| dev | Runs a Vite test project, you can add your own components in App.tsx to see how they look |
-| storybook| Opens StorybookJS to display components, runs in watch mode so will adjust as you save it|
-| lint | Runs a linter, worth checking before deployment to ensure simple mistakes are fixed |
-| test | TODO |
+
+| Command   | Description                                                                               |
+| --------- | ----------------------------------------------------------------------------------------- |
+| build     | Bundles the package                                                                       |
+| dev       | Runs a Vite test project, you can add your own components in App.tsx to see how they look |
+| storybook | Opens StorybookJS to display components, runs in watch mode so will adjust as you save it |
+| lint      | Runs a linter, worth checking before deployment to ensure simple mistakes are fixed       |
+| test      | TODO                                                                                      |
 
 <br/>
 <br/>
@@ -107,24 +92,6 @@ You can read more about it here https://nextjs.org/docs/getting-started/react-es
 
 ## Deployment
 
-Make sure you bump up the package.json version before deployment or else the build will fail.
-*TODO - automate this*
+To create your own feature branch of this project, deploy within that project and you should get a package named something like: @global-x-etfs/gxcomponents/@your_branch_name of which you can just run npm install.
 
 When you commit to main, it will trigger a github action here: https://github.com/Global-X-ETFs/GXComponents/actions
-
-If builds pass, update your package.json on the **consuming project**, to include the latest version you created, then run `npm i` to consume it.
-
-    import { YourComponent } from  "@global-x-etfs/gxcomponents";
-    ...
-    ...
-	    return (
-		    <YourComponent> </YourComponent>
-	    )
-    }
-
-	
-<br/>
-<br/>
-<br/>
-
-***Tada***, you've now got your own custom component! 🥳
