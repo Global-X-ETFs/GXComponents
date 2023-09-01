@@ -15,3 +15,5 @@ export * from "./Card";
 export * from "./LoadingSpinner";
 
 export * from "./Table";
+
+export * from "./PrintHero";
