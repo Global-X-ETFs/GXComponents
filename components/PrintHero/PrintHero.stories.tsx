@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const BlankPrintHero: Story = {
+export const ExamplePrintHero: Story = {
   args: {
     children: "Hello World",
     title: "Thematic Exposure",
@@ -22,5 +22,66 @@ export const BlankPrintHero: Story = {
       subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
     },
     imageURL: "/logo.png",
+    backgroundImageURL: "/CompassRose-Blue.svg",
+  },
+};
+
+export const PrintHeroWithOutBackgroundImage: Story = {
+  args: {
+    title: "Thematic Exposure",
+    rhs: {
+      title: "Q2 2023 Overlap Analysis",
+      subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
+    },
+    imageURL: "/logo.png",
+  },
+};
+
+export const PrintHeroWithOutRHS: Story = {
+  args: {
+    title: "Thematic Exposure",
+    imageURL: "/logo.png",
+    backgroundImageURL: "/CompassRose-Blue.svg",
+  },
+};
+
+export const PrintHeroWithOutImage: Story = {
+  args: {
+    title: "Thematic Exposure",
+    rhs: {
+      title: "Q2 2023 Overlap Analysis",
+      subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
+    },
+    backgroundImageURL: "/CompassRose-Blue.svg",
+  },
+};
+
+export const PrintHeroWithOutRHSAndImage: Story = {
+  args: {
+    title: "Thematic Exposure",
+    backgroundImageURL: "/CompassRose-Blue.svg",
+  },
+};
+
+export const PrintHeroWithOutTitle: Story = {
+  args: {
+    rhs: {
+      title: "Q2 2023 Overlap Analysis",
+      subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
+    },
+    imageURL: "/logo.png",
+    backgroundImageURL: "/CompassRose-Blue.svg",
+  },
+};
+
+export const PrintHeroWithTransparentBackground: Story = {
+  args: {
+    title: "Thematic Exposure",
+    rhs: {
+      title: "Q2 2023 Overlap Analysis",
+      subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
+    },
+    imageURL: "/logo.png",
+    backgroundColour: "transparent",
   },
 };

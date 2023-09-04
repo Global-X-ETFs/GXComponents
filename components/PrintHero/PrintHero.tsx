@@ -3,9 +3,20 @@ import type { VariantProps } from "class-variance-authority";
 import React from "react";
 import cn from "../Utils/cn";
 
-const printHeroVariants = cva("flex space-x-8 bg-darkblue px-8", {
-  variants: {},
-});
+const printHeroVariants = cva(
+  "flex space-x-8 bg-cover bg-center bg-no-repeat px-8",
+  {
+    variants: {
+      backgroundColour: {
+        darkblue: "bg-darkblue",
+        transparent: "bg-transparent",
+      },
+    },
+    defaultVariants: {
+      backgroundColour: "darkblue",
+    },
+  }
+);
 
 export interface PrintHeroProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -13,15 +24,30 @@ export interface PrintHeroProps
   title?: string;
   rhs?: { title: string; subtitle: string };
   imageURL?: string;
+  backgroundImageURL?: string;
 }
 
 const PrintHero = React.forwardRef<HTMLDivElement, PrintHeroProps>(
-  ({ className, title, rhs, imageURL, ...props }, ref) => {
+  (
+    {
+      className,
+      title,
+      rhs,
+      imageURL,
+      backgroundColour,
+      backgroundImageURL,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <div className="preflight">
         <div
           ref={ref}
-          className={cn(printHeroVariants({ className }))}
+          className={cn(
+            printHeroVariants({ className, backgroundColour }),
+            `bg-[url('${backgroundImageURL}')]`
+          )}
           {...props}
         >
           <div className="before:notch relative flex flex-grow flex-col justify-center py-8">
