@@ -34,6 +34,7 @@ export const PrintHeroWithOutBackgroundImage: Story = {
       subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
     },
     imageURL: "/logo.png",
+    backgroundColour: "darkblue",
   },
 };
 

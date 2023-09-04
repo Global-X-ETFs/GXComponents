@@ -4,7 +4,7 @@ import React from "react";
 import cn from "../Utils/cn";
 
 const printHeroVariants = cva(
-  "flex space-x-8 bg-cover bg-center bg-no-repeat px-8",
+  "flex flex-col overflow-hidden px-8 md:flex-row md:space-x-8",
   {
     variants: {
       backgroundColour: {
@@ -13,7 +13,7 @@ const printHeroVariants = cva(
       },
     },
     defaultVariants: {
-      backgroundColour: "darkblue",
+      backgroundColour: "transparent",
     },
   }
 );
@@ -41,24 +41,24 @@ const PrintHero = React.forwardRef<HTMLDivElement, PrintHeroProps>(
     ref
   ) => {
     return (
-      <div className="preflight">
+      <div
+        className={cn("preflight", backgroundImageURL ? "bg-cover" : "")}
+        style={{ backgroundImage: `url('${backgroundImageURL}')` }}
+      >
         <div
           ref={ref}
-          className={cn(
-            printHeroVariants({ className, backgroundColour }),
-            `bg-[url('${backgroundImageURL}')]`
-          )}
+          className={cn(printHeroVariants({ className, backgroundColour }))}
           {...props}
         >
-          <div className="before:notch relative flex flex-grow flex-col justify-center py-8">
+          <div className="md:before:notch relative flex flex-grow flex-col justify-center py-8">
             <h1 className="text-6xl text-orange">{title}</h1>
           </div>
           <div className="before:notch relative flex flex-grow flex-col justify-center gap-2 py-8">
             <h2 className="text-2xl  text-white">{rhs?.title}</h2>
             <p className="text-lg text-white">{rhs?.subtitle}</p>
           </div>
-          <div className="flex items-center">
-            <img src={imageURL} className="max-h-[8rem] object-contain p-8" />
+          <div className="hidden items-center md:flex">
+            <img src={imageURL} className="h-2/3 object-contain " />
           </div>
         </div>
       </div>
