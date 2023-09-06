@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "run-s build:*",
+    "build": "tsc ./components/index.ts --outDir ./dist --jsx preserve --declaration --esModuleInterop --skipLibCheck && cp tailwind.config.js dist/tailwind.config.js  ",
     "build:lib": "tsup components/index.ts --dts",
     "test": "vitest run",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0",
