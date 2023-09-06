@@ -10,9 +10,9 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc ./components/index.ts --outDir ./dist --jsx preserve --declaration --esModuleInterop --skipLibCheck && cp tailwind.config.js dist/tailwind.config.js && cp components/index.css dist/index.css && cp components/preflight.css dist/preflight.css",
+    "build:tsc": "tsc ./components/index.ts --outDir ./dist --jsx preserve --declaration --esModuleInterop --skipLibCheck && cp tailwind.config.js dist/tailwind.config.js && cp components/index.css dist/index.css && cp components/preflight.css dist/preflight.css",
     "build:lib": "tsup components/index.ts --dts",
-    "tsup": "tsup --config tsup.config.ts",
+    "build": "tsup --config tsup.config.ts",
     "test": "vitest run",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0",
     "format": "prettier --write .",
