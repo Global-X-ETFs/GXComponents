@@ -35,7 +35,7 @@
    "outDir": "dist",
    "moduleResolution": "Node",
    "skipLibCheck": true,
-   "jsx": "preserve",
+   "jsx": "react",
    "allowSyntheticDefaultImports": true,
    "declaration": true
   },
