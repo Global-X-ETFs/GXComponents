@@ -6,7 +6,7 @@ export default {
     "./index.html",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@global-x-etfs/gxcomponents/dist/index.js",
+    "./node_modules/@global-x-etfs/gxcomponents/dist/**/*.js",
   ],
   theme: {
     extend: {

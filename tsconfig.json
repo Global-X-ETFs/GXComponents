@@ -1,33 +1,3 @@
-// {
-//   "compilerOptions": {
-//     "target": "ESNext",
-//     "useDefineForClassFields": true,
-//     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-//     "allowJs": false,
-//     "skipLibCheck": true,
-//     "esModuleInterop": true,
-//     "allowSyntheticDefaultImports": true,
-//     "strict": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "module": "ESNext",
-//     "moduleResolution": "Node",
-//     "resolveJsonModule": true,
-//     "isolatedModules": true,
-//     "noUncheckedIndexedAccess": true,
-//     "noEmit": true,
-//     "jsx": "preserve",
-//     "baseUrl": ".",
-//     "declaration": true,
-//     "outDir": "dist",
-//     "paths": {
-//       "@utils/*": ["components/Utils/*"]
-//     }
-//   },
-//   "include": ["components/index.ts"],
-//   "exclude": ["node_modules", "dist", "./**/*.stories.tsx"]
-// }
-
-
 {
   "compilerOptions": {
    "target": "ESNext",
