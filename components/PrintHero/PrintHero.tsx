@@ -15,7 +15,7 @@ const printHeroVariants = cva(
     defaultVariants: {
       backgroundColour: "transparent",
     },
-  }
+  },
 );
 
 export interface PrintHeroProps
@@ -38,12 +38,14 @@ const PrintHero = React.forwardRef<HTMLDivElement, PrintHeroProps>(
       backgroundImageURL,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div
         className={cn("preflight", backgroundImageURL ? "bg-cover" : "")}
-        style={{ backgroundImage: `url('${backgroundImageURL}')` }}
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('${backgroundImageURL}')`,
+        }}
       >
         <div
           ref={ref}
@@ -63,7 +65,7 @@ const PrintHero = React.forwardRef<HTMLDivElement, PrintHeroProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 PrintHero.displayName = "PrintHero";
