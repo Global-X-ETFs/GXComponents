@@ -16,33 +16,37 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const BasicHoverCard: Story = {
-  render: () => (
-    <HoverCard>
-      <HoverCardTrigger>Hover me</HoverCardTrigger>
-      <HoverCardContent>Card content</HoverCardContent>
-    </HoverCard>
-  ),
-};
-
 export const ExampleHoverCard: Story = {
   render: () => (
-    <HoverCard>
-      <HoverCardTrigger className="text-white">AIQ</HoverCardTrigger>
-      <HoverCardContent className="max-w-xl">
-        <Card border={"top_accent"} className="flex flex-col  p-4">
-          <p className="font-semibold">
-            Global X ETFs Artificial Intelligence & Technology ETF
-          </p>
-          <p className="pt-4 text-neutral-100">
-            Theme: Artificial Intelligence
-          </p>
+    <div className="flex">
+      <HoverCard>
+        <HoverCardTrigger className="cursor-pointer ">
+          <Button>AIQ</Button>
+        </HoverCardTrigger>
+        <HoverCardContent>
+          <Card border="top_accent" className="flex flex-col  p-4">
+            <p className="pb-2 text-lg font-semibold text-black">
+              Global X Artificial Intelligence & Technology ETF
+            </p>
+            <p className="text-black">
+              Theme:{" "}
+              <span className="font-semibold text-neutral-100">Big Data</span>
+            </p>
 
-          <a href="https://globalxetfs.com/funds/aiq">
-            <Button className="-ml-2">View</Button>
-          </a>
-        </Card>
-      </HoverCardContent>
-    </HoverCard>
+            <p className="text-black">
+              Category:{" "}
+              <span className="font-semibold text-neutral-100">
+                Disruptive Technology
+              </span>
+            </p>
+            <a href={`https://globalxetfs.com/fund/AIQ`}>
+              <Button className="-ml-2" afterContent="arrow">
+                View More
+              </Button>
+            </a>
+          </Card>
+        </HoverCardContent>
+      </HoverCard>
+    </div>
   ),
 };
