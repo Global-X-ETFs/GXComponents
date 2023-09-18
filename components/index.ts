@@ -19,3 +19,5 @@ export * from "./Table";
 export * from "./PrintHero";
 
 export * from "./TabGroup";
+
+export * from "./HoverCard";
