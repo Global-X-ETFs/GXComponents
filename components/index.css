@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .notch {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 4px;
+    background-color: #ff5400;
+  }
+}
+
 @font-face {
   font-family: "Brown";
   src: url("/fonts/lineto-brown-regular.woff") format("woff");
