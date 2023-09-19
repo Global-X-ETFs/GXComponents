@@ -6,7 +6,7 @@ export default {
     "./index.html",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@global-x-etfs/gxcomponents/dist/index.js",
+    "./node_modules/@global-x-etfs/gxcomponents/dist/**/*.js",
   ],
   theme: {
     extend: {
@@ -38,6 +38,12 @@ export default {
         md: "14px",
         ml: "15px",
         lg: "16px",
+        xl: "18px",
+        "2xl": "20px",
+        "3xl": "24px",
+        "4xl": "28px",
+        "5xl": "32px",
+        "6xl": "36px",
       },
       width: {
         2.25: "0.55rem",
