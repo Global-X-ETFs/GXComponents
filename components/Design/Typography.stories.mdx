@@ -1,0 +1,82 @@
+import { Meta, Typeset } from "@storybook/blocks";
+
+<Meta title="Design/Typography" />
+
+export const typography = {
+  type: {
+    brown: '"Brown", san-serif',
+    proxima: '"Proxima Nova", san-serif',
+  },
+  weight: {
+    regular: "400",
+    bold: "700",
+    extrabold: "800",
+    black: "900",
+  },
+  size: {
+    xs: 11,
+    sm: 12,
+    ms: 13,
+    md: 14,
+    ml: 15,
+    lg: 16,
+    xl: 18,
+    xxl: 20,
+    xxxl: 24,
+    xxxxl: 28,
+    xxxxxl: 32,
+    xxxxxxl: 36,
+  },
+};
+
+export const SampleText = `The quick brown fox jumps over the lazy dog.`;
+
+# Typography
+
+**Font:** Brown
+
+**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.xs),
+    Number(typography.size.sm),
+    Number(typography.size.ms),
+    Number(typography.size.md),
+    Number(typography.size.ml),
+    Number(typography.size.lg),
+    Number(typography.size.xl),
+    Number(typography.size.xxl),
+    Number(typography.size.xxxl),
+    Number(typography.size.xxxxl),
+    Number(typography.size.xxxxxl),
+    Number(typography.size.xxxxxxl),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.brown}
+/>
+
+**Font:** Proxima
+
+**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.xs),
+    Number(typography.size.sm),
+    Number(typography.size.ms),
+    Number(typography.size.md),
+    Number(typography.size.ml),
+    Number(typography.size.lg),
+    Number(typography.size.xl),
+    Number(typography.size.xxl),
+    Number(typography.size.xxxl),
+    Number(typography.size.xxxxl),
+    Number(typography.size.xxxxxl),
+    Number(typography.size.xxxxxxl),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.proxima}
+/>
