@@ -1,3 +1,5 @@
+import tailwindAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   mode: "jit",
@@ -71,5 +73,5 @@ export default {
   corePlugins: {
     preflight: false, // Tailwind pre ships border-box (which is a good thing) but it conflicts with our global css in other projects
   },
-  plugins: [],
+  plugins: [tailwindAnimate],
 };
