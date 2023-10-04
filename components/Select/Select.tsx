@@ -14,8 +14,8 @@ interface SelectProps
 const Select = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Root>,
   SelectProps
->(({ className, children, ...props }) => (
-  <div className={cn("preflight font-proxima ", className)}>
+>(({ className, children, ...props }, ref) => (
+  <div ref={ref} className={cn("preflight font-proxima ", className)}>
     <SelectPrimitive.Root {...props}>{children}</SelectPrimitive.Root>
   </div>
 ));
