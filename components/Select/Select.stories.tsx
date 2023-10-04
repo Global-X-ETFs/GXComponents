@@ -27,7 +27,7 @@ export default meta;
 export const ExampleSelect: Story = {
   render: () => (
     <Select>
-      <SelectLabel>Theme:</SelectLabel>
+      <SelectLabel>Theme</SelectLabel>
       <SelectTrigger className="w-1/2">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
@@ -43,6 +43,7 @@ export const ExampleSelect: Story = {
 export const ExampleSelectWithGroups: Story = {
   render: () => (
     <Select>
+      <SelectLabel>Pets</SelectLabel>
       <SelectTrigger className="w-1/2">
         <SelectValue placeholder="Pets" />
       </SelectTrigger>
