@@ -6,11 +6,36 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 
 import cn from "../Utils/cn";
 
-const Select = SelectPrimitive.Root;
+interface SelectProps
+  extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> {
+  className?: string;
+}
+
+const Select = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Root>,
+  SelectProps
+>(({ className, children, ...props }) => (
+  <div className={cn("preflight font-proxima ", className)}>
+    <SelectPrimitive.Root {...props}>{children}</SelectPrimitive.Root>
+  </div>
+));
+
+Select.displayName = "Select";
 
 const SelectGroup = SelectPrimitive.Group;
 
 const SelectValue = SelectPrimitive.Value;
+
+const SelectLabel = React.forwardRef<
+  HTMLLabelElement,
+  React.ComponentPropsWithoutRef<"label">
+>(({ children, ...props }, ref) => (
+  <label ref={ref} className="text-granite text-md leading-5" {...props}>
+    {children}
+  </label>
+));
+
+SelectLabel.displayName = "SelectLabel";
 
 interface SelectTriggerProps
   extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {
@@ -24,7 +49,9 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-9 w-full items-center justify-between border-0  bg-neutral-700 hover:bg-neutral-600 active:bg-neutral-600 px-3 py-2 text-sm shadow-sm placeholder:text-neutral-100 disabled:cursor-not-allowed disabled:opacity-50",
+      `flex h-9 w-full items-center  text-granite justify-between border-0
+        bg-neutral-700 hover:bg-neutral-600 active:bg-neutral-600 px-3 py-2
+       placeholder:text-neutral-100 disabled:cursor-not-allowed disabled:opacity-50`,
       className,
     )}
     {...props}
@@ -51,7 +78,11 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative preflight z-50 min-w-[8rem] overflow-hidden border-0 bg-neutral-700 text-black shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        `relative preflight z-50 min-w-[8rem] overflow-hidden border-0 bg-neutral-700 
+         data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0
+         data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 
+         data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 
+         data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2`,
         position === "popper" &&
           "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
         className,
@@ -78,7 +109,7 @@ interface SelectLabelProps
   className?: string;
 }
 
-const SelectLabel = React.forwardRef<
+const SelectGroupLabel = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
   SelectLabelProps
 >(({ className, ...props }, ref) => (
@@ -88,7 +119,7 @@ const SelectLabel = React.forwardRef<
     {...props}
   />
 ));
-SelectLabel.displayName = SelectPrimitive.Label.displayName;
+SelectGroupLabel.displayName = SelectPrimitive.Label.displayName;
 
 interface SelectItemProps
   extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
@@ -102,7 +133,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none hover:bg-neutral-500 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex w-full text-granite cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none hover:bg-neutral-500 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
     {...props}
@@ -140,7 +171,8 @@ export {
   SelectValue,
   SelectTrigger,
   SelectContent,
-  SelectLabel,
+  SelectGroupLabel,
   SelectItem,
   SelectSeparator,
+  SelectLabel,
 };

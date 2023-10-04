@@ -9,6 +9,7 @@ import {
   SelectLabel,
   SelectSeparator,
   SelectValue,
+  SelectGroupLabel,
 } from "./Select";
 import React from "react";
 
@@ -26,6 +27,7 @@ export default meta;
 export const ExampleSelect: Story = {
   render: () => (
     <Select>
+      <SelectLabel>Theme:</SelectLabel>
       <SelectTrigger className="w-1/2">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
@@ -46,14 +48,14 @@ export const ExampleSelectWithGroups: Story = {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Dogs</SelectLabel>
+          <SelectGroupLabel>Dogs</SelectGroupLabel>
           <SelectItem value="john">John</SelectItem>
           <SelectItem value="steve">Steve</SelectItem>
           <SelectItem value="nigel">Nigel</SelectItem>
         </SelectGroup>
         <SelectSeparator />
         <SelectGroup>
-          <SelectLabel>Cats</SelectLabel>
+          <SelectGroupLabel>Cats</SelectGroupLabel>
           <SelectItem value="alan">Alan</SelectItem>
           <SelectItem value="brian">Brian</SelectItem>
           <SelectItem value="tom">Tom</SelectItem>
