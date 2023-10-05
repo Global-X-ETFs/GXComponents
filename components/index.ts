@@ -21,3 +21,7 @@ export * from "./TabGroup";
 export * from "./HoverCard";
 
 export * from "./Select";
+
+export * from "./Popover";
+
+export * from "./DropdownMenu";
