@@ -63,3 +63,11 @@ export const Transparent: Story = {
     onClick: () => console.log("Clicked!"),
   },
 };
+
+export const LinkDisabled: Story = {
+  args: {
+    variant: "link",
+    children: "Click Me",
+    disabled: true,
+  },
+};
