@@ -25,3 +25,5 @@ export * from "./Select";
 export * from "./Popover";
 
 export * from "./DropdownMenu";
+
+export * from "./Highlight";
