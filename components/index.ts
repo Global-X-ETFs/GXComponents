@@ -27,3 +27,5 @@ export * from "./Popover";
 export * from "./DropdownMenu";
 
 export * from "./Highlight";
+
+export * from "./Tooltip";
