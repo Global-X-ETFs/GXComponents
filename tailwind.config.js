@@ -66,8 +66,9 @@ export default {
     fontFamily: {
       sans: ["Brown", "sans-serif"],
       serif: ["Brown", "serif"],
-      mono: ["Brown", "monospace"],
+      mono: ["GeistMono", "monospace"],
       proxima: ["ProximaNova", "sans-serif"],
+      ui: ["Geist", "sans-serif"],
     },
   },
   corePlugins: {

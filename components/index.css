@@ -90,3 +90,13 @@
   font-weight: normal;
   font-style: italic;
 }
+
+@font-face {
+  font-family: "GeistMono";
+  src: url("/fonts/GeistMonoVariableVF.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/GeistVariableVF.ttf") format("truetype");
+}
