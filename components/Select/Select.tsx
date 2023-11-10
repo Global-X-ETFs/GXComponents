@@ -15,7 +15,7 @@ const Select = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Root>,
   SelectProps
 >(({ className, children, ...props }, ref) => (
-  <div ref={ref} className={cn("preflight font-proxima ", className)}>
+  <div ref={ref} className={cn("preflight ", className)}>
     <SelectPrimitive.Root {...props}>{children}</SelectPrimitive.Root>
   </div>
 ));
@@ -30,11 +30,7 @@ const SelectLabel = React.forwardRef<
   HTMLLabelElement,
   React.ComponentPropsWithoutRef<"label">
 >(({ children, ...props }, ref) => (
-  <label
-    ref={ref}
-    className="text-granite text-md font-sans leading-5"
-    {...props}
-  >
+  <label ref={ref} className="text-granite text-md leading-5" {...props}>
     {children}
   </label>
 ));

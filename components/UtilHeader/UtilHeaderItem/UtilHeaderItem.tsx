@@ -10,7 +10,7 @@ const utilHeaderItemVariants = cva(
     variants: {
       position: {
         left: "",
-        right: `p-[10px] before:p-[10px] before:font-proxima
+        right: `p-[10px] before:p-[10px] 
              before:text-lg before:leading-3 before:text-white before:content-['|'] 
              before:last:hidden md:p-0`,
       },
@@ -23,7 +23,7 @@ const utilHeaderItemVariants = cva(
       position: "right",
       isVisibleMobile: false,
     },
-  }
+  },
 );
 
 export interface UtilHeaderItemProps
@@ -41,14 +41,14 @@ const UtilHeaderItem = React.forwardRef<HTMLDivElement, UtilHeaderItemProps>(
         className={cn(
           ["flex", position == "right" ? "flex-row-reverse" : ""],
           utilHeaderItemVariants({ position, isVisibleMobile }),
-          className
+          className,
         )}
       >
         {icon && <UtilHeaderItemIcon> {icon} </UtilHeaderItemIcon>}
         <div> {children} </div>
       </div>
     );
-  }
+  },
 );
 
 UtilHeaderItem.displayName = "UtilHeaderItem";
