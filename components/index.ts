@@ -31,3 +31,5 @@ export * from "./Highlight";
 export * from "./Tooltip";
 
 export * from "./Sheet";
+
+export * from "./Accordion";
