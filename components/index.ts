@@ -29,3 +29,5 @@ export * from "./DropdownMenu";
 export * from "./Highlight";
 
 export * from "./Tooltip";
+
+export * from "./Sheet";
