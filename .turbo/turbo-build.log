@@ -1,9 +1,125 @@
 
-> gxc2@1.1.4 build /Users/cbradley/Documents/code/globalx/gxeu-next/packages/gxc2
-> tsc --build --verbose && cp tailwind.config.js dist/tailwind.config.js && cp components/index.css dist/index.css && cp components/preflight.css dist/preflight.css
+> gxc2@2.0.0 build /Users/cbradley/Documents/code/globalx/gxeu-next/packages/gxc2
+> tsup && cp components/preflight.css dist/preflight.css
 
-13:27:26 - Projects in this build: 
-    * tsconfig.json
-
-13:27:26 - Project 'tsconfig.json' is up to date because newest input 'components/index.ts' is older than output 'dist/index.js'
-
+CLI Building entry: components/Button/Button.tsx, components/Carousel/Carousel.tsx, components/Card/Card.tsx, components/Accordion/Accordion.tsx, components/DropdownMenu/DropdownMenu.tsx, components/CategoryCard/CategoryCard.tsx, components/Highlight/Highlight.tsx, components/HoverCard/HoverCard.tsx, components/FundCard/FundCard.tsx, components/Hero/Hero.tsx, components/LoadingSpinner/LoadingSpinner.tsx, components/Input/Input.tsx, components/MainNav/MainNav.tsx, components/PrintHero/PrintHero.tsx, components/Select/Select.tsx, components/Popover/Popover.tsx, components/RTCBlock/RTCBlock.tsx, components/Sheet/Sheet.tsx, components/Table/Table.tsx, components/TabGroup/TabGroup.tsx, components/Tooltip/Tooltip.tsx, components/UtilHeader/UtilHeader.tsx, components/MainNav/MainNavItem/MainNavItem.tsx, components/VerticalSVGTicker/VerticalSVGTicker.tsx, components/VideoCard/VideoCard.tsx, components/Table/TableCell/TableCell.tsx, components/Table/TableCaption/TableCaption.tsx, components/Table/TableHead/TableHead.tsx, components/Table/TableBody/TableBody.tsx, components/Table/TableRow/TableRow.tsx, components/UtilHeader/UtilHeaderItem/UtilHeaderItem.tsx, components/Table/TableHeader/TableHeader.tsx, components/UtilHeader/UtilHeaderItem/UtilHeaderItemIcon/UtilHeaderItemIcon.tsx, components/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.0.1
+CLI Using tsup config: /Users/cbradley/Documents/code/globalx/gxeu-next/packages/gxc2/tsup.config.ts
+CLI Target: esnext
+ESM Build start
+DTS Build start
+dist/Sheet/Sheet.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/Sheet/Sheet.js" was ignored.
+dist/TabGroup/TabGroup.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/TabGroup/TabGroup.js" was ignored.
+dist/Tooltip/Tooltip.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/Tooltip/Tooltip.js" was ignored.
+dist/Select/Select.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/Select/Select.js" was ignored.
+dist/Popover/Popover.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/Popover/Popover.js" was ignored.
+dist/Accordion/Accordion.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/Accordion/Accordion.js" was ignored.
+dist/DropdownMenu/DropdownMenu.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/DropdownMenu/DropdownMenu.js" was ignored.
+dist/Highlight/Highlight.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/Highlight/Highlight.js" was ignored.
+dist/HoverCard/HoverCard.js (1:0) Module level directives cause errors when bundled, "use client" in "dist/HoverCard/HoverCard.js" was ignored.
+ESM dist/index.css                                                          60.43 KB
+ESM dist/Table/TableCell/TableCell.js                                       92.00 B
+ESM dist/UtilHeader/UtilHeaderItem/UtilHeaderItemIcon/UtilHeaderItemIcon.js 107.00 B
+ESM dist/Table/TableBody/TableBody.js                                       92.00 B
+ESM dist/Table/TableRow/TableRow.js                                         91.00 B
+ESM dist/chunk-VM44V6DT.js                                                  325.00 B
+ESM dist/chunk-EIS62Q57.js                                                  243.00 B
+ESM dist/chunk-4A4N2FSA.js                                                  270.00 B
+ESM dist/Table/TableHead/TableHead.js                                       92.00 B
+ESM dist/chunk-MIEJWJSI.js                                                  286.00 B
+ESM dist/chunk-ZPZAZ562.js                                                  341.00 B
+ESM dist/chunk-PWCRRZWH.js                                                  881.00 B
+ESM dist/Table/Table.js                                                     82.00 B
+ESM dist/Sheet/Sheet.js                                                     250.00 B
+ESM dist/chunk-TUF6D2PD.js                                                  310.00 B
+ESM dist/UtilHeader/UtilHeaderItem/UtilHeaderItem.js                        131.00 B
+ESM dist/Table/TableHeader/TableHeader.js                                   94.00 B
+ESM dist/RTCBlock/RTCBlock.js                                               54.00 B
+ESM dist/TabGroup/TabGroup.js                                               136.00 B
+ESM dist/chunk-HGYRWY25.js                                                  508.00 B
+ESM dist/Tooltip/Tooltip.js                                                 148.00 B
+ESM dist/index.js                                                           2.93 KB
+ESM dist/MainNav/MainNavItem/MainNavItem.js                                 94.00 B
+ESM dist/chunk-DLFA3R6N.js                                                  2.52 KB
+ESM dist/chunk-IZYXQNQL.js                                                  472.00 B
+ESM dist/UtilHeader/UtilHeader.js                                           87.00 B
+ESM dist/chunk-CC4UU7N5.js                                                  1.55 KB
+ESM dist/VerticalSVGTicker/VerticalSVGTicker.js                             122.00 B
+ESM dist/chunk-SA2436M6.js                                                  761.00 B
+ESM dist/chunk-MKCQMQZC.js                                                  1.04 KB
+ESM dist/Hero/Hero.js                                                       81.00 B
+ESM dist/Input/Input.js                                                     82.00 B
+ESM dist/chunk-LGCPDMW3.js                                                  725.00 B
+ESM dist/FundCard/FundCard.js                                               85.00 B
+ESM dist/VideoCard/VideoCard.js                                             86.00 B
+ESM dist/chunk-VQC3XZKL.js                                                  1.06 KB
+ESM dist/chunk-OZKICE6B.js                                                  1.14 KB
+ESM dist/MainNav/MainNav.js                                                 84.00 B
+ESM dist/PrintHero/PrintHero.js                                             86.00 B
+ESM dist/Select/Select.js                                                   239.00 B
+ESM dist/Popover/Popover.js                                                 126.00 B
+ESM dist/chunk-GEDTVY4Y.js                                                  1.56 KB
+ESM dist/Button/Button.js                                                   83.00 B
+ESM dist/Carousel/Carousel.js                                               169.00 B
+ESM dist/LoadingSpinner/LoadingSpinner.js                                   91.00 B
+ESM dist/chunk-O7ESC4EZ.js                                                  1.25 KB
+ESM dist/Card/Card.js                                                       81.00 B
+ESM dist/Accordion/Accordion.js                                             152.00 B
+ESM dist/chunk-3UO4ZXA4.js                                                  654.00 B
+ESM dist/chunk-5FGBCAVG.js                                                  452.00 B
+ESM dist/chunk-CN3QNRZO.js                                                  2.92 KB
+ESM dist/chunk-OYLAP2D7.js                                                  1.10 KB
+ESM dist/CategoryCard/CategoryCard.js                                       226.00 B
+ESM dist/chunk-BC2OOZ6G.js                                                  1.23 KB
+ESM dist/chunk-CVX53CLZ.js                                                  465.00 B
+ESM dist/HoverCard/HoverCard.js                                             132.00 B
+ESM dist/chunk-QKZGC3IY.js                                                  1.79 KB
+ESM dist/chunk-SBBUDOLO.js                                                  976.00 B
+ESM dist/chunk-32F4NGE7.js                                                  3.90 KB
+ESM dist/chunk-MKCNPFZN.js                                                  1021.00 B
+ESM dist/chunk-7T3EAPTY.js                                                  392.00 B
+ESM dist/chunk-LWAB4655.js                                                  874.00 B
+ESM dist/chunk-3JCWXJAM.js                                                  446.00 B
+ESM dist/chunk-P6KTRSDJ.js                                                  365.00 B
+ESM dist/chunk-EVLKI4BK.js                                                  260.00 B
+ESM dist/Table/TableCaption/TableCaption.js                                 95.00 B
+ESM dist/DropdownMenu/DropdownMenu.js                                       460.00 B
+ESM dist/Highlight/Highlight.js                                             55.00 B
+ESM dist/chunk-PWVB5PAS.js                                                  507.00 B
+ESM ⚡️ Build success in 7283ms
+DTS ⚡️ Build success in 14750ms
+DTS dist/index.d.ts                                                           3.51 KB
+DTS dist/Button/Button.d.ts                                                   658.00 B
+DTS dist/Carousel/Carousel.d.ts                                               1.43 KB
+DTS dist/Card/Card.d.ts                                                       622.00 B
+DTS dist/Accordion/Accordion.d.ts                                             1.10 KB
+DTS dist/DropdownMenu/DropdownMenu.d.ts                                       3.65 KB
+DTS dist/CategoryCard/CategoryCard.d.ts                                       1.45 KB
+DTS dist/Highlight/Highlight.d.ts                                             307.00 B
+DTS dist/HoverCard/HoverCard.d.ts                                             751.00 B
+DTS dist/FundCard/FundCard.d.ts                                               684.00 B
+DTS dist/Hero/Hero.d.ts                                                       749.00 B
+DTS dist/LoadingSpinner/LoadingSpinner.d.ts                                   692.00 B
+DTS dist/Input/Input.d.ts                                                     1.11 KB
+DTS dist/MainNav/MainNav.d.ts                                                 363.00 B
+DTS dist/PrintHero/PrintHero.d.ts                                             784.00 B
+DTS dist/Select/Select.d.ts                                                   2.14 KB
+DTS dist/Popover/Popover.d.ts                                                 761.00 B
+DTS dist/RTCBlock/RTCBlock.d.ts                                               351.00 B
+DTS dist/Sheet/Sheet.d.ts                                                     2.33 KB
+DTS dist/Table/Table.d.ts                                                     222.00 B
+DTS dist/TabGroup/TabGroup.d.ts                                               1.53 KB
+DTS dist/Tooltip/Tooltip.d.ts                                                 702.00 B
+DTS dist/UtilHeader/UtilHeader.d.ts                                           378.00 B
+DTS dist/MainNav/MainNavItem/MainNavItem.d.ts                                 691.00 B
+DTS dist/VerticalSVGTicker/VerticalSVGTicker.d.ts                             621.00 B
+DTS dist/VideoCard/VideoCard.d.ts                                             341.00 B
+DTS dist/Table/TableCell/TableCell.d.ts                                       334.00 B
+DTS dist/Table/TableCaption/TableCaption.d.ts                                 250.00 B
+DTS dist/Table/TableHead/TableHead.d.ts                                       242.00 B
+DTS dist/Table/TableBody/TableBody.d.ts                                       244.00 B
+DTS dist/Table/TableRow/TableRow.d.ts                                         234.00 B
+DTS dist/UtilHeader/UtilHeaderItem/UtilHeaderItem.d.ts                        712.00 B
+DTS dist/Table/TableHeader/TableHeader.d.ts                                   248.00 B
+DTS dist/UtilHeader/UtilHeaderItem/UtilHeaderItemIcon/UtilHeaderItemIcon.d.ts 381.00 B
