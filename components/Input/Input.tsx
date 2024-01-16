@@ -10,7 +10,6 @@ const inputVariants = cva(
       variant: {
         primary:
           "bg-neutral-700 invalid:text-orange hover:bg-neutral-600 active:bg-neutral-600",
-        secondary: "bg-blue-500 hover:bg-blue-600",
       },
       textTransform: {
         uppercase: "uppercase",
@@ -19,7 +18,7 @@ const inputVariants = cva(
     defaultVariants: {
       variant: "primary",
     },
-  }
+  },
 );
 
 export interface InputProps
@@ -53,7 +52,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       required,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div className="preflight">
@@ -92,7 +91,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = "Input";

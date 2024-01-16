@@ -60,7 +60,7 @@ const PrintHero = React.forwardRef<HTMLDivElement, PrintHeroProps>(
             <p className="text-lg text-white">{rhs?.subtitle}</p>
           </div>
           <div className="hidden items-center md:flex">
-            <img src={imageURL} className="h-2/3 object-contain " />
+            <img src={imageURL} className="h-2/3 w-16 object-contain " />
           </div>
         </div>
       </div>

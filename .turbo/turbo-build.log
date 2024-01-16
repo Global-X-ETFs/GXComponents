@@ -1,0 +1,9 @@
+
+> gxc2@1.1.4 build /Users/cbradley/Documents/code/globalx/gxeu-next/packages/gxc2
+> tsc --build --verbose && cp tailwind.config.js dist/tailwind.config.js && cp components/index.css dist/index.css && cp components/preflight.css dist/preflight.css
+
+13:27:26 - Projects in this build: 
+    * tsconfig.json
+
+13:27:26 - Project 'tsconfig.json' is up to date because newest input 'components/index.ts' is older than output 'dist/index.js'
+

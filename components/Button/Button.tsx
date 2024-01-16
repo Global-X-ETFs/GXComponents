@@ -4,11 +4,11 @@ import React from "react";
 import cn from "../Utils/cn";
 
 const buttonVariants = cva(
-  "rounded-md p-2 font-bold leading-7 tracking-normal ",
+  "rounded-md p-2 font-bold leading-7  tracking-normal disabled:text-orange-hover disabled:hover:text-orange-hover disabled:cursor-not-allowed ",
   {
     variants: {
       variant: {
-        link: "text-orange hover:text-orange-hover",
+        link: "text-green-500 hover:text-orange-hover",
         transparent:
           "border border-white bg-transparent px-6 py-2 tracking-wide text-white transition-colors duration-200 hover:border-orange hover:text-orange ",
       },
@@ -22,7 +22,7 @@ const buttonVariants = cva(
       variant: "link",
       afterContent: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -40,7 +40,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

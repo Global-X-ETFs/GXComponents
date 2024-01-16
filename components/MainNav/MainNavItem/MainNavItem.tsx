@@ -2,17 +2,14 @@ import React from "react";
 import cn from "../../Utils/cn";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { UtilHeaderItemIcon } from "./UtilHeaderItemIcon/UtilHeaderItemIcon";
 
-const utilHeaderItemVariants = cva(
+const MainNavItemVariants = cva(
   "preflight cursor-pointer items-center text-xs leading-3 text-white",
   {
     variants: {
       position: {
         left: "",
-        right: `p-[10px] before:p-[10px] 
-             before:text-lg before:leading-3 before:text-white before:content-['|'] 
-             before:last:hidden md:p-0`,
+        right: `p-[10px] before:p-[10px] text-base hover:text-orange transition-colors duration-400`,
       },
       isVisibleMobile: {
         true: "",
@@ -26,13 +23,13 @@ const utilHeaderItemVariants = cva(
   },
 );
 
-export interface UtilHeaderItemProps
+export interface MainNavItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof utilHeaderItemVariants> {
+    VariantProps<typeof MainNavItemVariants> {
   icon?: JSX.Element;
 }
 
-const UtilHeaderItem = React.forwardRef<HTMLDivElement, UtilHeaderItemProps>(
+const MainNavItem = React.forwardRef<HTMLDivElement, MainNavItemProps>(
   ({ className, position, isVisibleMobile, icon, children, ...props }, ref) => {
     return (
       <div
@@ -40,17 +37,16 @@ const UtilHeaderItem = React.forwardRef<HTMLDivElement, UtilHeaderItemProps>(
         {...props}
         className={cn(
           ["flex", position == "right" ? "flex-row-reverse" : ""],
-          utilHeaderItemVariants({ position, isVisibleMobile }),
+          MainNavItemVariants({ position, isVisibleMobile }),
           className,
         )}
       >
-        {icon && <UtilHeaderItemIcon> {icon} </UtilHeaderItemIcon>}
         <div> {children} </div>
       </div>
     );
   },
 );
 
-UtilHeaderItem.displayName = "UtilHeaderItem";
+MainNavItem.displayName = "MainNavItem";
 
-export { UtilHeaderItem };
+export { MainNavItem };
