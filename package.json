@@ -76,10 +76,6 @@
     "vite-plugin-dts": "^3.5.3",
     "vitest": "^0.34.3"
   },
-  "readme": "ERROR: No README data found!",
-  "dependencies": {
-    "@radix-ui/react-hover-card": "^1.0.6",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "tailwind-merge": "1.13.0"
-  }
+  "packageManager": "pnpm@8.15.6",
+  "name": "@global-x-etfs/gx-design-system"
 }
