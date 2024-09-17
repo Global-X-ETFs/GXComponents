@@ -25,7 +25,7 @@ const config = {
       resolve: {
         alias: [
           {
-            find: "ui",
+            find: "@global-x-etfs/gx-components",
             replacement: resolve(__dirname, "../../../packages/ui/"),
           },
         ],
