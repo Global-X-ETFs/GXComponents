@@ -41,4 +41,4 @@ jobs:
         run: pnpm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
 
       - name: Publish package
-        run: pnpm publish --tag ${GITHUB_REF##*/}
+        run: pnpm publish --tag ${GITHUB_REF##*/} --no-git-checks
