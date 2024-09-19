@@ -6,7 +6,8 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
-    "./tailwind.config.ts": "./tailwind.config.ts"
+    "./tailwind.config.ts": "./tailwind.config.ts",
+    "./fonts.css": "./fonts.css"
   },
   "types": "./dist/index.d.ts",
   "scripts": {
