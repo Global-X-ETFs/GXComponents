@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@global-x-etfs/gx-components";
-import { useArgs } from "@storybook/preview-api";
 import type { Key } from "react";
 
 const meta: Meta = {
