@@ -17,7 +17,9 @@ const MenuContext = React.createContext({
 
 export const useMenu = () => React.useContext(MenuContext);
 
-export const MenuProvider = ({ children }) => {
+import type { ReactNode } from "react";
+
+export const MenuProvider = ({ children }: { children: ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
@@ -107,7 +109,7 @@ const MainNavItem = forwardRef<HTMLLIElement, MainNavItemProps>(
       <li
         ref={ref}
         {...props}
-        onClick={dontCloseMenu ? null : toggleMenu}
+        onClick={dontCloseMenu ? undefined : toggleMenu}
         className={cn(
           "group/icon flex cursor-pointer font-bold lg:font-normal font-sans items-center pl-7 leading-3 text-white lg:hover:text-orange whitespace-nowrap duration-400 lg:text-ml transition-colors flex-row-reverse justify-end",
           className,
@@ -174,7 +176,7 @@ const NavItem = forwardRef<HTMLDivElement, NavItemProps>(
           "flex pt-4 flex-col h-full items-start gap-4 font-normal text-ml",
           className,
         )}
-        onClick={dontCloseMenu ? null : toggleMenu}
+        onClick={dontCloseMenu ? undefined : toggleMenu}
         {...props}
       >
         {children}

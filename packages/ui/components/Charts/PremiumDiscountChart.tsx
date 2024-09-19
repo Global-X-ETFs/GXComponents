@@ -13,7 +13,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-import './PremiumDiscountChart.css';
+// import './PremiumDiscountChart.css';
 
 
 ChartJS.register(

@@ -1,5 +1,25 @@
 {
-  "extends": "@repo/typescript-config/react-app.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "compilerOptions": {
+    "target": "ES2020",                        // Use the appropriate ECMAScript version for your project
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],  // Include DOM and ES libraries
+    "allowJs": true,                           // Allow JavaScript files
+    "skipLibCheck": true,                      // Skip type checking of declaration files
+    "esModuleInterop": true,                   // Enables interop between CommonJS and ES modules
+    "allowSyntheticDefaultImports": true,      // Allow default imports from modules without default exports
+    "strict": true,                            // Enable all strict type checking options
+    "forceConsistentCasingInFileNames": true,  // Ensure file names are case consistent
+    "noEmit": true,                            // Don't emit compiled files, useful if only using for type checking
+    "isolatedModules": true,                   // Ensure each file can be safely transpiled without relying on other imports
+    "module": "ESNext",                        // Use ESNext for module resolution
+    "moduleResolution": "node",                // Node.js style resolution
+    "resolveJsonModule": true,                 // Allow importing JSON files
+    "jsx": "react-jsx"                         // Use the new JSX transform in React 17+
+  },
+  "include": [
+    ".storybook",                              // Include Storybook configuration
+    "stories"                                  // Include the folder where your stories are located
+  ],
+  "exclude": [
+    "node_modules"                             // Exclude node_modules from the compilation
+  ]
 }

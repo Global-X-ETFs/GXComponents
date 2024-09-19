@@ -1,5 +1,14 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "declaration": true,
+    "outDir": "./dist",
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": ["./components/index.ts", "./components/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }

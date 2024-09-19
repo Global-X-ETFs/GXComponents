@@ -42,4 +42,5 @@ const Highlight = React.forwardRef<HTMLDivElement, HighlightProps>(
 
 Highlight.displayName = "Highlight";
 
-export { Highlight, HighlightProps };
+export { Highlight };
+export type { HighlightProps };
