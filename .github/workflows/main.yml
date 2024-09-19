@@ -1,0 +1,41 @@
+name: CI
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Bumping version
+        uses: jpb06/bump-package@latest
+        with:
+          major-keywords: BREAKING CHANGE
+          minor-keywords: feat,minor
+          patch-keywords: fix,chore
+          should-default-to-patch: true
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          registry-url: https://npm.pkg.github.com/
+          scope: "@global-x-etfs"
+
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - uses: chromaui/action@v1
+      #   # Options required for Chromatic's GitHub Action
+      #   with:
+      #     #👇 Chromatic projectToken,
+      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
