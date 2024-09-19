@@ -13,7 +13,8 @@
     "module": "ESNext",                        // Use ESNext for module resolution
     "moduleResolution": "node",                // Node.js style resolution
     "resolveJsonModule": true,                 // Allow importing JSON files
-    "jsx": "react-jsx"                         // Use the new JSX transform in React 17+
+    "jsx": "react-jsx",                        // Use the new JSX transform in React 17+
+    "types": ["vite-plugin-svgr/client"],      // Include the types for the Vite plugin
   },
   "include": [
     ".storybook",                              // Include Storybook configuration
