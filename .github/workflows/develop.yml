@@ -2,45 +2,46 @@ name: Release Feature Branch
 
 on: push
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
-    name: Build and Deploy
-    timeout-minutes: 15
     runs-on: ubuntu-latest
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
-    # env:
-    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-    #  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
- 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 2
- 
-      - uses: pnpm/action-setup@v3
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          version: 8
- 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: 16.x
           registry-url: https://npm.pkg.github.com/
           scope: "@global-x-etfs"
- 
+          always-auth: true
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+          run_install: false
+
       - name: Install dependencies
         run: pnpm install
- 
-      - name: Build
-        run: pnpm build
- 
-      - name: Deploy
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Configure Git
         run: |
           git config --global user.email "cbradley@globalxetfs.com"
           git config --global user.name "Connor Bradley"
-          pnpm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
-          pnpm publish --tag ${GITHUB_REF##*/} --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bump version
+        run: pnpm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
+
+      - name: Publish package
+        run: pnpm publish --tag ${GITHUB_REF##*/}
