@@ -15,7 +15,7 @@ export default meta;
 export const ListItemDefaultExample: Story = {
   render: () => (
     <ListItem
-      date={new Date()}
+      date="18th November 2021"
       title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
     />
   ),
@@ -25,19 +25,19 @@ export const ListWithMultipleItemsExample: Story = {
   render: () => (
     <List>
       <ListItem
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
       <ListItem
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
       <ListItem
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
       <ListItem
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
     </List>
@@ -48,7 +48,7 @@ export const ListItemWithArrowAfterExample: Story = {
   render: () => (
     <ListItem
       afterContent="arrow"
-      date={new Date()}
+      date="18th November 2021"
       title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
     />
   ),
@@ -58,7 +58,7 @@ export const ListItemCompactExample: Story = {
   render: () => (
     <ListItem
       variant="compact"
-      date={new Date()}
+      date="18th November 2021"
       title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
     />
   ),
@@ -69,22 +69,22 @@ export const ListCompactMultipleItemsExample: Story = {
     <List>
       <ListItem
         variant="compact"
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
       <ListItem
         variant="compact"
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
       <ListItem
         variant="compact"
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
       <ListItem
         variant="compact"
-        date={new Date()}
+        date="18th November 2021"
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
     </List>
