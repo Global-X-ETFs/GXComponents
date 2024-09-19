@@ -41,5 +41,5 @@ jobs:
         run: git config --global user.name "Connor Bradley"
         run: pnpm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
         run: pnpm publish --tag ${GITHUB_REF##*/}
-          env:
-            NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
