@@ -1,0 +1,241 @@
+<svg id="svg-buildings" xmlns="http://www.w3.org/2000/svg" viewBox="0 15 300 305"
+    shape-rendering="geometricPrecision"
+    text-rendering="geometricPrecision">
+    <style>
+        @keyframes eqi4yyxrwt8p3_ts__ts {
+        0% {
+        transform: translate(153px, 286.5px) scale(0, 0)
+        }
+
+        5% {
+        transform: translate(153px, 286.5px) scale(0, 0);
+        animation-timing-function: cubic-bezier(.25, 1, .25, 1)
+        }
+
+        30%,
+        to {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p3_c_o {
+
+        0%,
+        87.5% {
+        opacity: 1
+        }
+
+        to {
+        opacity: 0
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p4_ts__ts {
+        0% {
+        transform: translate(153px, 286.5px) scale(0, 0)
+        }
+
+        10% {
+        transform: translate(153px, 286.5px) scale(0, 0);
+        animation-timing-function: cubic-bezier(.25, 1, .25, 1)
+        }
+
+        35%,
+        to {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p4_c_o {
+
+        0%,
+        87.5% {
+        opacity: 1
+        }
+
+        to {
+        opacity: 0
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p5_ts__ts {
+        0% {
+        transform: translate(153px, 286.5px) scale(0, 0);
+        animation-timing-function: cubic-bezier(.25, 1, .25, 1)
+        }
+
+        25%,
+        to {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p5_c_o {
+
+        0%,
+        87.5% {
+        opacity: 1
+        }
+
+        to {
+        opacity: 0
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p6_ts__ts {
+        0% {
+        transform: translate(153px, 286.5px) scale(0, 0)
+        }
+
+        15% {
+        transform: translate(153px, 286.5px) scale(0, 0);
+        animation-timing-function: cubic-bezier(.25, 1, .25, 1)
+        }
+
+        40%,
+        to {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p6_c_o {
+
+        0%,
+        87.5% {
+        opacity: 1
+        }
+
+        to {
+        opacity: 0
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p7_ts__ts {
+        0% {
+        transform: translate(149.099985px, 305.950012px) scale(0, 1);
+        animation-timing-function: cubic-bezier(.25, 1, .25, 1)
+        }
+
+        25%,
+        to {
+        transform: translate(149.099985px, 305.950012px) scale(1.1, 1)
+        }
+        }
+
+        @keyframes eqi4yyxrwt8p7_c_o {
+
+        0%,
+        87.5% {
+        opacity: 1
+        }
+
+        to {
+        opacity: 0
+        }
+        }
+
+        #svg-buildings #eqi4yyxrwt8p3_ts {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+
+        #svg-buildings #eqi4yyxrwt8p3 {
+        opacity: 1
+        }
+
+        #svg-buildings #eqi4yyxrwt8p4_ts {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+
+        #svg-buildings #eqi4yyxrwt8p4 {
+        opacity: 1
+        }
+
+        #svg-buildings #eqi4yyxrwt8p5_ts {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+
+        #svg-buildings #eqi4yyxrwt8p5 {
+        opacity: 1
+        }
+
+        #svg-buildings #eqi4yyxrwt8p6_ts {
+        transform: translate(153px, 286.5px) scale(1, 1)
+        }
+
+        #svg-buildings #eqi4yyxrwt8p6 {
+        opacity: 1
+        }
+
+        #svg-buildings #eqi4yyxrwt8p7_ts {
+        transform: translate(149.099985px, 305.950012px) scale(1.1, 1)
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p3_ts {
+        animation: eqi4yyxrwt8p3_ts__ts 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p3 {
+        animation: eqi4yyxrwt8p3_c_o 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p4_ts {
+        animation: eqi4yyxrwt8p4_ts__ts 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p4 {
+        animation: eqi4yyxrwt8p4_c_o 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p5_ts {
+        animation: eqi4yyxrwt8p5_ts__ts 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p5 {
+        animation: eqi4yyxrwt8p5_c_o 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p6_ts {
+        animation: eqi4yyxrwt8p6_ts__ts 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p6 {
+        animation: eqi4yyxrwt8p6_c_o 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p7_ts {
+        animation: eqi4yyxrwt8p7_ts__ts 4000ms linear infinite normal forwards
+        }
+
+        .active #svg-buildings #eqi4yyxrwt8p7 {
+        animation: eqi4yyxrwt8p7_c_o 4000ms linear infinite normal forwards
+        }
+    </style>
+    <g id="eqi4yyxrwt8p2">
+        <g id="eqi4yyxrwt8p3_ts" transform="matrix(0 0 0 0 153 286.5)">
+            <path id="eqi4yyxrwt8p3" fill="#00414F" stroke="#00414F" stroke-width="4"
+                stroke-miterlimit="10"
+                d="M-51.6-107.3h11.9v-56.8h77.3V0h11.9v-176H-51.6z"></path>
+        </g>
+        <g id="eqi4yyxrwt8p4_ts" transform="matrix(0 0 0 0 153 286.5)">
+            <path id="eqi4yyxrwt8p4" fill="#00414F" stroke="#00414F" stroke-width="4"
+                stroke-miterlimit="10"
+                d="m63.2-154.1.4 11.9h45.1V0h11.9v-154.1z"></path>
+        </g>
+        <g id="eqi4yyxrwt8p5_ts" transform="matrix(0 0 0 0 153 286.5)">
+            <path id="eqi4yyxrwt8p5" fill="#00414F" stroke="#00414F" stroke-width="4"
+                stroke-miterlimit="10"
+                d="M-128.4 0h11.9v-78.2h64.7V0h11.9v-90.1h-88.5z"></path>
+        </g>
+        <g id="eqi4yyxrwt8p6_ts" transform="matrix(0 0 0 0 153 286.5)">
+            <path id="eqi4yyxrwt8p6" fill="#00414F" stroke="#00414F" stroke-width="4"
+                stroke-miterlimit="10"
+                d="m-81.7-243.3 46.2 18.4v33.6h11.9v-42l-69.9-30v155.9h11.8z"></path>
+        </g>
+        <g id="eqi4yyxrwt8p7_ts" transform="matrix(0 0 0 1 149.1 305.95)">
+            <rect id="eqi4yyxrwt8p7" width="249" height="10.5" rx="0" ry="0"
+                transform="translate(-124.5 -5.25)"
+                fill="#F75410" stroke="#F75410" stroke-width="4" stroke-linecap="square"
+                stroke-miterlimit="10"></rect>
+        </g>
+    </g>
+</svg>

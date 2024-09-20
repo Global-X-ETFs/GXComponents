@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .notch {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 4px;
+    background-color: #ff5400;
+  }
+
+  .notchHero {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 6px;
+    width: 30px;
+    height: 7px;
+    background-color: #ff5400;
+  }
+
+  @media screen and (max-width: 767px) {
+    .notchHero {
+      top: auto;
+      left: 50%;
+      bottom: -28px;
+      margin-left: -15px;
+    }    
+  }
+}
+
+.premium-discount-chart canvas {
+  width: 100% !important;
+  height: 450px !important;
+}

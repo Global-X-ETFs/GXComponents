@@ -1,0 +1,208 @@
+<svg id="svg-car" xmlns="http://www.w3.org/2000/svg" class="" viewBox="-10 -80 650 410"
+    shape-rendering="geometricPrecision"
+    text-rendering="geometricPrecision">
+    <style>
+        @keyframes exu5855fo1p94_c_o {
+
+        0%,
+        to {
+        opacity: 1
+        }
+
+        27.777778%,
+        77.777778% {
+        opacity: 0
+        }
+        }
+
+        @keyframes exu5855fo1p97_ts__ts {
+        0% {
+        transform: translate(141.4px, 140.6px) scale(.2, .2);
+        animation-timing-function: cubic-bezier(.19, 1, .22, 1)
+        }
+
+        44.444444%,
+        to {
+        transform: translate(141.4px, 140.6px) scale(1, 1)
+        }
+        }
+
+        @keyframes exu5855fo1p97_c_o {
+
+        0%,
+        88.888889%,
+        to {
+        opacity: 0
+        }
+
+        61.111111%,
+        72.222222% {
+        opacity: 1
+        }
+        }
+
+        @keyframes exu5855fo1p98_ts__ts {
+        0% {
+        transform: translate(141.4px, 140.6px) scale(.2, .2)
+        }
+
+        5.555556% {
+        transform: translate(141.4px, 140.6px) scale(.2, .2);
+        animation-timing-function: cubic-bezier(.19, 1, .22, 1)
+        }
+
+        50%,
+        to {
+        transform: translate(141.4px, 140.6px) scale(1, 1)
+        }
+        }
+
+        @keyframes exu5855fo1p98_c_o {
+
+        0%,
+        5.555556%,
+        94.444444%,
+        to {
+        opacity: 0
+        }
+
+        66.666667%,
+        77.777778% {
+        opacity: 1
+        }
+        }
+
+        @keyframes exu5855fo1p99_ts__ts {
+        0% {
+        transform: translate(141.4px, 140.6px) scale(.2, .2)
+        }
+
+        11.111111% {
+        transform: translate(141.4px, 140.6px) scale(.2, .2);
+        animation-timing-function: cubic-bezier(.19, 1, .22, 1)
+        }
+
+        55.555556%,
+        to {
+        transform: translate(141.4px, 140.6px) scale(1, 1)
+        }
+        }
+
+        @keyframes exu5855fo1p99_c_o {
+
+        0%,
+        11.111111%,
+        to {
+        opacity: 0
+        }
+
+        72.222222%,
+        83.333333% {
+        opacity: 1
+        }
+        }
+
+        @keyframes exu5855fo1p911_c_o {
+        0% {
+        opacity: 1
+        }
+
+        66.666667% {
+        opacity: 1;
+        animation-timing-function: cubic-bezier(.42, 0, 1, 1)
+        }
+
+        88.888889%,
+        to {
+        opacity: 0
+        }
+        }
+
+        @keyframes exu5855fo1p911_s_do {
+        0% {
+        stroke-dashoffset: 500
+        }
+
+        77.777778%,
+        to {
+        stroke-dashoffset: 0
+        }
+        }
+
+        .active #svg-car #exu5855fo1p94 {
+        animation: exu5855fo1p94_c_o 1800ms linear infinite normal forwards
+        }
+
+        .active #svg-car #exu5855fo1p97_ts {
+        animation: exu5855fo1p97_ts__ts 1800ms linear infinite normal forwards
+        }
+
+        .active #svg-car #exu5855fo1p97 {
+        animation: exu5855fo1p97_c_o 1800ms linear infinite normal forwards
+        }
+
+        .active #svg-car #exu5855fo1p98_ts {
+        animation: exu5855fo1p98_ts__ts 1800ms linear infinite normal forwards
+        }
+
+        .active #svg-car #exu5855fo1p98 {
+        animation: exu5855fo1p98_c_o 1800ms linear infinite normal forwards
+        }
+
+        .active #svg-car #exu5855fo1p99_ts {
+        animation: exu5855fo1p99_ts__ts 1800ms linear infinite normal forwards
+        }
+
+        .active #svg-car #exu5855fo1p99 {
+        animation: exu5855fo1p99_c_o 1800ms linear infinite normal forwards
+        }
+
+        .active #svg-car #exu5855fo1p911 {
+        animation-name: exu5855fo1p911_c_o, exu5855fo1p911_s_do;
+        animation-duration: 1800ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-iteration-count: infinite
+        }
+    </style>
+    <path id="exu5855fo1p92"
+        d="M624.5 137.9c-16-23.5-45-37.6-86.3-41.7L160.9 61c1.3-14.3 9.9-33 14.8-41.9 35.8-3 68.8-6.2 104.4 0 33.4 5.9 66.8 15 97.1 30.4L402 65.3l30.2 3.4.6-1-48.4-30.9c-34.9-19.7-74.3-31-114.1-35.3-42-4.5-83.9 2-125.7 5.4-4 .3-66.1 5.2-66.1 5.4l.4 7.2c.6 8 3.1 15.7 7.2 22.6C96.9 60 117 71.8 140 73.8l396.8 37c36.7 3.7 62.1 15.6 75.5 35.2 17 24.9 9 54.8 8.7 56.1-2.7 19.4-20.9 21.5-22.4 21.7h-38c8.1-31.8-11.2-64.1-43-72.1-31.8-8.1-64.1 11.2-72.1 43s11.2 64.1 43 72.1c26 6.6 53.2-5.1 66.3-28.4h44.3c11-.9 32.8-9.1 36.1-33.3.4-1.5 10.1-36.5-10.7-67.2ZM146.4 59.7l-5.1-.4c-18.3-1.6-34.2-10.8-42.5-24.6-1.7-2.8-3-5.8-3.9-8.9l63.8-5.3c-4.9 10.1-11 25.3-12.3 39.2Zm357.5 194.4c-24.2 0-43.9-19.6-43.9-43.8 0-24.2 19.6-43.9 43.8-43.9 24.2 0 43.9 19.6 43.9 43.8 0 24.3-19.6 43.9-43.8 43.9Z"
+        fill="#002F37" stroke="none" stroke-width="1"></path>
+    <path id="exu5855fo1p93"
+        d="M141.4 105.8c-19.2 0-34.8 15.6-34.8 34.8 0 19.2 15.6 34.8 34.8 34.8 19.2 0 34.8-15.6 34.8-34.8-.1-19.2-15.6-34.8-34.8-34.8Zm0 54.9c-11.1 0-20.2-9-20.2-20.1 0-11.1 9-20.2 20.1-20.2 11.1 0 20.2 9 20.2 20.1 0 11.2-9 20.2-20.1 20.2Z"
+        fill="#002F37" stroke="none" stroke-width="1"></path>
+    <path id="exu5855fo1p94"
+        d="M141.4 105.8c-19.2 0-34.8 15.6-34.8 34.8 0 19.2 15.6 34.8 34.8 34.8 19.2 0 34.8-15.6 34.8-34.8-.1-19.2-15.6-34.8-34.8-34.8Zm0 54.9c-11.1 0-20.2-9-20.2-20.1 0-11.1 9-20.2 20.1-20.2 11.1 0 20.2 9 20.2 20.1 0 11.2-9 20.2-20.1 20.2Z"
+        fill="#FF5400" stroke="none" stroke-width="1"></path>
+    <path id="exu5855fo1p95" fill="#002F37" stroke="none" stroke-width="1"
+        d="m252.4 56 13.7 1.7 1.1-.1-2.1-25.4-14.9-2.3z"></path>
+    <path id="exu5855fo1p96"
+        d="M596.7 155.8c-.4-4.9-1.2-9.9-2.3-14.7-15.5-2.2-25.9-8.5-32.6-14.4l-21.5-2.7c4.1 6.6 20.6 28.5 56.4 31.8Z"
+        fill="#002F37" stroke="none" stroke-width="1"></path>
+    <g id="exu5855fo1p97_ts" transform="matrix(.2 0 0 .2 141.4 140.6)">
+        <path id="exu5855fo1p97"
+            d="M16.3 120.1c5.2-31.6 22.8-59.9 48.9-78.5l-8.5-11.9C-4.2 73.3-18.3 158 25.3 218.9l11.9-8.5c-18.7-26.1-26.3-58.7-20.9-90.3Z"
+            transform="translate(-141.4 -140.6)" opacity="0" fill="#FF5400" stroke="none"
+            stroke-width="1"></path>
+    </g>
+    <g id="exu5855fo1p98_ts" transform="matrix(.2 0 0 .2 141.4 140.6)">
+        <path id="exu5855fo1p98"
+            d="M52.3 125.7c3.6-22 15.9-41.6 34.1-54.6l-8.5-11.9c-44.3 31.7-54.6 93.3-23 137.6.1.1.1.2.2.3l11.9-8.5c-13.1-18.1-18.4-40.8-14.7-62.9Z"
+            transform="translate(-141.4 -140.6)" opacity="0" fill="#FF5400" stroke="none"
+            stroke-width="1"></path>
+    </g>
+    <g id="exu5855fo1p99_ts" transform="matrix(.2 0 0 .2 141.4 140.6)">
+        <path id="exu5855fo1p99"
+            d="m105.9 98.2-8.6-11.8c-28.7 21.1-34.9 61.4-13.8 90.1.1.1.2.3.3.4l11.7-8.7c-16.5-22.1-11.9-53.3 10.2-69.8 0-.1.1-.1.2-.2Z"
+            transform="translate(-141.4 -140.6)" opacity="0" fill="#FF5400" stroke="none"
+            stroke-width="1"></path>
+    </g>
+    <path id="exu5855fo1p910"
+        d="M191.1 141.4h71.5c8.3 0 41 3.6 41 42.4h-69.7s2.7 44.1 42.8 47.1h156.7" fill="none"
+        stroke="#002F37" stroke-width="14" stroke-miterlimit="10"></path>
+    <path id="exu5855fo1p911"
+        d="M191.1 141.4h71.5c8.3 0 41 3.6 41 42.4h-69.7s2.7 44.1 42.8 47.1h156.7" fill="none"
+        stroke="#FF5400" stroke-width="14" stroke-miterlimit="10" stroke-dashoffset="500"
+        stroke-dasharray="500"></path>
+</svg>

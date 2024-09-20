@@ -1,0 +1,36 @@
+{
+  "name": "docs",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./input.css -o ./output.css --watch & storybook dev -p 6006",
+    "build": "tailwindcss -i ./input.css -o ./output.css && storybook build --docs",
+    "preview-storybook": "serve storybook-static",
+    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
+  },
+  "dependencies": {
+    "@global-x-etfs/gx-components": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^8.2.6",
+    "@storybook/addon-essentials": "^8.2.6",
+    "@storybook/addon-links": "^8.2.6",
+    "@storybook/react": "^8.2.6",
+    "@storybook/react-vite": "^8.2.6",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "serve": "^14.2.1",
+    "storybook": "^8.2.6",
+    "tailwindcss": "^3.4.11",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4",
+    "vite-plugin-svgr": "^4.2.0"
+  }
+}

@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Brown";
+  src: url("./fonts/lineto-brown-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brown";
+  src: url("./fonts/lineto-brown-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brown";
+  src: url("./fonts/lineto-brown-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brown";
+  src: url("./fonts/lineto-brown-thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brown";
+  src: url("./fonts/lineto-brown-thinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Brown";
+  src: url("./fonts/lineto-brown-boldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("./fonts/ProximaNova-CondensedRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("./fonts/ProximaNova-Semibold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("./fonts/ProximaNova-RegularItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("./fonts/ProximaNova-Reg.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova-Condensed";
+  src: url("./fonts/ProximaNova-CondensedRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova-Condensed";
+  src: url("./fonts/ProximaNova-CondensedBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "GeistMono";
+  src: url("./fonts/GeistMonoVariableVF.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("./fonts/GeistVariableVF.ttf") format("truetype");
+}

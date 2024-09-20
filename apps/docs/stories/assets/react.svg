@@ -1,0 +1,138 @@
+<svg id="svg-react" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 300 300"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" class="last">
+    <style>
+        .active svg #eVoFBZzTfbH2_ts {
+        animation: eVoFBZzTfbH2_ts__ts 3000ms linear 1 normal forwards
+        }
+
+        @keyframes eVoFBZzTfbH2_ts__ts {
+        0% {
+        transform: translate(150.027404px, 149.548889px) scale(1, 1)
+        }
+
+        50% {
+        transform: translate(150.027404px, 149.548889px) scale(1.04, 1)
+        }
+
+        100% {
+        transform: translate(150.027404px, 149.548889px) scale(1, 1)
+        }
+        }
+
+        .active svg #eVoFBZzTfbH3_ts {
+        animation: eVoFBZzTfbH3_ts__ts 3000ms linear 1 normal forwards
+        }
+
+        @keyframes eVoFBZzTfbH3_ts__ts {
+        0% {
+        transform: translate(150.027404px, 149.548889px) scale(1, 1)
+        }
+
+        50% {
+        transform: translate(150.027404px, 149.548889px) scale(1.04, 1)
+        }
+
+        100% {
+        transform: translate(150.027404px, 149.548889px) scale(1, 1)
+        }
+        }
+
+        .active svg #eVoFBZzTfbH3 {
+        animation-name: eVoFBZzTfbH3_c_o, eVoFBZzTfbH3_s_do;
+        animation-duration: 3000ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        }
+
+        @keyframes eVoFBZzTfbH3_c_o {
+        0% {
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95)
+        }
+
+        50% {
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95)
+        }
+
+        100% {
+        opacity: 0
+        }
+        }
+
+        @keyframes eVoFBZzTfbH3_s_do {
+        0% {
+        stroke-dashoffset: 820.763372
+        }
+
+        100% {
+        stroke-dashoffset: 660
+        }
+        }
+
+        .active svg #eVoFBZzTfbH7 {
+        animation-name: eVoFBZzTfbH7_c_o, eVoFBZzTfbH7_s_do;
+        animation-duration: 3000ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        }
+
+        @keyframes eVoFBZzTfbH7_c_o {
+        0% {
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95)
+        }
+
+        50% {
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95)
+        }
+
+        100% {
+        opacity: 0
+        }
+        }
+
+        @keyframes eVoFBZzTfbH7_s_do {
+        0% {
+        stroke-dashoffset: 574.97
+        }
+
+        100% {
+        stroke-dashoffset: 0
+        }
+        }
+    </style>
+    <g id="eVoFBZzTfbH2_ts" transform="translate(150.027404,149.548889) scale(1,1)">
+        <path
+            d="M450.97,155.96c22.84-6.54,40.51-5.6,47.96,4.38c11.76,15.77-5.36,49.57-39.79,84.05M354.81,209.41c3.19-2.55,6.47-5.08,9.83-7.59c17.98-13.42,36.11-24.47,53.05-32.74M338.42,321.99c-24.67,7.76-43.91,7.29-51.76-3.24-11.71-15.7,5.21-49.28,39.33-83.59m105.8,33.71c-3.564295,2.870256-7.181585,5.674072-10.85,8.41-18.31,13.66-36.77,24.87-53.97,33.19m-53.69-80.48c-1.08-1.25-2.13-2.5-3.15-3.74-23.07-27.92-32.97-53.28-23.22-66.26c7.46-9.93,25.05-10.83,47.77-4.28m43.46,131.24c-4.54-3.1-9.08-6.36-13.62-9.77-2.68-2.02-5.32-4.05-7.9-6.1m66.19,41.59c-.97-.45-1.95-.91-2.93-1.38-4.97-2.38-10.04-5.01-15.19-7.87m68.61-53.14c24.6,28.92,35.42,55.45,25.37,68.83-7.66,10.19-26,10.87-49.6,3.74M401.86,188.4c6.38,4.19,12.8,8.7,19.21,13.51c4.65,3.5,7.16,5.05,11.5,8.63m-69.71-44.07c6.40392,2.986242,12.691808,6.215248,18.85,9.68"
+            transform="translate(-392.794601,-239.548889)" fill="none" stroke="#002F37"
+            stroke-width="11.18"
+            stroke-miterlimit="10"></path>
+    </g>
+    <g id="eVoFBZzTfbH3_ts" transform="translate(150.027404,149.548889) scale(1,1)">
+        <path id="eVoFBZzTfbH3"
+            d="M450.97,155.96c22.84-6.54,40.51-5.6,47.96,4.38c11.76,15.77-5.36,49.57-39.79,84.05M354.81,209.41c3.19-2.55,6.47-5.08,9.83-7.59c17.98-13.42,36.11-24.47,53.05-32.74M338.42,321.99c-24.67,7.76-43.91,7.29-51.76-3.24-11.71-15.7,5.21-49.28,39.33-83.59m105.8,33.71c-3.564295,2.870256-7.181585,5.674072-10.85,8.41-18.31,13.66-36.77,24.87-53.97,33.19m-53.69-80.48c-1.08-1.25-2.13-2.5-3.15-3.74-23.07-27.92-32.97-53.28-23.22-66.26c7.46-9.93,25.05-10.83,47.77-4.28m43.46,131.24c-4.54-3.1-9.08-6.36-13.62-9.77-2.68-2.02-5.32-4.05-7.9-6.1m66.19,41.59c-.97-.45-1.95-.91-2.93-1.38-4.97-2.38-10.04-5.01-15.19-7.87m68.61-53.14c24.6,28.92,35.42,55.45,25.37,68.83-7.66,10.19-26,10.87-49.6,3.74M401.86,188.4c6.38,4.19,12.8,8.7,19.21,13.51c4.65,3.5,7.16,5.05,11.5,8.63m-69.71-44.07c6.40392,2.986242,12.691808,6.215248,18.85,9.68"
+            transform="translate(-392.794601,-239.548889)" opacity="0" fill="none" stroke="#ff5400"
+            stroke-width="11.18"
+            stroke-miterlimit="10" stroke-dashoffset="820.763372" stroke-dasharray="820.763372"></path>
+    </g>
+    <circle r="18.51" transform="translate(149.192803 148.25)" fill="none" stroke="#ff5400"
+        stroke-width="9.87"
+        stroke-miterlimit="10"></circle>
+    <circle r="18.51" transform="translate(149.192803 148.25)" fill="none" stroke="#002F37"
+        stroke-width="9.87"
+        stroke-miterlimit="10"></circle>
+    <ellipse rx="52.92" ry="118.1" transform="translate(151.422803 150)" fill="none"
+        stroke="#002F37"
+        stroke-width="11.19" stroke-miterlimit="10"></ellipse>
+    <ellipse id="eVoFBZzTfbH7" rx="52.92" ry="118.1" transform="translate(151.422803 150)"
+        opacity="0" fill="none"
+        stroke="#ff5400" stroke-width="11.19" stroke-miterlimit="10" stroke-dashoffset="574.97"
+        stroke-dasharray="574.97"></ellipse>
+</svg>
