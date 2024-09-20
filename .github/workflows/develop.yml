@@ -25,6 +25,9 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+      
+      - name: Authenticate with npm
+        run: echo -e "@global-x-etfs:registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
       - name: Install dependencies
         run: pnpm install
