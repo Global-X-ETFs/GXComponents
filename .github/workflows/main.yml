@@ -14,8 +14,8 @@ jobs:
           fetch-depth: 0
 
       - name: Bumping version
-        uses: jpb06/bump-package@latest
         working-directory: packages/ui
+        uses: jpb06/bump-package@latest
         with:
           major-keywords: BREAKING CHANGE
           minor-keywords: feat,minor
