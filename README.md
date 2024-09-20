@@ -1,192 +1,172 @@
-# Turborepo Design System Starter
+GXComponents is a UI library developed at Global X ETFs to create a standardised system of React components.
 
-This guide explains how to use a React design system starter powered by:
+## Key Technologies
 
-- 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
-- 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
-- 🛠 [Tsup](https://github.com/egoist/tsup) — TypeScript bundler powered by esbuild
-- 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
 
-As well as a few others tools preconfigured:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs
-- [GitHub Actions](https://github.com/changesets/action) for fully automated package publishing
+|                                                                                        |                                                                                                                                                                                                                                                                                                                 |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **StorybookJS**<br>https://storybook.js.org/<br>                                       | This acts as a playground during development and a distributable brochure once deployed. I'd encourage you to read the docs and have a play about with it, this is a huge area for improvement.<br><br>It's also handy to look at the story's code to see how the developer intended the components to be used. |
+| **Radix Primitives**<br>https://www.radix-ui.com/primitives/docs/overview/introduction | These are unskinned web components that we can base our components off of, with a similar approach to the popular shadcn-ui components.                                                                                                                                                                         |
+| **Class Variance Authority**<br>https://cva.style/docs                                 | This library provides an easy way to extend a component to have multiple different appearances.                                                                                                                                                                                                                 |
+| **TurboRepo**<br>https://turbo.build/repo/docs                                         | GX Components uses TurboRepo to combine the UI library and StorybookJS. This combined with `pnpm` provides us a symlink between the UI library and Storybook, meaning any changes you make in the UI library are instantly reflected in Storybook. Plus many other benefits.                                    |
+| **TailwindCSS**<br>https://tailwindcss.com/                                            | This provides all of our styling. Note that the `tailwind.config.ts` file is shared from GXComponents and can be extended in your app.<br>                                                                                                                                                                      |
 
-## Using this example
+## Installation
 
-Run the following command:
-
-```sh
-npx create-turbo@latest -e design-system
+```shell 
+git clone https://github.com/Global-X-ETFs/GXComponents.git && cd GXComponents
 ```
 
-### Useful Commands
+⚠️ This project uses `pnpm` and **not** yarn, npm or bun.
+If the below doesn't work, install pnpm: https://pnpm.io/installation#prerequisites
+```bash
+pnpm i && pnpm dev
+```
 
-- `pnpm build` - Build all packages, including the Storybook site
-- `pnpm dev` - Run all packages locally and preview with Storybook
-- `pnpm lint` - Lint all packages
-- `pnpm changeset` - Generate a changeset
-- `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
 
-## Turborepo
+# Importing into your Project
 
-[Turborepo](https://turbo.build/repo) is a high-performance build system for JavaScript and TypeScript codebases. It was designed after the workflows used by massive software engineering organizations to ship code at scale. Turborepo abstracts the complex configuration needed for monorepos and provides fast, incremental builds with zero-configuration remote caching.
+### Personal Access Token
 
-Using Turborepo simplifies managing your design system monorepo, as you can have a single lint, build, test, and release process for all packages. [Learn more](https://vercel.com/blog/monorepos-are-changing-how-teams-build-software) about how monorepos improve your development workflow.
+First, you need to create a Personal Access Token. 
 
-## Apps & Packages
+1. Click on your Avatar at the top right of GitHub, then press settings.
+2. Then press "Developer Settings".
+3. Personal Access Tokens => Tokens (classic) => Generate new token => Generate new token **(classic)**
+4. Select *repo*, *write:packages* and optionally *delete:packages*.
 
-This Turborepo includes the following packages and applications:
+Store the key somewhere as you won't be able to see it again.
 
-- `apps/docs`: Component documentation site with Storybook
-- `packages/ui`: Core React components
-- `packages/utils`: Shared React utilities
-- `packages/typescript-config`: Shared `tsconfig.json`s used throughout the Turborepo
-- `packages/eslint-config`: ESLint preset
+### .npmrc file
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-w` workspaces flag with `pnpm add`.
+⚠️ Before you leak your access token, add `.npmrc` to your `.gitignore` file
 
-This example sets up your `.gitignore` to exclude all generated files, other folders like `node_modules` used to store your dependencies.
+Create a `.npmrc` file at the root of your project. Replacing `YOUR_GITHUB_TOKEN` with your personal access token we've just generated.
+```
+@global-x-etfs:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
 
-### Compilation
+### Installing GXComponents In Your Project
 
-To make the core library code work across all browsers, we need to compile the raw TypeScript and React code to plain JavaScript. We can accomplish this with `tsup`, which uses `esbuild` to greatly improve performance.
-
-Running `pnpm build` from the root of the Turborepo will run the `build` command defined in each package's `package.json` file. Turborepo runs each `build` in parallel and caches & hashes the output to speed up future builds.
-
-For `acme-core`, the `build` command is the following:
+#### Install GXComponents
 
 ```bash
-tsup src/index.tsx --format esm,cjs --dts --external react
+npm i @global-x-etfs/gx-components
 ```
 
-`tsup` compiles `src/index.tsx`, which exports all of the components in the design system, into both ES Modules and CommonJS formats as well as their TypeScript types. The `package.json` for `acme-core` then instructs the consumer to select the correct format:
+#### Tailwind CSS
 
-```json:acme-core/package.json
-{
-  "name": "@acme/core",
-  "version": "0.0.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "sideEffects": false,
+Install tailwind if you don't already have it:
+https://tailwindcss.com/docs/installation
+
+Replace `tailwind.config.js` with the below, rename the file to `tailwind.config.ts` if you use typescript. 
+
+```ts
+import type { Config } from "tailwindcss";
+import sharedConfig from "@global-x-etfs/gx-components/tailwind.config.ts";
+
+const config: Pick<Config, "presets" | "content"> = {	
+	presets: [sharedConfig],
+	content: [
+		"./node_modules/@global-x-etfs/gx-components/dist/**/*.js",
+		"./src/*.{js,ts,jsx,tsx}",
+	]
+};
+
+  
+
+export default config;
+```
+
+
+### Using the package
+
+Add this to the top of your root file, App.tsx,  index.tsx, RootLayout.tsx etc...
+```ts
+import '@global-x-etfs/gx-components/fonts.css'
+```
+
+You can now use the components in your React app 🥳
+```tsx
+import "./index.css";
+import "@global-x-etfs/gx-components/fonts.css";
+import {
+  Button,
+  Input,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@global-x-etfs/gx-components";
+
+function App() {
+  return (
+    <>
+      <div className="max-w-4xl text-marine mx-auto h-[100vh] justify-evenly flex flex-col">
+        <Button>Hello World</Button>
+        <Input placeholder="Enter your name" />
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Header 1</TableHead>
+              <TableHead>Header 2</TableHead>
+              <TableHead>Header 3</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {Array.from({ length: 10 }).map((_, i) => (
+              <TableRow key={i}>
+                <TableCell>Cell 1</TableCell>
+                <TableCell>Cell 2</TableCell>
+                <TableCell>
+                  <Button>Cell 3</Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    </>
+  );
 }
+
+export default App;
 ```
 
-Run `pnpm build` to confirm compilation is working correctly. You should see a folder `acme-core/dist` which contains the compiled output.
 
-```bash
-acme-core
-└── dist
-    ├── index.d.ts  <-- Types
-    ├── index.js    <-- CommonJS version
-    └── index.mjs   <-- ES Modules version
+## Developing with GXComponents
+
+After running `pnpm dev`, Storybook is launched on port 6006 and the UI library is being watched and compiled by `tsc -w`, any changes you make on the UI library should be reflected on Storybook.
+
+⚠️ Please create stories alongside your UI development, treated as documentation.
+
+### Feature Branches
+
+When you push your code up to GitHub, an action is triggered that releases the package to our private npm registry. 
+
+For example, when code is pushed to `origin/combobox`, we can then run `pnpm i @global-x-etfs/gx-components@3.0.1-combobox-93.0` in a separate project to install that specific version following the above importing guide.
+
+In order to get that package name, visit this [link](https://github.com/Global-X-ETFs/GXComponents/actions/workflows/develop.yml) and then click on your commit => "build" => expand "Publish package" and you should see something like this:
+```
+Run pnpm publish --no-git-checks
+
+npm notice
+npm notice 📦 @global-x-etfs/gx-components@3.0.1-ComboBox-93.0 
+npm notice 116B .eslintrc.js
+npm notice 107B .turbo/turbo-build.log
 ```
 
-## Components
+This way you can avoid having to wait for your changes to be on `origin/main` before using them in your project.
 
-Each file inside of `acme-core/src` is a component inside our design system. For example:
+## Contributing
 
-```tsx:acme-core/src/Button.tsx
-import * as React from 'react';
+We're releasing this library with the hope that other teams across the world can contribute and urge you to please share your work via a Pull Request with the reviewer assigned to Connor Bradley. 
 
-export interface ButtonProps {
-  children: React.ReactNode;
-}
+I'll write more documentation on style guides shortly.
 
-export function Button(props: ButtonProps) {
-  return <button>{props.children}</button>;
-}
 
-Button.displayName = 'Button';
-```
 
-When adding a new file, ensure the component is also exported from the entry `index.tsx` file:
-
-```tsx:acme-core/src/index.tsx
-import * as React from "react";
-export { Button, type ButtonProps } from "./Button";
-// Add new component exports here
-```
-
-## Storybook
-
-Storybook provides us with an interactive UI playground for our components. This allows us to preview our components in the browser and instantly see changes when developing locally. This example preconfigures Storybook to:
-
-- Use Vite to bundle stories instantly (in milliseconds)
-- Automatically find any stories inside the `stories/` folder
-- Support using module path aliases like `@acme-core` for imports
-- Write MDX for component documentation pages
-
-For example, here's the included Story for our `Button` component:
-
-```js:apps/docs/stories/button.stories.mdx
-import { Button } from '@acme-core/src';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-
-<Meta title="Components/Button" component={Button} />
-
-# Button
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi, euismod aliquam nisl nunc euismod.
-
-## Props
-
-<Props of={Box} />
-
-## Examples
-
-<Preview>
-  <Story name="Default">
-    <Button>Hello</Button>
-  </Story>
-</Preview>
-```
-
-This example includes a few helpful Storybook scripts:
-
-- `pnpm dev`: Starts Storybook in dev mode with hot reloading at `localhost:6006`
-- `pnpm build`: Builds the Storybook UI and generates the static HTML files
-- `pnpm preview-storybook`: Starts a local server to view the generated Storybook UI
-
-## Versioning & Publishing Packages
-
-This example uses [Changesets](https://github.com/changesets/changesets) to manage versions, create changelogs, and publish to npm. It's preconfigured so you can start publishing packages immediately.
-
-You'll need to create an `NPM_TOKEN` and `GITHUB_TOKEN` and add it to your GitHub repository settings to enable access to npm. It's also worth installing the [Changesets bot](https://github.com/apps/changeset-bot) on your repository.
-
-### Generating the Changelog
-
-To generate your changelog, run `pnpm changeset` locally:
-
-1. **Which packages would you like to include?** – This shows which packages and changed and which have remained the same. By default, no packages are included. Press `space` to select the packages you want to include in the `changeset`.
-1. **Which packages should have a major bump?** – Press `space` to select the packages you want to bump versions for.
-1. If doing the first major version, confirm you want to release.
-1. Write a summary for the changes.
-1. Confirm the changeset looks as expected.
-1. A new Markdown file will be created in the `changeset` folder with the summary and a list of the packages included.
-
-### Releasing
-
-When you push your code to GitHub, the [GitHub Action](https://github.com/changesets/action) will run the `release` script defined in the root `package.json`:
-
-```bash
-turbo run build --filter=docs^... && changeset publish
-```
-
-Turborepo runs the `build` script for all publishable packages (excluding docs) and publishes the packages to npm. By default, this example includes `acme` as the npm organization. To change this, do the following:
-
-- Rename folders in `packages/*` to replace `acme` with your desired scope
-- Search and replace `acme` with your desired scope
-- Re-run `pnpm install`
-
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
-
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
-```
