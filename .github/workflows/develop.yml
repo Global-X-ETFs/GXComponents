@@ -26,8 +26,10 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
       
-      - name: Authenticate with npm
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+      - name: Create .npmrc file
+        run: |
+          echo '@global-x-etfs:registry=https://npm.pkg.github.com/' > .npmrc
+          echo '//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}' >> .npmrc
 
       - name: Install dependencies
         run: pnpm install
