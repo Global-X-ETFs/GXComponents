@@ -1,5 +1,4 @@
 {
-  "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -16,5 +15,5 @@
     "turbo": "^2.1.2"
   },
   "packageManager": "pnpm@8.15.6",
-  "name": "design-system"
+  "name": "@global-x-etfs/design-system"
 }
