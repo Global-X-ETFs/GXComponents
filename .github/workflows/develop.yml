@@ -19,17 +19,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: https://npm.pkg.github.com/
+          registry-url: "https://npm.pkg.github.com/"
           scope: "@global-x-etfs"
           always-auth: true
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-      
-      - name: Create .npmrc file
-        run: |
-          echo '@global-x-etfs:registry=https://npm.pkg.github.com/' > .npmrc
-          echo '//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}' >> .npmrc
 
       - name: Install dependencies
         run: pnpm install
@@ -46,4 +41,4 @@ jobs:
         run: pnpm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
 
       - name: Publish package
-        run: pnpm publish --tag ${GITHUB_REF##*/} --no-git-checks
+        run: pnpm publish --registry 'https://npm.pkg.github.com/' --tag ${GITHUB_REF##*/} --no-git-checks
