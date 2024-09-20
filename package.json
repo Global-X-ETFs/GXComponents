@@ -15,5 +15,6 @@
     "turbo": "^2.1.2"
   },
   "packageManager": "pnpm@8.15.6",
-  "name": "@global-x-etfs/design-system"
+  "name": "@global-x-etfs/design-system",
+  "version": "0.0.1"
 }
