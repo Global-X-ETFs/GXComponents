@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -19,28 +19,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: "https://npm.pkg.github.com/"
-          scope: "@global-x-etfs"
+          registry-url: 'https://npm.pkg.github.com/'
+          scope: '@global-x-etfs'
           always-auth: true
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
-      - name: Install dependencies
+      - name: Install root dependencies
         run: pnpm install
 
-      - name: Build project
+      - name: Build all packages
         run: pnpm run build
 
-      - name: Configure Git
-        run: |
-          git config --global user.email "cbradley@globalxetfs.com"
-          git config --global user.name "Connor Bradley"
-
       - name: Bump version
+        working-directory: packages/ui
         run: pnpm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
 
       - name: Publish package
+        working-directory: packages/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: pnpm publish --registry 'https://npm.pkg.github.com/' --tag ${GITHUB_REF##*/} --no-git-checks
+        run: pnpm publish --no-git-checks
