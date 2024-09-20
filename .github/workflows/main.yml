@@ -15,12 +15,13 @@ jobs:
 
       - name: Bumping version
         working-directory: packages/ui
-        uses: jpb06/bump-package@latest
-        with:
-          major-keywords: BREAKING CHANGE
-          minor-keywords: feat,minor
-          patch-keywords: fix,chore
-          should-default-to-patch: true
+        run: |
+          npx bump-package \
+            --major-keywords "BREAKING CHANGE" \
+            --minor-keywords "feat,minor" \
+            --patch-keywords "fix,chore" \
+            --should-default-to-patch true
+
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
