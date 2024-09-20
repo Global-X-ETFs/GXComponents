@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -13,14 +14,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Bumping version
-        working-directory: packages/ui
-        run: |
-          npx bump-package \
-            --major-keywords "BREAKING CHANGE" \
-            --minor-keywords "feat,minor" \
-            --patch-keywords "fix,chore" \
-            --should-default-to-patch true
+      # - name: Bumping version
+      #   working-directory: packages/ui
+      #   run: |
+      #     npx bump-package \
+      #       --major-keywords "BREAKING CHANGE" \
+      #       --minor-keywords "feat,minor" \
+      #       --patch-keywords "fix,chore" \
+      #       --should-default-to-patch true
 
 
       - name: Setup Node.js
@@ -40,6 +41,11 @@ jobs:
 
       - name: Build all packages
         run: pnpm run build
+      
+      - name: Bump Package Version
+        working-directory: packages/ui
+        run: |
+          pnpm version patch -m "chore: bump version to %s [skip ci]"
 
       - name: Publish package
         working-directory: packages/ui
