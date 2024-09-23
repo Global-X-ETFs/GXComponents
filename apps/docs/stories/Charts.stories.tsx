@@ -7,6 +7,9 @@ const meta = {
   title: "Components/Charts",
   tags: ["autodocs"],
   argTypes: {},
+  parameters: {
+    layout: "left",
+  }
 } satisfies Meta<typeof BreakdownChart>;
 
 export default meta;
@@ -56,11 +59,16 @@ const premiumDiscountChartMockData = {
   "2024-05-07": -0.000114913
 }
 
-export const PremiumDiscountChartStory: StoryObj<typeof PremiumDiscountChart> = {
-  render: () => {
-    return <PremiumDiscountChart data={premiumDiscountChartMockData} />;
-  },
-};
+export const PremiumDiscountChartStory: StoryObj<typeof PremiumDiscountChart> =
+  {
+    render: () => {
+      return (
+        <div className="max-w-[850px]">
+          <PremiumDiscountChart data={premiumDiscountChartMockData} />
+        </div>
+      );
+    },
+  };
 
 const performanceBarChartMockProps = {
   labels: [

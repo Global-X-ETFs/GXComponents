@@ -140,32 +140,37 @@ export const EULocaleSelector: Story = {
     ];
     return (
       <Dialog>
-        <DialogTrigger>United Kingdom</DialogTrigger>
-        <DialogContent className="bg-marine md:border-8">
-          <DialogHeader>
-            <DialogTitle>Select Your Location</DialogTitle>
-            <DialogClose />
-          </DialogHeader>
-          <DialogDescription className="md:mx-40">
-            <div className="flex flex-col items-center mx-auto gap-4 text-white py-10">
+      <DialogTrigger>United Kingdom</DialogTrigger>
+      <DialogContent className="bg-marine md:border-8 md:border-white md:max-w-4xl">
+        <DialogHeader>
+          <DialogTitle>Select Your Location</DialogTitle>
+          <DialogClose />
+        </DialogHeader>
+        <div className="overflow-hidden">
+          <div className="md:mx-40">
+            <div className="flex flex-col items-center gap-4 text-white py-10">
               <div className="w-72 ">
                 <GlobalXLogo />
               </div>
               <h3 className="text-2xl font-bold border-b-2 border-orange pb-4 pt-10 px-8 leading-9">
                 Select Your Location
               </h3>
-              <div className="overflow-y-auto max-h-[80vh] w-full space-y-4">
-                {countries.map((country) => (
-                  <div className="flex justify-start items-center gap-4 px-8 w-full">
-                    <div className="w-12 h-12">{country.icon}</div>
-                    <a href={country.href}>{country.name}</a>
-                  </div>
-                ))}
-              </div>
             </div>
-          </DialogDescription>
-        </DialogContent>
-      </Dialog>
+          </div>
+          <div className="max-h-[50svh] md:max-h-[70svh] p-10 flex flex-wrap overflow-auto w-full  gap-y-4">
+            {countries.map((country) => (
+              <div
+                className="flex justify-start gap-4 px-8 w-full sm:w-1/2 md:w-1/3 place-items-center text-white hover:text-orange-hover transition-colors duration-300"
+                key={country.name}
+              >
+                <div className="w-12 h-12">{country.icon}</div>
+                <a href={country.href}>{country.name}</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
     );
   },
 };
