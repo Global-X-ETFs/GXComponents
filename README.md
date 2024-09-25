@@ -2,8 +2,6 @@ GXComponents is a UI library developed at Global X ETFs to create a standardised
 
 ## Key Technologies
 
-
-
 |                                                                                        |                                                                                                                                                                                                                                                                                                                 |
 | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **StorybookJS**<br>https://storybook.js.org/<br>                                       | This acts as a playground during development and a distributable brochure once deployed. I'd encourage you to read the docs and have a play about with it, this is a huge area for improvement.<br><br>It's also handy to look at the story's code to see how the developer intended the components to be used. |
@@ -27,25 +25,11 @@ pnpm i && pnpm dev
 
 # Importing into your Project
 
-### Personal Access Token
-
-First, you need to create a Personal Access Token. 
-
-1. Click on your Avatar at the top right of GitHub, then press settings.
-2. Then press "Developer Settings".
-3. Personal Access Tokens => Tokens (classic) => Generate new token => Generate new token **(classic)**
-4. Select *repo*, *write:packages* and optionally *delete:packages*.
-
-Store the key somewhere as you won't be able to see it again.
-
 ### .npmrc file
 
-⚠️ Before you leak your access token, add `.npmrc` to your `.gitignore` file
-
-Create a `.npmrc` file at the root of your project. Replacing `YOUR_GITHUB_TOKEN` with your personal access token we've just generated.
+Create a `.npmrc` file at the root of your project. 
 ```
 @global-x-etfs:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 ```
 
 ### Installing GXComponents In Your Project
