@@ -28,7 +28,7 @@ const tabGroupVariants = cva("", {
       corp: "hover:text-marine transition-colors data-[state=active]:text-marine data-[state=active]:border-b-orange w-full max-w-64 py-8 data-[state=active]:border-b-4",
       search:
         "transition-colors data-[state=active]:border-b-orange border-b-transparent border-b-[3px] data-[state=active]:text-white hover:text-white md:px-2 mr-8 py-2 md:py-8 font-proxima",
-      fund: ` font-proximatight font-bold px-4 md:text-xl pt-1 pb-2 relative top-[2px]
+      fund: ` font-proximatight text-marine font-bold px-4 md:text-xl pt-1 pb-2 relative top-[2px]
               data-[state=active]:pt-[3px] data-[state=active]:px-[15px]
               data-[state=active]:border-x data-[state=active]:border-neutral-400 data-[state=active]:border-t
               data-[state=active]:bg-white
