@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useMemo } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
@@ -16,8 +14,7 @@ function capitalizeWords(sentence: string): string {
 }
 
 function roundDecimal(value: number, decimalPlaces = 1): number {
-  const factor = Math.pow(10, decimalPlaces);
-  const roundedValue = Math.round(value * factor * 100) / factor; 
+  const roundedValue = Math.round(value * 1000) / 10; 
   return roundedValue;
 }
 
@@ -54,11 +51,12 @@ function prepareData(data: Record<string, number>, maxRecords = 11): Record<stri
 export interface BreakdownChartProps {
   title: string;
   data: Record<string, number>;
+  capitalize?: boolean;
 }
 
-export function BreakdownChart({ data, title }: BreakdownChartProps): JSX.Element {
+export function BreakdownChart({ data, title, capitalize=true }: BreakdownChartProps): JSX.Element {
   const records = prepareData(data);
-  const labels = Object.keys(records).map(capitalizeWords);
+  const labels = capitalize ? Object.keys(records).map(capitalizeWords) : Object.keys(records);
   const values = Object.values(records);
 
   const backgroundColor = useMemo(() => [
@@ -90,6 +88,7 @@ export function BreakdownChart({ data, title }: BreakdownChartProps): JSX.Elemen
   const options = {
     cutout: "60%",
     aspectRatio: 1,
+    responsive: true,
     hover: { mode: null },
     plugins: {
       tooltip: {
@@ -114,7 +113,7 @@ export function BreakdownChart({ data, title }: BreakdownChartProps): JSX.Elemen
       </div>
       <table className="w-full">
         <thead>
-          <tr className="text-left border-b border-gray-200 text-ms text-proxima font-bold uppercase text-neutral-200">
+          <tr className="text-left border-b border-gray-200 text-ms font-proximatight font-bold uppercase text-neutral-200">
             <th className="w-6" />
             <th>{title}</th>
             <th className="text-right">Weight (%)</th>
@@ -122,7 +121,7 @@ export function BreakdownChart({ data, title }: BreakdownChartProps): JSX.Elemen
         </thead>
         <tbody>
           {labels.map((label, index) => (
-            <tr key={label} className="font-proxima text-granite text-ml border-b border-gray-200">
+            <tr key={label} className="font-proximatight text-granite text-ml border-b border-gray-200">
               <td>
                 <div className="w-3 h-3 inline-block rounded-full" style={{ background: backgroundColor[index] }} />
               </td>
