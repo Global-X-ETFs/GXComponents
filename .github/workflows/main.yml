@@ -39,17 +39,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Bump Package Version
-        working-directory: packages/ui
+      - name: Version Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          pnpm version patch -m "chore: bump version to %s [skip ci]"
+          pnpm version-packages
 
-      - name: Push changes
+      - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git push origin HEAD:main --follow-tags
+          git add .
+          git commit -m "chore: version packages"
+          git push --follow-tags
 
-      - name: Publish package
-        working-directory: packages/ui
+      - name: Publish Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: pnpm publish --no-git-checks
+        run: pnpm publish-packages
