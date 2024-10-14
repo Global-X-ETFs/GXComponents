@@ -33,7 +33,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Build Packages
+      - name: Build packages/ui
+        working-directory: packages/ui
         run: pnpm run build
 
       - name: Configure Git User
@@ -41,16 +42,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Create Changeset
+      - name: Bump Version in packages/ui
+        working-directory: packages/ui
         run: |
-          pnpm changeset --empty --snapshot "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
+          pnpm version prerelease --preid="${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}" --no-git-tag-version
 
-      - name: Version Packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm changeset version --snapshot "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
-
-      - name: Publish Packages
+      - name: Publish packages/ui
+        working-directory: packages/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: pnpm publish --no-git-checks --registry "https://npm.pkg.github.com" --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
+        run: pnpm publish --no-git-checks --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}" --access restricted
