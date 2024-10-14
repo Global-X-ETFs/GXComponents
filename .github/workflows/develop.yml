@@ -1,9 +1,12 @@
 name: Release Feature Branch
 
-on: push
+on:
+  push:
+    branches-ignore:
+      - 'main'
 
 permissions:
-  contents: read
+  contents: write
   packages: write
 
 jobs:
@@ -27,18 +30,27 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
-      - name: Install root dependencies
+      - name: Install Dependencies
         run: pnpm install
 
-      - name: Build all packages
+      - name: Build Packages
         run: pnpm run build
 
-      - name: Bump version
-        working-directory: packages/ui
-        run: pnpm version prerelease --no-git-tag-version --preid=${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}
+      - name: Configure Git User
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Publish package
-        working-directory: packages/ui
+      - name: Create Changeset
+        run: |
+          pnpm changeset --empty --snapshot "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
+
+      - name: Version Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm changeset version --snapshot "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
+
+      - name: Publish Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: pnpm publish --no-git-checks
+        run: pnpm publish --no-git-checks --registry "https://npm.pkg.github.com" --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
