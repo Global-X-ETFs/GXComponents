@@ -49,11 +49,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git add .
-          git commit -m "chore: version packages"
-          git push --follow-tags
+          if [[ $(git status --porcelain) ]]; then
+            git add .
+            git commit -m "chore: version packages"
+            git push --follow-tags
+          else
+            echo "No changes to commit"
+          fi
 
       - name: Publish Packages
+        if: ${{ steps.commit-and-push-changes.outcome == 'success' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: pnpm publish-packages
