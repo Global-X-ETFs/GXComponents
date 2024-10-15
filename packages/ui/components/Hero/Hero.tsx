@@ -11,6 +11,7 @@ const heroVariants = cva("", {
       home: "-mt-24 pb-8 md:pb-16 pt-20 md:pt-28 bg-[center_top_2rem] sm:bg-[length:1110px] ",
       basic: "-mt-24 pb-8 md:pb-16 pt-20 md:pt-28 bg-cover ",
       fund: "-mt-24 pt-20 lg:pt-28 pb-60 md:pb-80",
+      empty: "-mt-24 pt-20 md:pt-28 bg-cover",
       roadshow: "pb-8 bg-neutral-500 ",
     },
   },
