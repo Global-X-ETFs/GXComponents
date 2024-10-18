@@ -8,8 +8,6 @@ jobs:
   build:
     if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Grants write permission to push changes back
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,31 +32,7 @@ jobs:
       - name: Build all packages
         run: pnpm run build
 
-      - name: Configure Git user
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Version Packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pnpm version-packages
-
-      - name: Commit and Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if [[ $(git status --porcelain) ]]; then
-            git add .
-            git commit -m "chore: version packages"
-            git push --follow-tags
-          else
-            echo "No changes to commit"
-          fi
-
       - name: Publish Packages
-        if: ${{ steps.commit-and-push-changes.outcome == 'success' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: pnpm publish-packages
