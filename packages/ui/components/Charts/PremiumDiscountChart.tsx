@@ -149,7 +149,12 @@ export function PremiumDiscountChart({ data }: PremiumDiscountChartProps): JSX.E
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    animation: false,
+    animation: {
+      duration: 0,
+      resize: {
+        duration: 0
+      }
+    },
     aspectRatio: 2,
     hover: { mode: null },
     elements: {
