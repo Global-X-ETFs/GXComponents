@@ -13,8 +13,6 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-// import './PremiumDiscountChart.css';
-
 
 ChartJS.register(
   CategoryScale,
@@ -151,6 +149,12 @@ export function PremiumDiscountChart({ data }: PremiumDiscountChartProps): JSX.E
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    animation: {
+      duration: 0,
+      resize: {
+        duration: 0
+      }
+    },
     aspectRatio: 2,
     hover: { mode: null },
     elements: {
