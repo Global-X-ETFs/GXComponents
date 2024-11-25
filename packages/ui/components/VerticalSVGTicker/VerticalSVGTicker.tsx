@@ -28,6 +28,7 @@ const VerticalSVGTicker = React.forwardRef<
           {/* Icons */}
           {iconsURL.map((iconURL, index) => (
             <img
+              alt="Global Theme Icon"
               src={iconURL}
               style={{
                 animationDelay: `${index % 2 == 0 ? 4000 : 0}ms`,
@@ -39,6 +40,7 @@ const VerticalSVGTicker = React.forwardRef<
           ))}
           {iconsURL.map((iconURL, index) => (
             <img
+              alt="Global Theme Icon"
               src={iconURL}
               style={{
                 animationDelay: `${index % 2 == 0 ? 4000 : 0}ms`,

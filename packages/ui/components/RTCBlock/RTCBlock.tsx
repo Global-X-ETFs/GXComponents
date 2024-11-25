@@ -48,6 +48,7 @@ const RTCBlockIcon = React.forwardRef<HTMLDivElement, RTCBlockIconProps>(
     return (
       <div ref={ref} className="w-32 object-cover mb-5" {...props}>
         <img
+          alt="Global RTC Icon"
           className="max-w-32 max-h-32"
           style={fillOrange ? { filter: 'brightness(0) saturate(100%) invert(44%) sepia(76%) saturate(3950%) hue-rotate(0deg) brightness(98%) contrast(109%)' } : {}}
           src={imageURL}
