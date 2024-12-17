@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { List, ListItem } from "@global-x-etfs/gx-components";
+import Pdf from "./assets/Pdf.svg?react";
 
 const meta: Meta = {
   title: "Components/List",
@@ -88,5 +89,28 @@ export const ListCompactMultipleItemsExample: Story = {
         title="Experts: November Jobs Report Tempers Fed-Cut Expectations"
       />
     </List>
+  ),
+};
+
+export const ListItemWithIconExample: Story = {
+  render: () => (
+    <ListItem variant="documents" icon={<Pdf />} title="Fact Sheet" />
+  ),
+};
+
+export const DocumentExample: Story = {
+  render: () => (
+    <div className="bg-neutral-600">
+      <h3 className="text-3xl">Fund Documents</h3>
+      <List variant="documents">
+        <ListItem variant="documents" icon={<Pdf />} title="Fact Sheet" />
+        <ListItem variant="documents" icon={<Pdf />} title="Prospectus" />
+        <ListItem
+          variant="documents"
+          icon={<Pdf />}
+          title="Index Methodology Overview"
+        />
+      </List>
+    </div>
   ),
 };
