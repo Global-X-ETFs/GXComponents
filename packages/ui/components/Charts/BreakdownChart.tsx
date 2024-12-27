@@ -22,13 +22,42 @@ function formatNumber(value: number): string {
   return value.toFixed(1);
 }
 
-function prepareData(data: Record<string, number>, maxRecords = 11): Record<string, number> {
+function prepareData(data: Record<string, number>, order: string, maxRecords = 11): Record<string, number> {
   const entries = Object.entries(data);
   // Convert each entry value to a percentage
   const formattedEntries: (string | number)[][] = entries.map(([key, value]) => [key, roundDecimal(value)]);
 
-  // Sort the entries by value in descending order
-  const sortedEntries = formattedEntries.sort(([, valueA]: [string, number], [, valueB]: [string, number]) => valueB - valueA);
+  // Sort the entries
+  let sortedEntries: (string | number)[][] = [];
+  // by value in descending order
+  if (order === "weight") {
+    sortedEntries = formattedEntries.sort(([, valueA]: [string, number], [, valueB]: [string, number]) => valueB - valueA);
+  }
+  // by key in alphabetical order
+  if (order === "alphabetical") {
+    sortedEntries = formattedEntries.sort((a, b) => {
+      return String(a[0]).localeCompare(String(b[0])); // Compare the first elements as strings
+    });
+  }
+  // by key in rating order
+  // sort by groups (first letter) ascending, then by value descending
+  // used on EMBD - Credit Quality Breakdown 
+  if (order === "rating") {
+    sortedEntries = formattedEntries.sort((a, b) => {
+      const firstLetterA = a[0][0].toLowerCase();
+      const firstLetterB = b[0][0].toLowerCase();
+    
+      // Sort by groups (first letter) ascending
+      if (firstLetterA < firstLetterB) return -1;
+      if (firstLetterA > firstLetterB) return 1;
+    
+      // Within each group, sort contents descending
+      if (a[0] < b[0]) return 1;
+      if (a[0] > b[0]) return -1;
+    
+      return 0;
+    });
+  }
 
   // Get the top {maxRecords} entries and the rest
   const topEntries = sortedEntries.slice(0, maxRecords);
@@ -51,11 +80,12 @@ function prepareData(data: Record<string, number>, maxRecords = 11): Record<stri
 export interface BreakdownChartProps {
   title: string;
   data: Record<string, number>;
+  order?: "alphabetical" | "rating" | "weight";
   capitalize?: boolean;
 }
 
-export function BreakdownChart({ data, title, capitalize=true }: BreakdownChartProps): JSX.Element {
-  const records = prepareData(data);
+export function BreakdownChart({ data, title, order="weight", capitalize=true }: BreakdownChartProps): JSX.Element {
+  const records = prepareData(data, order);
   const labels = capitalize ? Object.keys(records).map(capitalizeWords) : Object.keys(records);
   const values = Object.values(records);
 
