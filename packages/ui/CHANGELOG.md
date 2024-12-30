@@ -1,5 +1,13 @@
 # @global-x-etfs/gx-components
 
+## 3.0.9
+
+### Patch Changes
+
+- Updating BreakdownCharts
+   - Adding Order Parameters (by weight, alphabetical, and ranking)
+	 - Fixing the display of 0.0 when the value is less than 0.04
+
 ## 3.0.8
 
 ### Patch Changes
