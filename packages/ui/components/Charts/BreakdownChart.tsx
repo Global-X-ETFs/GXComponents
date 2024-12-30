@@ -71,7 +71,7 @@ function prepareData(data: Record<string, number>, order: string, maxRecords = 1
   const topRecord = Object.fromEntries(topEntries);
 
   // Add the "Other" category if there is a discrepancy (> 0)
-  if (otherTotal > 0) {
+  if (parseFloat(otherTotal.toFixed(1)) > 0) {
     topRecord["Other"] = parseFloat(otherTotal.toFixed(1));
   }
   return topRecord;
