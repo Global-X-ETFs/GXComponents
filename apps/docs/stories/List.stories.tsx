@@ -109,7 +109,7 @@ export const ListItemWithIconExample: Story = {
 export const DocumentExample: Story = {
   render: () => (
     <div className="bg-neutral-600 py-8 p-4 w-96">
-      <h3 className="text-3xl mb-8`">Fund Documents</h3>
+      <h3 className="text-3xl mb-8">Fund Documents</h3>
       <List variant="documents">
         <ListItem variant="documents" icon={<Pdf />} title="Fact Sheet" />
         <ListItem variant="documents" icon={<Pdf />} title="Prospectus" />

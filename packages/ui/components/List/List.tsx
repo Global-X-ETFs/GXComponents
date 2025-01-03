@@ -8,8 +8,10 @@ const listItemVariants = cva("", {
       default:
         " flex flex-col gap-2 font-proxima group-hover:duration-600 ease-in-out py-4",
       compact: "flex flex-row items-center text-xl gap-4 md:gap-8 mt-1 py-4",
-      documents: "flex-row gap-4 items-center border-neutral-400 text-md md:text-lg py-4",
-      documentssmall: "flex-row gap-4 items-center border-neutral-400 md:text-md text-sm py-3",
+      documents:
+        "flex-row gap-4 items-center border-neutral-400 text-md md:text-lg py-4",
+      documentssmall:
+        "flex-row gap-4 items-center border-neutral-400 md:text-md text-sm py-3",
       off: "",
     },
     afterContent: {
@@ -36,6 +38,7 @@ interface ListItemProps
   title: string;
   locale?: string;
   icon?: React.ReactNode;
+  href?: string;
 }
 
 const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
@@ -49,6 +52,7 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
       link,
       locale = "en-US",
       className,
+      href,
       ...props
     },
     ref
@@ -65,11 +69,27 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
         {date && <p className="text-granite text-md">{date}</p>}
 
         {icon && <div className="w-4">{icon}</div>}
-        <h3
-          className={cn(listItemVariants({ link, variant: "off",  }), "font-sans mr-5")}
-        >
-          {title}
-        </h3>
+        {href ? (
+          <a href={href} target="blank">
+            <h3
+              className={cn(
+                listItemVariants({ link, variant: "off" }),
+                "font-sans mr-5"
+              )}
+            >
+              {title}
+            </h3>
+          </a>
+        ) : (
+          <h3
+            className={cn(
+              listItemVariants({ link, variant: "off" }),
+              "font-sans mr-5"
+            )}
+          >
+            {title}
+          </h3>
+        )}
       </li>
     );
   }
