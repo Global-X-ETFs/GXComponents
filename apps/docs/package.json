@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "tailwindcss -i ./input.css -o ./output.css --watch & storybook dev -p 6006",
+    "dev": "concurrently \"tailwindcss -i ./input.css -o ./output.css --watch\" \"storybook dev -p 6006\"",
     "build": "tailwindcss -i ./input.css -o ./output.css && storybook build --docs",
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo && rm -rf node_modules",
@@ -25,6 +25,7 @@
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^9.1.2",
     "eslint": "^8.57.0",
     "serve": "^14.2.1",
     "storybook": "^8.2.6",

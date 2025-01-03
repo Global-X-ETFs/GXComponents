@@ -6,8 +6,13 @@ const listItemVariants = cva("", {
   variants: {
     variant: {
       default:
-        " flex flex-col gap-2 font-proxima group-hover:duration-600 ease-in-out",
-      compact: "flex flex-row items-center text-xl gap-4 md:gap-8 mt-1",
+        " flex flex-col gap-2 font-proxima group-hover:duration-600 ease-in-out py-4",
+      compact: "flex flex-row items-center text-xl gap-4 md:gap-8 mt-1 py-4",
+      documents:
+        "flex-row gap-4 items-center border-neutral-400 text-md md:text-lg py-4",
+      documentssmall:
+        "flex-row gap-4 items-center border-neutral-400 md:text-md text-sm py-3",
+      off: "",
     },
     afterContent: {
       default: "",
@@ -28,10 +33,12 @@ const listItemVariants = cva("", {
 
 interface ListItemProps
   extends React.HTMLAttributes<HTMLLIElement>,
-  VariantProps<typeof listItemVariants> {
-  date: string;
+    VariantProps<typeof listItemVariants> {
+  date?: string;
   title: string;
   locale?: string;
+  icon?: React.ReactNode;
+  href?: string;
 }
 
 const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
@@ -39,50 +46,87 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
     {
       date,
       title,
+      icon,
       variant,
       afterContent,
       link,
       locale = "en-US",
       className,
+      href,
       ...props
     },
-    ref,
+    ref
   ) => {
     return (
       <li
         ref={ref}
         className={cn(
-          listItemVariants({ variant, className, afterContent }),
-          "list-none flex py-4  cursor-pointer group text-marine",
+          listItemVariants({ variant, className, afterContent, link: "off" }),
+          "flex  cursor-pointer text-marine"
         )}
         {...props}
       >
-        <p className="text-granite text-md">
-          {date}
-        </p>
+        {date && <p className="text-granite text-md">{date}</p>}
 
-        <h3 className={cn(listItemVariants({ link }), "text-xl font-sans mr-5")}>
-          {title}
-        </h3>
+        {icon && <div className="w-4">{icon}</div>}
+        {href ? (
+          <a href={href} target="_blank">
+            <h3
+              className={cn(
+                listItemVariants({ link, variant: "off" }),
+                "font-sans mr-5"
+              )}
+            >
+              {title}
+            </h3>
+          </a>
+        ) : (
+          <h3
+            className={cn(
+              listItemVariants({ link, variant: "off" }),
+              "font-sans mr-5"
+            )}
+          >
+            {title}
+          </h3>
+        )}
       </li>
     );
-  },
+  }
 );
 
 ListItem.displayName = "ListItem";
 
-interface ListProps extends React.HTMLAttributes<HTMLUListElement> { }
+const listVariants = cva("", {
+  variants: {
+    variant: {
+      default: "divide-neutral-600",
+      documents: "divide-neutral-200",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+interface ListProps
+  extends React.HTMLAttributes<HTMLUListElement>,
+    VariantProps<typeof listVariants> {}
 
 const List = React.forwardRef<HTMLUListElement, ListProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, variant, ...props }, ref) => {
     return (
       <ul
         ref={ref}
-        className={cn("list-none divide-y divide-neutral-600", className)}
+        className={cn(
+          listVariants({ variant }),
+          "divide-y divide-y-black",
+          className
+        )}
         {...props}
       />
     );
-  },
+  }
 );
 
 List.displayName = "List";
