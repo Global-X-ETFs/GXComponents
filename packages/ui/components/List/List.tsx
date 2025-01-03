@@ -70,7 +70,7 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
 
         {icon && <div className="w-4">{icon}</div>}
         {href ? (
-          <a href={href} target="blank">
+          <a href={href} target="_blank">
             <h3
               className={cn(
                 listItemVariants({ link, variant: "off" }),
