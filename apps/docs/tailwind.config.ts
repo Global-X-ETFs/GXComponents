@@ -5,6 +5,7 @@ const config: Pick<Config, "presets" | "content"> = {
   presets: [sharedConfig],
   content: [
     "./node_modules/@global-x-etfs/gx-components/dist/**/*.js",
+    "../../packages/ui/components/**/*.tsx",
     "./stories/*.{js,ts,jsx,tsx}",
   ]
 };

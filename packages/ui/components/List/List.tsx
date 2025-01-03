@@ -6,9 +6,11 @@ const listItemVariants = cva("", {
   variants: {
     variant: {
       default:
-        " flex flex-col gap-2 font-proxima group-hover:duration-600 ease-in-out",
-      compact: "flex flex-row items-center text-xl gap-4 md:gap-8 mt-1",
-      documents: "flex-row gap-4 items-center",
+        " flex flex-col gap-2 font-proxima group-hover:duration-600 ease-in-out py-4",
+      compact: "flex flex-row items-center text-xl gap-4 md:gap-8 mt-1 py-4",
+      documents: "flex-row gap-4 items-center border-neutral-400 text-md md:text-lg py-4",
+      documentssmall: "flex-row gap-4 items-center border-neutral-400 md:text-md text-sm py-3",
+      off: "",
     },
     afterContent: {
       default: "",
@@ -55,8 +57,8 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
       <li
         ref={ref}
         className={cn(
-          listItemVariants({ variant, className, afterContent }),
-          "list-none flex py-4 cursor-pointer group text-marine"
+          listItemVariants({ variant, className, afterContent, link: "off" }),
+          "flex  cursor-pointer text-marine"
         )}
         {...props}
       >
@@ -64,7 +66,7 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
 
         {icon && <div className="w-4">{icon}</div>}
         <h3
-          className={cn(listItemVariants({ link }), "text-xl font-sans mr-5")}
+          className={cn(listItemVariants({ link, variant: "off",  }), "font-sans mr-5")}
         >
           {title}
         </h3>
@@ -79,7 +81,7 @@ const listVariants = cva("", {
   variants: {
     variant: {
       default: "divide-neutral-600",
-      documents: "divide-neutral-400",
+      documents: "divide-neutral-200",
     },
   },
   defaultVariants: {
@@ -98,7 +100,7 @@ const List = React.forwardRef<HTMLUListElement, ListProps>(
         ref={ref}
         className={cn(
           listVariants({ variant }),
-          "list-none divide-y ",
+          "divide-y divide-y-black",
           className
         )}
         {...props}
