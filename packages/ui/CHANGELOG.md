@@ -1,5 +1,13 @@
 # @global-x-etfs/gx-components
 
+## 3.0.11
+
+### Patch Changes
+
+- Adding Accessibility to some elements
+  - Adding ARIA attribute
+  - Adding htmlFor to some Label tags
+
 ## 3.0.9
 
 ### Patch Changes

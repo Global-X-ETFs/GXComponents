@@ -1,13 +1,20 @@
 # docs
 
-## 0.04
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @global-x-etfs/gx-components@3.0.11
+
+## 0.0.4
 
 ### Patch Changes
 
 - Updated dependencies
   - @global-x-etfs/gx-components@3.0.9
 
-## 0.03
+## 0.0.3
 
 ### Patch Changes
 

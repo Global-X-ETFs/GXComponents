@@ -144,7 +144,7 @@ export function BreakdownChart({ data, title, order="weight", capitalize=true }:
       <table className="w-full">
         <thead>
           <tr className="text-left border-b border-gray-200 text-ms font-proximatight font-bold uppercase text-neutral-200">
-            <th className="w-6" />
+            <td className="w-6" />
             <th>{title}</th>
             <th className="text-right">Weight (%)</th>
           </tr>

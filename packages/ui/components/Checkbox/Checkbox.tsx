@@ -19,6 +19,7 @@ const Checkbox = React.forwardRef<
     className={cn("grid grid-cols-[30px_auto] items-center gap-4", className)}
   >
     <CheckboxPrimitive.Root
+      aria-label="Checkbox"
       ref={ref}
       id={id}
       className={cn(
