@@ -43,12 +43,14 @@ const accordionTriggerVariants = cva("", {
       standard: "hover:bg-neutral-700 text-marine py-4 ",
       mobileNav: "text-white",
       card: "h-full",
+      leftAligned: "flex-row-reverse items-center justify-end gap-3 text-orange font-bold font-proxima text-[15px] h-6 -ml-1",
     },
     chevronStyle: {
       standard: "shrink-0 text-orange",
       large: "w-6 h-6 text-orange",
       mobileNav: " shrink-0 w-6 h-6 ml-2 text-white",
       card: "hidden",
+      leftAligned: "shrink-0 w-6 h-6 text-orange",
     },
   },
 });
