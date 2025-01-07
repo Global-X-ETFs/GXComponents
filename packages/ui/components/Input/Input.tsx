@@ -47,6 +47,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       variant,
       textTransform,
       label,
+      name,
       hintMessage,
       errorMessage,
       promptMessage,
@@ -60,13 +61,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className="relative flex flex-col">
         {label && (
           <div className="text-md py-1 leading-5">
-            <label className={cn("text-granite", className)}>{label}</label>
+            <label htmlFor={name} className={cn("text-granite", className)}>{label}</label>
             {required && <span className="text-orange ml-1">*</span>}
           </div>
         )}
 
         <input
           ref={ref}
+          id={name}
+          name={name}
           {...props}
           className={cn(inputVariants({ variant, textTransform }), className)}
         />

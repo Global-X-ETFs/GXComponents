@@ -45,7 +45,7 @@ const MenuButton = forwardRef<HTMLButtonElement, MenuButtonProps>(
       strokeWidth: 2,
     };
     return (
-      <button className={cn("z-50 ", className)} ref={ref} {...props}>
+      <button className={cn("z-50 ", className)} ref={ref} {...props} aria-label="Open/Close Nav Menu" >
         <motion.svg
           preserveAspectRatio="none"
           className="w-6 h-6 text-white"
