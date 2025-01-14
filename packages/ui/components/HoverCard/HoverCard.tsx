@@ -15,12 +15,14 @@ interface HoverCardTriggerProps
 const HoverCardTrigger = React.forwardRef<
   React.ElementRef<typeof HoverCardPrimitive.Trigger>,
   HoverCardTriggerProps
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <HoverCardPrimitive.Trigger
     ref={ref}
     className={cn("font-sans", className)}
     {...props}
-  />
+  >
+    {children}
+  </HoverCardPrimitive.Trigger>
 ));
 HoverCardTrigger.displayName = HoverCardPrimitive.Trigger.displayName;
 
@@ -32,14 +34,16 @@ interface HoverCardContentProps
 const HoverCardContent = React.forwardRef<
   React.ElementRef<typeof HoverCardPrimitive.Content>,
   HoverCardContentProps
->(({ className, align = "center", sideOffset = 4, ...props }, ref) => (
+>(({ className, children, align = "center", sideOffset = 4, ...props }, ref) => (
   <HoverCardPrimitive.Content
     ref={ref}
     align={align}
     sideOffset={sideOffset}
     className={cn("z-50", className)}
     {...props}
-  />
+  >
+    {children}
+  </HoverCardPrimitive.Content>
 ));
 HoverCardContent.displayName = HoverCardPrimitive.Content.displayName;
 
