@@ -25,6 +25,7 @@ export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
   VariantProps<typeof inputVariants> {
   label?: string;
+  labelClassName?: string;
   hintMessage?: string;
   promptMessage?: string;
   errorMessage?: string;
@@ -44,6 +45,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
       className,
+      labelClassName,
       variant,
       textTransform,
       label,
@@ -61,7 +63,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className="relative flex flex-col">
         {label && (
           <div className="text-md py-1 leading-5">
-            <label htmlFor={name} className={cn("text-granite", className)}>{label}</label>
+            <label htmlFor={name} className={cn("text-granite", labelClassName)}>{label}</label>
             {required && <span className="text-orange ml-1">*</span>}
           </div>
         )}
