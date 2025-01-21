@@ -1,5 +1,14 @@
 # @global-x-etfs/gx-components
 
+## 3.0.12
+
+### Patch Changes
+
+- Updating BreakdownCharts
+  - Adding custom tooltip
+- FundDetailsCardSubtitle Component
+  - Updating the text size to 13px
+
 ## 3.0.11
 
 ### Patch Changes
