@@ -1,5 +1,16 @@
 # @global-x-etfs/gx-components
 
+## 3.1.3
+
+### Patch Changes
+
+- Tweaking BreakdownCharts
+  - Adding the correct font family -- ProximaNova-Condensed
+  - Increasing the text size
+  - Adding border to the Label Box
+- FundCard Component
+  - Adding filter to it (converting color from black to marine)
+
 ## 3.0.12
 
 ### Patch Changes

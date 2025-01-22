@@ -21,14 +21,15 @@ const getOrCreateTooltip = (chart, labelColor) => {
     tooltipEl.style.transform = 'translate(-50%, -120%)';
     tooltipEl.style.transition = 'opacity .3s ease';
     tooltipEl.style.borderRadius = '6px';
-    tooltipEl.style.fontSize = '12px';
-    tooltipEl.style.fontFamily = 'Proxima Nova';
+    tooltipEl.style.fontSize = '14px';
+    tooltipEl.style.fontFamily = 'ProximaNova-Condensed';
     tooltipEl.style.padding = '2px 4px';
 
     const labelBox = document.createElement('div');
-    labelBox.style.width = '14px';
-    labelBox.style.height = '14px';
+    labelBox.style.width = '16px';
+    labelBox.style.height = '16px';
     labelBox.style.backgroundColor = labelColor;
+    labelBox.style.border = 'solid #fff 1px';
 
     tooltipEl.insertBefore(labelBox, tooltipEl.firstChild);
 

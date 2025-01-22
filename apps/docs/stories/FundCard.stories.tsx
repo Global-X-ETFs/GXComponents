@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const BOTZFund: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/BOTZ.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
     alt: "Botz Logo",
     title: "Robotics & Aritifical Intelligence ETF",
     subtitle: "BOTZ",
@@ -22,7 +22,7 @@ export const BOTZFund: Story = {
 
 export const AIQFund: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/AIQ.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/AIQ.svg",
     alt: "AIQ Logo",
     title: "Artificial Intelligence & Technology ETF",
     subtitle: "AIQ",
@@ -31,7 +31,7 @@ export const AIQFund: Story = {
 
 export const PAVEFund: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/PAVE.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/PAVE.svg",
     alt: "PAVE Logo",
     title: "U.S. Infrastructure Development ETF",
     subtitle: "PAVE",
@@ -40,7 +40,7 @@ export const PAVEFund: Story = {
 
 export const EMCFund: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/EMC.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/EMC.svg",
     alt: "EMC Logo",
     title: "Emerging Markets Great Consumer ETF",
     subtitle: "EMC",
@@ -49,7 +49,7 @@ export const EMCFund: Story = {
 
 export const QYLDFund: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/QYLD.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/QYLD.svg",
     alt: "QYLD Logo",
     title: "Nasdaq 100 Covered Call ETF",
     subtitle: "QYLD",
@@ -58,6 +58,7 @@ export const QYLDFund: Story = {
 
 export const MissingImage: Story = {
   args: {
+    src: "",
     alt: "Robotics & Aritifical Intelligence ETF",
     title: "Missing Image",
     subtitle: "MISS",
@@ -66,23 +67,26 @@ export const MissingImage: Story = {
 
 export const MissingTitle: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/BOTZ.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
     alt: "Botz Logo",
+    title: "",
     subtitle: "BOTZ",
   },
 };
 
 export const MissingSubtitle: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/BOTZ.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
     alt: "Botz Logo",
     title: "Robotics & Aritifical Intelligence ETF",
+    subtitle: "",
   },
 };
 
 export const MissingAltText: Story = {
   args: {
-    src: "https://staging-assets.globalxetfs.com/icons/BOTZ.svg",
+    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
+    alt: "",
     title: "Robotics & Aritifical Intelligence ETF",
     subtitle: "BOTZ",
   },
