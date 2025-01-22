@@ -1,4 +1,5 @@
 import * as tailwindAnimate from "tailwindcss-animate";
+import * as tailwindcssTypography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 
 const sharedConfig: Config = {
@@ -130,7 +131,7 @@ const sharedConfig: Config = {
       ui: ["Geist", "sans-serif"],
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [tailwindAnimate, tailwindcssTypography],
 };
 
 export default sharedConfig;
