@@ -34,8 +34,9 @@ const FundCard = React.forwardRef<HTMLDivElement, FundCardProps>(
             alt={props.alt}
             className={cn(
               "max-h-[70px]",
-              props.imgClassName ? props.imgClassName : "brightness-[44%] contrast-[123%] grayscale-[83%] hue-rotate-[108deg]", //temp fix
+              props.imgClassName,
             )}
+            style={!props.imgClassName ? { filter: "invert(14%) sepia(31%) saturate(2874%) hue-rotate(156deg) brightness(93%) contrast(103%)" } : null} //converting from black to marine
           />
         </div>
         <div ref={ref} className="self-center overflow-hidden px-3.75 py-3">
