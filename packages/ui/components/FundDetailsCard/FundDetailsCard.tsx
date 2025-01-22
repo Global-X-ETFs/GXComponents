@@ -64,7 +64,7 @@ const FundDetailsCardSubtitle = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <span
-      className={cn("text-neutral-200 text-sm", className)}
+      className={cn("text-neutral-200 text-[13px]", className)}
       ref={ref}
       {...props}
     ></span>

@@ -79,3 +79,5 @@ export * from "./Charts";
 export * from "./ImageSlider";
 
 export * from "./VideoSlider";
+
+export * from "./AlertDialog";
