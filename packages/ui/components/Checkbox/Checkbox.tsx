@@ -9,12 +9,13 @@ interface CheckboxProps
   extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {
   id: string;
   children: React.ReactNode;
+  labelClassName?: string;
 }
 
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   CheckboxProps
->(({ children, id, className, ...props }, ref) => (
+>(({ children, id, className, labelClassName, ...props }, ref) => (
   <div
     className={cn("grid grid-cols-[30px_auto] items-center gap-4", className)}
   >
@@ -45,7 +46,7 @@ const Checkbox = React.forwardRef<
     </CheckboxPrimitive.Root>
     <label
       htmlFor={id}
-      className="text-md text-granite col-start-2 w-full font-medium"
+      className={cn("text-md text-granite col-start-2 w-full font-medium", labelClassName)}
     >
       {children}
     </label>

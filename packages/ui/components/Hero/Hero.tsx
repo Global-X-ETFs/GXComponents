@@ -21,17 +21,19 @@ export interface HeroProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof heroVariants> {
   children?: React.ReactNode;
+  outerClassName?: string;
   backgroundImageURL?: string;
 }
 
 const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
-  ({ children, className, backgroundImageURL, variant, ...props }, ref) => {
+  ({ children, className, outerClassName, backgroundImageURL, variant, ...props }, ref) => {
     return (
       <div
         ref={ref}
         className={cn(
           "bg-marine flex bg-top bg-no-repeat",
           heroVariants({ variant }),
+          outerClassName,
         )}
         style={{
           backgroundImage: `url('${backgroundImageURL}')`,
