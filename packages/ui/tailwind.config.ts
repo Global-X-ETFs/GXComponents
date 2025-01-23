@@ -1,4 +1,5 @@
 import * as tailwindAnimate from "tailwindcss-animate";
+import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 
 const sharedConfig: Config = {
@@ -32,7 +33,7 @@ const sharedConfig: Config = {
         },
       },
       borderWidth: {
-        '3': "3px",
+        "3": "3px",
       },
       boxShadow: {
         card: "0 6px 9px 0 rgba(41,52,56,.17)",
@@ -129,8 +130,8 @@ const sharedConfig: Config = {
       proximatight: ["ProximaNova-Condensed", "sans-serif"],
       ui: ["Geist", "sans-serif"],
     },
+    plugins: [tailwindAnimate, typography],
   },
-  plugins: [tailwindAnimate],
 };
 
 export default sharedConfig;
