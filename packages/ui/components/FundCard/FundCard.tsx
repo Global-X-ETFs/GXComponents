@@ -21,7 +21,7 @@ const FundCard = React.forwardRef<HTMLDivElement, FundCardProps>(
       <div
         ref={ref}
         className={cn(
-          "mr-2 flex h-auto w-96 items-center justify-start",
+          "mr-2 flex h-auto w-full items-center justify-start",
           "cursor-pointer content-center bg-white px-5 py-2.5 shadow-card hover:scale-105 hover:bg-neutral-700 transition ease-in-out duration-300",
           fundCardVariants({ border }),
           className

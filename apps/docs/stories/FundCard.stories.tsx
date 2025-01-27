@@ -20,6 +20,7 @@ type Story = StoryObj<typeof meta>;
 export const BOTZFund: Story = {
   render: () => {
     return (
+      <div className="w-96" >
       <FundCard>
         <FundCardImage
           src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
@@ -32,6 +33,7 @@ export const BOTZFund: Story = {
           <FundCardSubtitle>BOTZ</FundCardSubtitle>
         </FundCardHeader>
       </FundCard>
+      </div>
     );
   },
 };
@@ -39,6 +41,7 @@ export const BOTZFund: Story = {
 export const AIQFund: Story = {
   render: () => {
     return (
+      <div className="w-96" >
       <FundCard>
         <FundCardImage
           src="https://assets.globalxetfs.com/svg-icons/AIQ.svg"
@@ -49,6 +52,7 @@ export const AIQFund: Story = {
           <FundCardSubtitle>AIQU</FundCardSubtitle>
         </FundCardHeader>
       </FundCard>
+      </div>
     );
   },
 };
@@ -56,6 +60,7 @@ export const AIQFund: Story = {
 export const PAVEFund: Story = {
   render: () => {
     return (
+      <div className="w-96" >
       <FundCard>
         <FundCardImage
           src="https://assets.globalxetfs.com/svg-icons/PAVE.svg"
@@ -66,6 +71,7 @@ export const PAVEFund: Story = {
           <FundCardSubtitle>PAVE</FundCardSubtitle>
         </FundCardHeader>
       </FundCard>
+      </div>
     );
   },
 };
