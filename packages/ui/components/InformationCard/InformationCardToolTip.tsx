@@ -7,7 +7,7 @@ import { TooltipProps, TooltipProvider } from "@radix-ui/react-tooltip";
 
 function useIsTouchDevice() {
   try {
-    return matchMedia('(hover: hover)').matches || matchMedia('(pointer: coarse)').matches
+    return window.matchMedia('(hover: hover)').matches || window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
   } catch {
     // Assume that if browser too old to support matchMedia it's likely not a touch device
     return true
@@ -41,13 +41,17 @@ const InformationCardToolTip = React.forwardRef<
 
   React.useImperativeHandle(ref, () => innerRef.current!, []);
 
-  const isTouchDevice = useIsTouchDevice();
   const [isOpen, setIsOpen] = React.useState(props.defaultOpen ?? false);
+  const [isTouchDevice, setIsTouchDevice] = React.useState(false);
 
   const toggleMobileOpen = (e) => {
     e.preventDefault();
     setIsOpen(true);
   }
+
+  React.useEffect(() => {
+    setIsTouchDevice(useIsTouchDevice());
+  }, []);
 
   React.useEffect(() => {
     const handleClickOutside = (event) => {
