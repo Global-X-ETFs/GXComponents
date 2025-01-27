@@ -20,19 +20,19 @@ type Story = StoryObj<typeof meta>;
 export const BOTZFund: Story = {
   render: () => {
     return (
-      <div className="w-96" >
-      <FundCard>
-        <FundCardImage
-          src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
-          alt="Botz Logo"
-        />
-        <FundCardHeader>
-          <FundCardTitle>
-            Robotics & Artificial Intelligence UCITS ETF
-          </FundCardTitle>
-          <FundCardSubtitle>BOTZ</FundCardSubtitle>
-        </FundCardHeader>
-      </FundCard>
+      <div className="w-96">
+        <FundCard>
+          <FundCardImage
+            src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
+            alt="Botz Logo"
+          />
+          <FundCardHeader>
+            <FundCardTitle>
+              Robotics & Artificial Intelligence UCITS ETF
+            </FundCardTitle>
+            <FundCardSubtitle>BOTZ</FundCardSubtitle>
+          </FundCardHeader>
+        </FundCard>
       </div>
     );
   },
@@ -41,17 +41,17 @@ export const BOTZFund: Story = {
 export const AIQFund: Story = {
   render: () => {
     return (
-      <div className="w-96" >
-      <FundCard>
-        <FundCardImage
-          src="https://assets.globalxetfs.com/svg-icons/AIQ.svg"
-          alt="AIQ Logo"
-        />
-        <FundCardHeader>
-          <FundCardTitle>Artificial Intelligence UCITS ETF</FundCardTitle>
-          <FundCardSubtitle>AIQU</FundCardSubtitle>
-        </FundCardHeader>
-      </FundCard>
+      <div className="w-96">
+        <FundCard>
+          <FundCardImage
+            src="https://assets.globalxetfs.com/svg-icons/AIQ.svg"
+            alt="AIQ Logo"
+          />
+          <FundCardHeader>
+            <FundCardTitle>Artificial Intelligence UCITS ETF</FundCardTitle>
+            <FundCardSubtitle>AIQU</FundCardSubtitle>
+          </FundCardHeader>
+        </FundCard>
       </div>
     );
   },
@@ -60,17 +60,17 @@ export const AIQFund: Story = {
 export const PAVEFund: Story = {
   render: () => {
     return (
-      <div className="w-96" >
-      <FundCard>
-        <FundCardImage
-          src="https://assets.globalxetfs.com/svg-icons/PAVE.svg"
-          alt="PAVE Logo"
-        />
-        <FundCardHeader>
-          <FundCardTitle>U.S. Infrastructure Development ETF</FundCardTitle>
-          <FundCardSubtitle>PAVE</FundCardSubtitle>
-        </FundCardHeader>
-      </FundCard>
+      <div className="w-96">
+        <FundCard>
+          <FundCardImage
+            src="https://assets.globalxetfs.com/svg-icons/PAVE.svg"
+            alt="PAVE Logo"
+          />
+          <FundCardHeader>
+            <FundCardTitle>U.S. Infrastructure Development ETF</FundCardTitle>
+            <FundCardSubtitle>PAVE</FundCardSubtitle>
+          </FundCardHeader>
+        </FundCard>
       </div>
     );
   },
@@ -175,7 +175,6 @@ export const MissingAltText: Story = {
   },
 };
 
-
 export const BlackFilteredImage: Story = {
   render: () => {
     return (
@@ -183,7 +182,25 @@ export const BlackFilteredImage: Story = {
         <FundCardImage
           src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
           alt="Botz Logo"
-          blackImage
+          filter="black"
+        />
+        <FundCardHeader>
+          <FundCardTitle>Robotics & Aritifical Intelligence ETF</FundCardTitle>
+          <FundCardSubtitle>BOTZ</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
+  },
+};
+
+export const MarineFilteredImage: Story = {
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
+          alt="Botz Logo"
+          filter="marine"
         />
         <FundCardHeader>
           <FundCardTitle>Robotics & Aritifical Intelligence ETF</FundCardTitle>
