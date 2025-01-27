@@ -39,18 +39,30 @@ FundCard.displayName = "FundCard";
 interface FundCardImageProps extends React.HTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
-  blackImage?: boolean;
+  filter?: "black" | "marine"; 
 }
 
 const FundCardImage = React.forwardRef<HTMLImageElement, FundCardImageProps>(
-  ({ className, src, alt, blackImage, ...props }, ref) => {
+  ({ className, src, alt, filter, ...props }, ref) => {
+    let filterStyles;
+    switch (filter) {
+      case "black":
+        filterStyles = { filter: "brightness(0) saturate(100)" };
+        break;
+      case "marine":
+        filterStyles = { filter: "invert(14%) sepia(31%) saturate(2874%) hue-rotate(156deg) brightness(93%) contrast(103%)" };
+        break;
+      default:
+        filterStyles = {};
+    }
+
     return (
       <img
         ref={ref}
         src={src}
         alt={alt}
         className={cn("max-h-[70px] w-17.5 items-center", className)}
-        style={blackImage ? { filter: "brightness(0) saturate(100)" } : {}}
+        style={filterStyles}
         
         {...props}
       />
