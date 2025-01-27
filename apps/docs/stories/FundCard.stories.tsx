@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FundCard } from "@global-x-etfs/gx-components";
+import {
+  FundCard,
+  FundCardHeader,
+  FundCardImage,
+  FundCardSubtitle,
+  FundCardTitle,
+} from "@global-x-etfs/gx-components";
 
 const meta = {
   title: "Components/FundCard",
@@ -12,82 +18,172 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const BOTZFund: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
-    alt: "Botz Logo",
-    title: "Robotics & Aritifical Intelligence ETF",
-    subtitle: "BOTZ",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
+          alt="Botz Logo"
+        />
+        <FundCardHeader>
+          <FundCardTitle>
+            Robotics & Artificial Intelligence UCITS ETF
+          </FundCardTitle>
+          <FundCardSubtitle>BOTZ</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const AIQFund: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/AIQ.svg",
-    alt: "AIQ Logo",
-    title: "Artificial Intelligence & Technology ETF",
-    subtitle: "AIQ",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/AIQ.svg"
+          alt="AIQ Logo"
+        />
+        <FundCardHeader>
+          <FundCardTitle>Artificial Intelligence UCITS ETF</FundCardTitle>
+          <FundCardSubtitle>AIQU</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const PAVEFund: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/PAVE.svg",
-    alt: "PAVE Logo",
-    title: "U.S. Infrastructure Development ETF",
-    subtitle: "PAVE",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/PAVE.svg"
+          alt="PAVE Logo"
+        />
+        <FundCardHeader>
+          <FundCardTitle>U.S. Infrastructure Development ETF</FundCardTitle>
+          <FundCardSubtitle>PAVE</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const EMCFund: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/EMC.svg",
-    alt: "EMC Logo",
-    title: "Emerging Markets Great Consumer ETF",
-    subtitle: "EMC",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/EMC.svg"
+          alt="EMC Logo"
+        />
+        <FundCardHeader>
+          <FundCardTitle>Emerging Markets Great Consumer ETF</FundCardTitle>
+          <FundCardSubtitle>EMC</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const QYLDFund: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/QYLD.svg",
-    alt: "QYLD Logo",
-    title: "Nasdaq 100 Covered Call ETF",
-    subtitle: "QYLD",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/QYLD.svg"
+          alt="QYLD Logo"
+        />
+        <FundCardHeader>
+          <FundCardTitle>Nasdaq 100 Covered Call ETF</FundCardTitle>
+          <FundCardSubtitle>QYLD</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const MissingImage: Story = {
-  args: {
-    src: "",
-    alt: "Robotics & Aritifical Intelligence ETF",
-    title: "Missing Image",
-    subtitle: "MISS",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage src="" alt="Robotics & Aritifical Intelligence ETF" />
+        <FundCardHeader>
+          <FundCardTitle>Missing Image</FundCardTitle>
+          <FundCardSubtitle>MISS</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const MissingTitle: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
-    alt: "Botz Logo",
-    title: "",
-    subtitle: "BOTZ",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
+          alt="Botz Logo"
+        />
+        <FundCardHeader>
+          <FundCardTitle />
+          <FundCardSubtitle>MISS</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const MissingSubtitle: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
-    alt: "Botz Logo",
-    title: "Robotics & Aritifical Intelligence ETF",
-    subtitle: "",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
+          alt="Botz Logo"
+        />
+        <FundCardHeader>
+          <FundCardTitle>Robotics & Aritifical Intelligence ETF</FundCardTitle>
+          <FundCardSubtitle />
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
 
 export const MissingAltText: Story = {
-  args: {
-    src: "https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg",
-    alt: "",
-    title: "Robotics & Aritifical Intelligence ETF",
-    subtitle: "BOTZ",
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg"
+          alt=""
+        />
+        <FundCardHeader>
+          <FundCardTitle>Robotics & Aritifical Intelligence ETF</FundCardTitle>
+          <FundCardSubtitle>BOTZ</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
+  },
+};
+
+
+export const BlackFilteredImage: Story = {
+  render: () => {
+    return (
+      <FundCard>
+        <FundCardImage
+          src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
+          alt="Botz Logo"
+          blackImage
+        />
+        <FundCardHeader>
+          <FundCardTitle>Robotics & Aritifical Intelligence ETF</FundCardTitle>
+          <FundCardSubtitle>BOTZ</FundCardSubtitle>
+        </FundCardHeader>
+      </FundCard>
+    );
   },
 };
