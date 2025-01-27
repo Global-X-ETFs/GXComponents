@@ -69,7 +69,7 @@ const InformationCardToolTip = React.forwardRef<
         {...(!isTouchDevice ? { open: isOpen } : {} )}
         {...props} 
       >
-        <TooltipTrigger onClick={!isTouchDevice ? toggleMobileOpen : () => {}}>
+        <TooltipTrigger onClick={isTouchDevice ? toggleMobileOpen : () => {}}>
           <InformationCardToolTipTrigger className={className} />
         </TooltipTrigger>
         <TooltipContent
