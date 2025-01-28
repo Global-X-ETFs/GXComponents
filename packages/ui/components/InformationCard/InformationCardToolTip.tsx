@@ -5,15 +5,6 @@ import cn from "../Utils/cn";
 import { Tooltip, TooltipTrigger, TooltipContent } from "../Tooltip";
 import { TooltipProps, TooltipProvider } from "@radix-ui/react-tooltip";
 
-function useIsTouchDevice() {
-  try {
-    return window.matchMedia('(hover: hover)').matches || window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
-  } catch {
-    // Assume that if browser too old to support matchMedia it's likely not a touch device
-    return true
-  }
-}
-
 export interface InformationCardTooltipProps
   extends React.HTMLAttributes<HTMLDivElement>, TooltipProps {
     delayDuration?: number;
@@ -42,7 +33,7 @@ const InformationCardToolTip = React.forwardRef<
   React.useImperativeHandle(ref, () => innerRef.current!, []);
 
   const [isOpen, setIsOpen] = React.useState(props.defaultOpen ?? false);
-  const [isTouchDevice, setIsTouchDevice] = React.useState(false);
+  const [isTouchDevice, setIsTouchDevice] = React.useState(window?.document.body.offsetWidth < 992);
 
   const toggleMobileOpen = (e) => {
     e.preventDefault();
@@ -50,8 +41,14 @@ const InformationCardToolTip = React.forwardRef<
   }
 
   React.useEffect(() => {
-    setIsTouchDevice(useIsTouchDevice());
-  }, []);
+    const updateScreen = () => {
+      // Update the state to reflect the current screen size
+      // 992px is the breakpoint for lg (tailwind config)
+      setIsTouchDevice(window?.document.body.offsetWidth < 992);
+    }
+    window.addEventListener('resize', updateScreen)
+		return () => window.removeEventListener('resize', updateScreen)
+  }, [ref]);
 
   React.useEffect(() => {
     const handleClickOutside = (event) => {
@@ -69,8 +66,8 @@ const InformationCardToolTip = React.forwardRef<
   return (
     <TooltipProvider>
       <Tooltip 
-        delayDuration={isTouchDevice ? delayDuration : 0}
-        {...(!isTouchDevice ? { open: isOpen } : {} )}
+        delayDuration={!isTouchDevice ? delayDuration : 0}
+        {...(isTouchDevice ? { open: isOpen } : {} )}
         {...props} 
       >
         <TooltipTrigger onClick={isTouchDevice ? toggleMobileOpen : () => {}}>
