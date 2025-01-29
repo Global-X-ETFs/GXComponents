@@ -145,7 +145,7 @@ export const PerformanceBarChart: React.FC<PerformanceBarChartProps> = ({
         </div>
         <div className="flex items-center">
           <div className="w-3 h-3 bg-[#002930] border-2 border-[#83A8A9] rounded-full mr-1.5" />
-          <span className="font-porxima text-md text-neutral-100">{ticker} Distributions</span>
+          <span className="font-porxima text-md text-neutral-100">{ticker} Distribution</span>
         </div>
       </div>
     </>
