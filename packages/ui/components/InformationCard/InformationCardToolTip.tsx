@@ -33,7 +33,7 @@ const InformationCardToolTip = React.forwardRef<
   React.useImperativeHandle(ref, () => innerRef.current!, []);
 
   const [isOpen, setIsOpen] = React.useState(props.defaultOpen ?? false);
-  const [isTouchDevice, setIsTouchDevice] = React.useState(window?.document.body.offsetWidth < 992);
+  const [isTouchDevice, setIsTouchDevice] = React.useState(false);
 
   const toggleMobileOpen = (e) => {
     e.preventDefault();
@@ -46,6 +46,7 @@ const InformationCardToolTip = React.forwardRef<
       // 992px is the breakpoint for lg (tailwind config)
       setIsTouchDevice(window?.document.body.offsetWidth < 992);
     }
+    updateScreen();
     window.addEventListener('resize', updateScreen)
 		return () => window.removeEventListener('resize', updateScreen)
   }, [ref]);
