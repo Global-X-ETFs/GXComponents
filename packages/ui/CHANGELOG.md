@@ -1,5 +1,14 @@
 # @global-x-etfs/gx-components
 
+## 3.1.6
+
+### Patch Changes
+
+- InformationCardToolTip
+  - Tooltip trigger on touch screens (onClick)
+- PerformancebarChart
+  - Removing an extra 's' from the distribution label
+
 ## 3.1.3
 
 ### Patch Changes
