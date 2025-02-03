@@ -214,7 +214,7 @@ export function PremiumDiscountChart({ data }: PremiumDiscountChartProps): JSX.E
 
   return (
     <div className="w-[99%] relative flex pr-3 h-[450px] premium-discount-chart">
-      <Line data={chartData} options={options} style={{ height: '100%' }} />
+      <Line data={chartData} options={options} style={{ height: '100%', width: '100%' }} />
     </div>
   );
 }
