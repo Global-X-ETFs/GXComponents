@@ -1,5 +1,12 @@
 # @global-x-etfs/gx-components
 
+## 3.1.7
+
+### Patch Changes
+
+- PremiumDiscountChart
+  - Disabling the premium discount chart resize animation by setting it to full-width
+
 ## 3.1.6
 
 ### Patch Changes
