@@ -59,8 +59,8 @@ const CarouselTab = React.forwardRef<HTMLDivElement, CarouselTabProps>(
         className={cn(
           "cursor-pointer flex flex-col justify-center items-center py-4 scroll-smooth text-xl snap-center md:border-b-4",
           index == activeIndex
-            ? "text-marine border-orange"
-            : "text-neutral-400 border-transparent",
+            ? "text-marine border-orange ease-in transition delay-[30ms]"
+            : "text-neutral-100 border-transparent hover:text-marine ease-in transition delay-[30ms]",
           className,
         )}
         {...props}
