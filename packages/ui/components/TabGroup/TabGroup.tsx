@@ -14,7 +14,7 @@ const tabGroupVariants = cva("", {
     },
     tabListStyle: {
       app: "inline-flex h-9 items-center justify-center rounded-lg bg-neutral-400 p-1 text-black",
-      corp: "inline-flex h-9 w-full justify-evenly rounded-lg bg-white p-1 text-neutral-200",
+      corp: "inline-flex h-9 w-full justify-evenly rounded-lg bg-white p-1 text-neutral-100",
       search:
         "inline-flex w-full rounded-lg p-1 bg-marine text-neutral-400 justify-start text-2xl md:text-4xl mb-4 md:h-24",
       fund: "inline-flex border-b border-neutral-400 w-full px-2 ",

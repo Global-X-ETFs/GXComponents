@@ -1,5 +1,12 @@
 # @global-x-etfs/gx-components
 
+## 3.1.8
+
+### Patch Changes
+
+- Accessibility Contrast Requirements
+  - Some components have been updated from neutral-200 to neutral-100, avoiding ADA issues
+
 ## 3.1.7
 
 ### Patch Changes

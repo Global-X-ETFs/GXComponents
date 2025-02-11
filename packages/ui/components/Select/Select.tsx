@@ -41,7 +41,7 @@ const selectLabelVariants = cva("", {
   variants: {
     variant: {
       corp: "text-granite text-md leading-5",
-      fund: "flex font-proxima text-sm lg:text-[13px] font-normal text-neutral-200 items-center",
+      fund: "flex font-proxima text-sm lg:text-[13px] font-normal text-neutral-100 items-center",
       rounded: "text-marine text-lg",
     },
   },
