@@ -52,75 +52,74 @@ export const ExampleInformationCard: Story = {
     const footer = "Footer";
 
     return (
-      <InformationCard>
-        <InformationCardHeader>
-          <InformationCardTitle>{title}</InformationCardTitle>
-          <InformationCardSubtitle>{subtitle}</InformationCardSubtitle>
-        </InformationCardHeader>
-        <InformationCardContent>
-          {rows.map((row, index) => (
-            <InformationCardRow key={index}>
-              <InformationCardName>
-                {row.name}{" "}
-                <InformationCardToolTip delayDuration={args.delayDuration}>
-                  A standard yield calculation developed by the Securities and
-                  Exchange Commission that allows for fairer comparisons among
-                  bond funds. It is based on the most recent month end. This
-                  figure reflects the interest earned during the period after
-                  deducting the fund’s expenses for the period.
-                </InformationCardToolTip>
-              </InformationCardName>
-              <InformationCardValue>{row.value}</InformationCardValue>
-            </InformationCardRow>
-          ))}
-          <InformationCardTextBox>{content}</InformationCardTextBox>
-        </InformationCardContent>
-        <InformationCardFooter>{footer}</InformationCardFooter>
-      </InformationCard>
+      <div className="w-[calc(100vw-60px)] sm:w-[500px]">
+        <InformationCard>
+          <InformationCardHeader>
+            <InformationCardTitle>{title}</InformationCardTitle>
+            <InformationCardSubtitle>{subtitle}</InformationCardSubtitle>
+          </InformationCardHeader>
+          <InformationCardContent>
+            {rows.map((row, index) => (
+              <InformationCardRow key={index}>
+                <InformationCardName>
+                  {row.name}{" "}
+                  <InformationCardToolTip delayDuration={args.delayDuration}>
+                    A standard yield calculation developed by the Securities and
+                    Exchange Commission that allows for fairer comparisons among
+                    bond funds.
+                  </InformationCardToolTip>
+                </InformationCardName>
+                <InformationCardValue>{row.value}</InformationCardValue>
+              </InformationCardRow>
+            ))}
+            <InformationCardTextBox>{content}</InformationCardTextBox>
+          </InformationCardContent>
+          <InformationCardFooter>{footer}</InformationCardFooter>
+        </InformationCard>
+      </div>
     );
   },
 };
 
 export const InformationCardTooltip: Story = {
   render: (args: { delayDuration?: number }) => (
-    <InformationCard>
-      <InformationCardHeader>
-        <InformationCardTitle>Distributions</InformationCardTitle>
-        <InformationCardSubtitle>As of 19th Jul 2024</InformationCardSubtitle>
-      </InformationCardHeader>
-      <InformationCardContent>
-        <InformationCardRow>
-          <InformationCardName>
-            30-Day SEC Yield
-            <InformationCardToolTip delayDuration={args.delayDuration}>
-              A standard yield calculation developed by the Securities and
-              Exchange Commission that allows for fairer comparisons among bond
-              funds. It is based on the most recent month end. This figure
-              reflects the interest earned during the period after deducting the
-              fund’s expenses for the period.
-            </InformationCardToolTip>
-          </InformationCardName>
-          <InformationCardValue>2.40%</InformationCardValue>
-        </InformationCardRow>
+    <div className="w-[calc(100vw-60px)] sm:w-[500px]">
+      <InformationCard>
+        <InformationCardHeader>
+          <InformationCardTitle>Distributions</InformationCardTitle>
+          <InformationCardSubtitle>As of 19th Jul 2024</InformationCardSubtitle>
+        </InformationCardHeader>
+        <InformationCardContent>
+          <InformationCardRow>
+            <InformationCardName>
+              30-Day SEC Yield
+              <InformationCardToolTip delayDuration={args.delayDuration}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                auctor.
+              </InformationCardToolTip>
+            </InformationCardName>
+            <InformationCardValue>2.40%</InformationCardValue>
+          </InformationCardRow>
 
-        <InformationCardRow>
-          <InformationCardName>
-            Unsubsidized 30-Day SEC Yield
-            <InformationCardToolTip delayDuration={args.delayDuration}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc,
-              nec ultricies nunc nisl nec nunc. Nullam auctor, nunc nec
-              ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc
-              nisl nec nunc.
-            </InformationCardToolTip>
-          </InformationCardName>
-          <InformationCardValue>1.40%</InformationCardValue>
-        </InformationCardRow>
-        <InformationCardRow>
-          <InformationCardName>Current Speed</InformationCardName>
-          <InformationCardValue>{args.delayDuration}ms</InformationCardValue>
-        </InformationCardRow>
-      </InformationCardContent>
-    </InformationCard>
+          <InformationCardRow>
+            <InformationCardName>
+              Unsubsidized 30-Day SEC Yield
+              <InformationCardToolTip delayDuration={args.delayDuration}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc,
+                nec ultricies nunc nisl nec nunc. Nullam auctor, nunc nec
+                ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc
+                nisl nec nunc.
+              </InformationCardToolTip>
+            </InformationCardName>
+            <InformationCardValue>1.40%</InformationCardValue>
+          </InformationCardRow>
+          <InformationCardRow>
+            <InformationCardName>Current Speed</InformationCardName>
+            <InformationCardValue>{args.delayDuration}ms</InformationCardValue>
+          </InformationCardRow>
+        </InformationCardContent>
+      </InformationCard>
+    </div>
   ),
 };

@@ -55,7 +55,7 @@ export const ExampleCorpTabGroup: Story = {
   render: () => (
     <Card className="w-full">
       <TabGroup defaultValue="thematic" tabGroupStyle="corp">
-        <TabsList tabListStyle="corp">
+        <TabsList tabListStyle="corp" className="gap-4">
           <TabsTrigger tabTriggerStyle="corp" value="thematic">
             Thematic
           </TabsTrigger>

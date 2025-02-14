@@ -28,7 +28,7 @@ export const Primary: Story = {
   args: {},
   render: function Render() {
     return (
-      <div className="max-w-1268 mx-auto z-20">
+      <div className="w-[calc(100vw-60px)] lg:w-[900px] mx-auto z-20 bg-marine px-4 py-10">
         <MenuProvider>
           <MainNav icon={<GlobalXLogo />} iconURL="/">
             {/* Our ETFs */}

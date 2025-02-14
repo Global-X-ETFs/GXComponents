@@ -1,5 +1,12 @@
 # @global-x-etfs/gx-components
 
+## 3.2.0
+
+### Patch Changes
+
+- Storybook Adjusts
+  - Many of the components have been adjusted to improve visualization in the Storybook Dashboard
+
 ## 3.1.8
 
 ### Patch Changes

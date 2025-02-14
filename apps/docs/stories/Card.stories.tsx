@@ -26,7 +26,7 @@ export const BlankCard: Story = {
 export const CardWithContent: Story = {
   args: {
     children: (
-      <>
+      <div className="w-[400px]">
         <h1 className="text-3xl font-bold mb-2">Hello World</h1>
         <p className="text-base">This is a card with some content</p>
         <p className="text-base">
@@ -34,23 +34,23 @@ export const CardWithContent: Story = {
           Quisquam, voluptatum. Blah blah blahh, random words...
         </p>
         <Button className="p-0 mt-4">Click Me</Button>
-      </>
+      </div>
     ),
     border: "top_accent",
-    className: "flex flex-col",
+    className: "flex flex-col shadow-xl",
   },
 };
 
 export const BroadcastAppearancesCard: Story = {
   render: () => {
     return (
-      <Card border="top_accent" className="flex flex-col gap-4 shadow-xl">
+      <Card border="top_accent" className="flex flex-col gap-4 shadow-xl w-[400px]">
         <img
           src="https://www.globalxetfs.com/content/files/Rohan-News.jpg"
           alt="Rohan News"
         />
         <p className="text-granite text-ml font-light">7/7/2023</p>
-        <h3 className="text-xl">
+        <h3 className="text-xl text-marine">
           Remain Wary Of Oil Demand In 2024 (Ameritrade Network) | Director of
           Research Rohan Reddy
         </h3>

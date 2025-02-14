@@ -25,7 +25,11 @@ const breakdownChartMockData = {
 
 export const BreakdownChartStory: StoryObj<typeof BreakdownChart> = {
   render: () => {
-    return <BreakdownChart data={breakdownChartMockData} title="Sector" />;
+    return (
+      <div className="p-8">
+        <BreakdownChart data={breakdownChartMockData} title="Sector" />
+      </div>
+    );
   },
 };
 
@@ -63,7 +67,7 @@ export const PremiumDiscountChartStory: StoryObj<typeof PremiumDiscountChart> =
   {
     render: () => {
       return (
-        <div className="max-w-[850px]">
+        <div className="max-w-[850px] p-8">
           <PremiumDiscountChart data={premiumDiscountChartMockData} />
         </div>
       );
@@ -118,7 +122,7 @@ const performanceBarChartMockProps = {
 export const PerformanceBarChartStory: StoryObj<typeof PerformanceBarChart> = {
   render: () => {
     return (
-      <div className="max-w-[850px]">
+      <div className="max-w-[850px] p-8">
         <PerformanceBarChart ticker="TICKER" {...performanceBarChartMockProps} />
       </div>
     );

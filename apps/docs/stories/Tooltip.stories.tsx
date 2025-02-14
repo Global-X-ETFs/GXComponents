@@ -30,7 +30,7 @@ export const ExampleTooltip: Story = {
           <Button>Hover</Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Add to library</p>
+          <p>Tooltip Text Here</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

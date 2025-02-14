@@ -117,7 +117,7 @@ export const ExploreOurETFsCarousel: Story = {
   },
 };
 
-export const EUExploreETFsCardWithTicker: Story = {
+export const ExploreETFsCardWithAnimatedIcons: Story = {
   render: () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -201,11 +201,12 @@ export const EUExploreETFsCardWithTicker: Story = {
                     <CategoryCardButton>Explore</CategoryCardButton>
                   </CategoryCard>
 
-                  <VerticalSVGTicker
-                    className="order-1 md:order-2"
-                    duration={4000}
-                    iconsURL={iconsURL}
-                  />
+                  <div className="order-1 md:order-2">
+                    <VerticalSVGTicker
+                      duration={4000}
+                      iconsURL={iconsURL}
+                    />
+                  </div>
                 </div>
               </CarouselItem>
             ))}

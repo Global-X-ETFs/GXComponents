@@ -18,11 +18,13 @@ export default meta;
 
 export const BasicStat: Story = {
   render: () => (
-    <Stat>
-      <StatTitle title="200" after="+" />
-      <StatDescription description="Diverse team of more than 200 financial professionals" />
-      <StatSubtitle subtitle="(As of March, 2024) "></StatSubtitle>
-    </Stat>
+    <div className="bg-marine p-10 w-80">
+      <Stat className="md:w-full">
+        <StatTitle title="200" after="+" />
+        <StatDescription description="Diverse team of more than 200 financial professionals" />
+        <StatSubtitle subtitle="(As of March, 2024) "></StatSubtitle>
+      </Stat>
+    </div>
   ),
 };
 
@@ -36,19 +38,34 @@ export const ExampleStats: Story = {
         <h3 className="text-white text-xl font-normal font-proxima mx-auto text-center py-12">
           With a global footprint spanning Europe, Asia, and Latin America
         </h3>
-        <div className="flex items-center md:justify-around md:flex-row flex-col ">
-          <Stat>
-            <StatTitle title="200" after="+" />
-            <StatDescription description="Diverse team of more than 200 financial professionals" />
+        <div className="flex md:justify-between md:flex-row flex-col text-center max-w-5xl [&_p]:mx-auto">          
+          <Stat className="px-11">
+            <StatTitle
+              after="+"
+              className="lg:text-11xl [&>sub]:relative [&>sub]:-top-5 lg:[&>sub]:-top-8"
+              sup=""
+              title="200"
+            />
+            <StatDescription className="max-w-64" description="Diverse team of more than 200 financial professionals" />
           </Stat>
-          <Stat>
-            <StatTitle title="$51bn" sup="~" />
-            <StatDescription description="of AUM in Global X ETFs listed worldwide" />
+          <Stat className="px-11">
+            <StatTitle
+              after="bn"
+              className="lg:text-11xl [&>sub]:relative [&>sub]:-top-5 lg:[&>sub]:-top-8"
+              sup="˜$"
+              title="93"
+            />
+            <StatDescription className="max-w-64" description="of AUM in Global X ETFs listed worldwide" />
             <StatSubtitle subtitle="(as of December 2023)" />
           </Stat>
-          <Stat>
-            <StatTitle title="1" />
-            <StatDescription description="one team, one shared mission" />
+          <Stat className="px-11">
+            <StatTitle
+              after=""
+              className="lg:text-11xl [&>sub]:relative [&>sub]:-top-5 lg:[&>sub]:-top-8"
+              sup=""
+              title="1"
+            />
+            <StatDescription className="max-w-64" description="one team, one shared mission" />
           </Stat>
         </div>
       </div>

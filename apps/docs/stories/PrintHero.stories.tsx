@@ -22,6 +22,7 @@ export const ExamplePrintHero: Story = {
     imageURL: "https://staging-assets.globalxetfs.com/logo/GlobalX.svg",
     backgroundImageURL:
       "https://staging-assets.globalxetfs.com/images/CompassRose_Blue.svg",
+      className: "py-4",
   },
 };
 
@@ -34,6 +35,7 @@ export const PrintHeroWithOutBackgroundImage: Story = {
     },
     imageURL: "https://staging-assets.globalxetfs.com/logo/GlobalX.svg",
     backgroundColour: "darkblue",
+    className: "py-4",
   },
 };
 
@@ -43,6 +45,7 @@ export const PrintHeroWithOutRHS: Story = {
     imageURL: "https://staging-assets.globalxetfs.com/logo/GlobalX.svg",
     backgroundImageURL:
       "https://staging-assets.globalxetfs.com/images/CompassRose_Blue.svg",
+      className: "py-4",
   },
 };
 
@@ -53,16 +56,20 @@ export const PrintHeroWithOutImage: Story = {
       title: "Q2 2023 Overlap Analysis",
       subtitle: "Source: Global X ETFs and Bloomberg as of 6/30/2023",
     },
+    imageURL: "https://staging-assets.globalxetfs.com/logo/GlobalX.svg",
     backgroundImageURL:
       "https://staging-assets.globalxetfs.com/images/CompassRose_Blue.svg",
+      className: "py-4",
   },
 };
 
 export const PrintHeroWithOutRHSAndImage: Story = {
   args: {
     title: "Thematic Exposure",
+    imageURL: "https://staging-assets.globalxetfs.com/logo/GlobalX.svg",
     backgroundImageURL:
       "https://staging-assets.globalxetfs.com/images/CompassRose_Blue.svg",
+      className: "py-4",
   },
 };
 
@@ -75,6 +82,7 @@ export const PrintHeroWithOutTitle: Story = {
     imageURL: "https://staging-assets.globalxetfs.com/logo/GlobalX.svg",
     backgroundImageURL:
       "https://staging-assets.globalxetfs.com/images/CompassRose_Blue.svg",
+      className: "py-4",
   },
 };
 
@@ -87,5 +95,6 @@ export const PrintHeroWithTransparentBackground: Story = {
     },
     imageURL: "https://staging-assets.globalxetfs.com/logo/GlobalX.svg",
     backgroundColour: "transparent",
+    className: "py-4",
   },
 };

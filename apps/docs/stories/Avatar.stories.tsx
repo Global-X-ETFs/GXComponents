@@ -13,6 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@global-x-etfs/gx-components";
+import LinkedInIconFull from "./assets/LinkedInFull.svg?react";
 
 const meta: Meta = {
   title: "Components/Avatar",
@@ -27,60 +28,78 @@ export default meta;
 export const ExampleAvatar: Story = {
   render: () => {
     return (
-      <Avatar>
-        <AvatarImage
-          src="https://globalxetfs.eu/content/files/Tom_Park-600x600-1.jpg"
-          alt="Thomas Park"
-        />
-        <AvatarDetails name="Thomas Park" position="Interim CEO" />
-        <Dialog>
-          <DialogTrigger>
-            <Button className="font-normal">Read Bio</Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Thomas Park</DialogTitle>
-              <DialogClose />
-            </DialogHeader>
-            <DialogDescription>
-              <Card className="flex flex-col gap-4 font-proxima">
-                <img
-                  src="https://globalxetfs.eu/content/files/Tom_Park-600x600-1.jpg"
-                  alt="Thomas Park"
-                  className="mt-8 aspect-square"
-                />
-                <div className="font-sans">
-                  <h3 className="text-xl">Thomas Park</h3>
-                  <p className="text-md text-granite">Interim CEO</p>
-                </div>
-                <div className="text-granite gap-4 flex flex-col">
-                  <p>
-                    Tom joined Global X as a member of the board in 2018. He
-                    leads the senior management team to drive execution across
-                    all functional areas, fulfilling the company’s mission of
-                    empowering investors with unexplored and intelligent
-                    solutions.
-                  </p>
-                  <p>
-                    For the past 15 years, Tom has held senior roles in the
-                    global ETF, real estate, private equity and venture capital
-                    divisions of our parent company, Mirae Asset Global
-                    Investments. He is currently co-CEO of Mirae Asset Global
-                    Investments (USA), in addition to serving on the board of
-                    Horizons ETFs (Canada), among other Mirae Asset entities.
-                    Previously, Tom worked in the investment banking divisions
-                    of Goldman Sachs and KPMG Consulting (now BearingPoint).
-                  </p>
-                  <p>
-                    Tom holds a BA from The American University of Paris and an
-                    MBA from the University of Chicago Booth School of Business.
-                  </p>
-                </div>
-              </Card>
-            </DialogDescription>
+      <div className="w-56">
+        <Avatar>
+          <AvatarImage
+            src="https://www.globalxetfs.com/content/files/Ryan_OConnor-600x600-1.jpg"
+            alt="Ryan O’Connor"
+          />
+          <AvatarDetails name="Ryan O’Connor" position="Chief Executive Officer" />
+          <Dialog>
+            <DialogTrigger>
+              <Button className="font-normal">Read Bio</Button>
+            </DialogTrigger>
+            <DialogContent aria-describedby={undefined} className="max-w-5xl ">
+              <DialogHeader className="bg-neutral-50">
+                <DialogTitle />
+                <DialogClose />
+              </DialogHeader>
+              <DialogDescription>
+                <Card border="rounded" className="flex flex-col md:flex-row gap-8 font-proxima items-start">
+                  <img
+                    src="https://www.globalxetfs.com/content/files/Ryan_OConnor-600x600-1.jpg"
+                    alt="Ryan O’Connor"
+                    className="aspect-square w-full h-auto md:w-96 md:h-96"
+                    height={380}
+                    width={380}
+                  />
+                  <div className="flex flex-col">
+                    <div className="font-sans mb-7">
+                      <div className="flex justify-between">
+                        <h3 className="text-3xl text-marine tracking-wider">
+                          Ryan O’Connor
+                        </h3>
+                        <div className="hidden md:flex">
+                          <LinkedInIconFull className="fill-orange cursor-pointer w-5 h-5 mr-2 self-center" />
+                          <Button
+                            afterContent="arrow"
+                            variant="link"
+                          >
+                            View LinkedIn
+                          </Button>
+                        </div>
+                      </div>
+                      <p className="text-md text-granite mb-2">
+                        Chief Executive Officer
+                      </p>
+                    </div>
+                    <div className="text-granite text-ml whitespace-pre-wrap text-pretty  col-span-2 lg:col-span-1 [&_p]:mb-5">
+                      <p>
+                        Ryan was appointed CEO of Global X in 2024. He leads the senior management team to drive execution across all functional areas, fulfilling the company’s mission of empowering investors with unexplored and intelligent solutions.
+                      </p>
+                      <p>
+                        Over the past two decades, Ryan has held senior roles across the ETF industry, most recently as Global Head of ETF Product at Goldman Sachs Asset Management. Prior to that, Ryan worked with State Street Global Advisors, where he led a range of product and capital markets teams for the SPDR ETF franchise.
+                      </p>
+                      <p>
+                        Ryan holds a BA from Bates College and an MBA from Cornell University’s Johnson Graduate School of Management.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex md:hidden">
+                    <LinkedInIconFull className="fill-orange cursor-pointer w-5 h-5 mr-2 self-center" />
+                    <Button
+                      afterContent="arrow"
+                      variant="link"
+                    >
+                      View LinkedIn
+                    </Button>
+                  </div>
+                </Card>
+              </DialogDescription>
           </DialogContent>
-        </Dialog>
-      </Avatar>
+          </Dialog>
+        </Avatar>
+      </div>
     );
   },
 };

@@ -24,30 +24,30 @@ export const ExpandButtonDefaultExample: Story = {
   render: () => {
     const expanded = false;
     return (
-      <div>
+      <div className="w-72 sm:w-[500px]">
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Age</TableHead>
+              <TableHead>Period</TableHead>
+              <TableHead>Fund NAV</TableHead>
+              <TableHead>Market Price</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell>1</TableCell>
-              <TableCell>John Doe</TableCell>
-              <TableCell>30</TableCell>
+              <TableCell>1 Month</TableCell>
+              <TableCell>10.10%</TableCell>
+              <TableCell>20.20%</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>2</TableCell>
-              <TableCell>Jane Smith</TableCell>
-              <TableCell>25</TableCell>
+              <TableCell>3 Months</TableCell>
+              <TableCell>10.10%</TableCell>
+              <TableCell>20.20%</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>3</TableCell>
-              <TableCell>John Smith</TableCell>
-              <TableCell>40</TableCell>
+              <TableCell>1 Year</TableCell>
+              <TableCell>10.10%</TableCell>
+              <TableCell>20.20%</TableCell>
             </TableRow>
           </TableBody>
         </Table>
