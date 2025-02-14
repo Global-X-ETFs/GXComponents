@@ -118,7 +118,7 @@ export const EULocaleSelector: Story = {
               <div className="max-h-[50svh] md:max-h-[70svh] p-10 flex flex-wrap overflow-auto w-full  gap-y-4">
                 {countries.map((country) => (
                   <div
-                    className="flex justify-start gap-4 px-8 w-full sm:w-1/2 md:w-1/3 place-items-center text-white hover:text-orange-hover transition-colors duration-300"
+                    className="flex justify-start gap-4 px-8 w-full sm:w-1/2 md:w-1/3 place-items-center text-white cursor-pointer hover:text-orange-hover transition-colors duration-300"
                     key={country.name}
                   >
                     <div className="w-12 h-12">{country.icon}</div>

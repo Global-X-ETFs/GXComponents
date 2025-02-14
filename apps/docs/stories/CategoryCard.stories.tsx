@@ -20,16 +20,18 @@ type Story = StoryObj<typeof meta>;
 export const CategoryCardExample: Story = {
   render: function Render() {
     return (
-      <CategoryCard>
-        <CategoryCardTitle>Thematic Growth ETFs</CategoryCardTitle>
-        <CategoryCardSubtitle>Harness Disruption</CategoryCardSubtitle>
-        <CategoryCardDescription>
-          Investing in companies at the leading edge of long-term, structural
-          shifts in the global economy. Solutions primarily target emerging
-          technologies, changing consumer preferences, and green innovation.
-        </CategoryCardDescription>
-        <CategoryCardButton>Explore</CategoryCardButton>
-      </CategoryCard>
+      <div className="w-[500px] text-marine">
+        <CategoryCard>
+          <CategoryCardTitle>Thematic Growth ETFs</CategoryCardTitle>
+          <CategoryCardSubtitle>Harness Disruption</CategoryCardSubtitle>
+          <CategoryCardDescription>
+            Investing in companies at the leading edge of long-term, structural
+            shifts in the global economy. Solutions primarily target emerging
+            technologies, changing consumer preferences, and green innovation.
+          </CategoryCardDescription>
+          <CategoryCardButton>Explore</CategoryCardButton>
+        </CategoryCard>
+      </div>
     );
   },
 };

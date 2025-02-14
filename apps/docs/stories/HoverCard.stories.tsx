@@ -20,13 +20,13 @@ type Story = StoryObj<typeof meta>;
 
 export const ExampleHoverCard: Story = {
   render: () => (
-    <div className="flex">
+    <div className="flex mb-40">
       <HoverCard>
         <HoverCardTrigger className="cursor-pointer ">
           <Button>AIQ</Button>
         </HoverCardTrigger>
         <HoverCardContent>
-          <Card border="top_accent" className="flex flex-col  p-4">
+          <Card border="top_accent" className="flex flex-col p-4">
             <p className="pb-2 text-lg font-semibold text-black">
               Global X Artificial Intelligence & Technology ETF
             </p>
@@ -41,8 +41,8 @@ export const ExampleHoverCard: Story = {
                 Disruptive Technology
               </span>
             </p>
-            <a href={`https://globalxetfs.com/fund/AIQ`}>
-              <Button className="-ml-2" afterContent="arrow">
+            <a href={`https://globalxetfs.com/fund/AIQ`} className="mt-4">
+              <Button afterContent="arrow">
                 View More
               </Button>
             </a>

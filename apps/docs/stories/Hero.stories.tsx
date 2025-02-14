@@ -33,20 +33,21 @@ export default meta;
 
 export const HomeHero: Story = {
   render: () => (
-    <Hero
-      variant="home"
-      backgroundImageURL="https://staging-assets.globalxetfs.com/images/hero_bg_map.svg"
-      className="bg-marine"
-    >
-      <HeroTitle sup="®" variant="home">
-        Beyond Ordinary ETFs
-      </HeroTitle>
-      <HeroSubtitle>
-        Investing in companies at the leading edge of trends disrupting our
-        economy and reshaping the future. Solutions focus on structural shifts
-        in technology.
-      </HeroSubtitle>
-    </Hero>
+    <div className="bg-marine">
+      <Hero
+        variant="home"
+        backgroundImageURL="https://staging-assets.globalxetfs.com/images/hero_bg_map.svg"
+      >
+        <HeroTitle sup="®" variant="home">
+          Beyond Ordinary ETFs
+        </HeroTitle>
+        <HeroSubtitle>
+          Investing in companies at the leading edge of trends disrupting our
+          economy and reshaping the future. Solutions focus on structural shifts
+          in technology.
+        </HeroSubtitle>
+      </Hero>
+    </div>
   ),
 };
 
@@ -60,7 +61,6 @@ export const BasicHero: Story = {
       <HeroSubtitle variant="page">
         Thoroughly researched perspectives and commentary on the trends shaping
         global markets.
-        <HeroActionButton>Subscribe</HeroActionButton>
       </HeroSubtitle>
     </Hero>
   ),
@@ -71,6 +71,7 @@ export const BasicIndentedHero: Story = {
     <Hero
       variant="basic"
       backgroundImageURL="https://staging-assets.globalxetfs.com/images/TopographicPattern.svg"
+      className="w-screen md:w-[800px]"
     >
       <HeroTitle variant="basic-indented">In The News</HeroTitle>
     </Hero>
@@ -101,12 +102,12 @@ export const FundHero: Story = {
 export const EmptyHero: Story = {
   render: () => {
     return (
-      <div className="w-screen">
+      <div className="w-[calc(100vw-60px)] lg:w-[900px]">
         <NavigationHeader />
-      <Hero
-        variant="empty"
-        backgroundImageURL="https://staging-assets.globalxetfs.com/images/TopographicPattern.svg"
-      />
+        <Hero
+          variant="empty"
+          backgroundImageURL="https://staging-assets.globalxetfs.com/images/TopographicPattern.svg"
+        />
       </div>
     );
   },

@@ -198,7 +198,7 @@ export const MarineFilteredImage: Story = {
     return (
       <FundCard>
         <FundCardImage
-          src="https://assets.globalxetfs.com/svg-icons/BOTZ.svg"
+          src="https://assets.globalxetfs.com/svg-icons/black/BOTZ.svg"
           alt="Botz Logo"
           filter="marine"
         />

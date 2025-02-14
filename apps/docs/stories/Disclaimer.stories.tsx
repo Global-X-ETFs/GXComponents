@@ -13,14 +13,15 @@ type Story = StoryObj<typeof meta>;
 
 export const BlankDisclaimer: Story = {
   args: {
-    children: "Hello World",
+    children: "Page Disclaimer ...",
+    className: "p-8 w-[500px]",
   },
 };
 
-export const DisclaimerUS: Story = {
+export const DisclaimerWithTextOnly: Story = {
   args: {
     children: (
-      <>
+      <div className="px-6 py-8 [&_p]:mb-5">
         <p>
           Investing involves risk, including the possible loss of principal. In
           addition to the normal risks associated with investing, international
@@ -73,15 +74,15 @@ export const DisclaimerUS: Story = {
           investing in the Global X Funds. Neither SIDCO, Global X nor Mirae
           Asset Global Investments are affiliated with these entities.
         </p>
-      </>
+      </div>
     ),
   },
 };
 
-export const DisclaimerEU: Story = {
+export const DisclaimerWithBackToTopButton: Story = {
   args: {
     children: (
-      <>
+      <div className="px-6 py-8 [&_p]:mb-5">
         <p>
           Communications issued in the European Union relating to Global X UCITS
           ETFs are issued by Global X Management Company (Europe) Limited (“GXM
@@ -145,7 +146,7 @@ export const DisclaimerEU: Story = {
         >
           Back to Top
         </Button>
-      </>
+      </div>
     ),
   },
 };

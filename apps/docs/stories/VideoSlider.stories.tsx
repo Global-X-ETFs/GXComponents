@@ -11,6 +11,24 @@ import {
 import React, { useState } from "react";
 import VideoPlayerIcon from "../stories/assets/VideoPlayer.svg?react";
 
+const videos = [
+	{
+		image: "https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg",
+		title: "An Active Approach for Emerging Markets",
+		description: "Explore why we chose an actively managed approach to investing in emerging markets.",
+	},
+	{
+		image: "https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg",
+		title: "An Active Approach for Emerging Markets",
+		description: "Explore why we chose an actively managed approach to investing in emerging markets.",
+	},
+	{
+		image: "https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg",
+		title: "An Active Approach for Emerging Markets",
+		description: "Explore why we chose an actively managed approach to investing in emerging markets.",
+	},
+];
+
 const meta = {
 	title: "Components/VideoSlider",
 	component: VideoSlider,
@@ -28,152 +46,45 @@ export const ExampleVideoSlider: Story = {
 
 		return (
 			<Card className="hidden md:flex flex-col w-full mx-auto bg-transparent p-0">
-				<VideoSlider>
-					<VideoSliderItemGroup activeIndex={activeIndex} setActiveIndex={setActiveIndex} nTabs={nTabs} showArrows>
+			 	<VideoSlider>
+					<VideoSliderItemGroup activeIndex={activeIndex} setActiveIndex={setActiveIndex} nTabs={nTabs} showArrows arrowColor="marine" cardType="full">
 
-						<VideoSliderItem>
-							<div className="grid grid-cols-3">
-								<CategoryCard
-									className="col-span-1 text-left px-3 md:px-3 py-0 md:py-0 [&>p]:hover:opacity-100 min-h-[360px]"
-								>
-									<div className="relative">
-										<img
-											src="https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg"
-											alt="Thomas Park"
-											className="brightness-75"
-											draggable="false"
-											width={380}
-											height={215}
-										/>
-										<VideoPlayerIcon className="absolute left-[41%] top-[35%] w-12 h-auto -mt-0.5 mr-3 cursor-pointer fill-white" />
-									</div>
-									<p className="font-sans text-2xl text-marine leading-tight hover:text-orange mt-6 mb-3">
-										Advances in Artificial Intelligence with Cartwheel Co-Founder Andrew Carr
-									</p>
-									<p className="font-proxima text-md text-granite my-4">
-										Andrew Carr (Co-Founder of Cartwheel) discusses how numerous artificial intelligence applications are disrupting businesses and industries.
-									</p>
-								</CategoryCard>
-								<CategoryCard
-									className="col-span-1 text-left px-3 md:px-3 py-0 md:py-0 [&>p]:hover:opacity-100 min-h-[360px]"
-								>
-									<div className="relative">
-										<img
-											src="https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg"
-											alt="Thomas Park"
-											className="brightness-75"
-											draggable="false"
-											width={380}
-											height={215}
-										/>
-										<VideoPlayerIcon className="absolute left-[41%] top-[35%] w-12 h-auto -mt-0.5 mr-3 cursor-pointer fill-white" />
-									</div>
-									<p className="font-sans text-2xl text-marine leading-tight hover:text-orange mt-6 mb-3">
-										Advances in Artificial Intelligence with Cartwheel Co-Founder Andrew Carr
-									</p>
-									<p className="font-proxima text-md text-granite my-4">
-										Andrew Carr (Co-Founder of Cartwheel) discusses how numerous artificial intelligence applications are disrupting businesses and industries.
-									</p>
-								</CategoryCard>
-								<CategoryCard
-									className="col-span-1 text-left px-3 md:px-3 py-0 md:py-0 [&>p]:hover:opacity-100 min-h-[360px]"
-								>
-									<div className="relative">
-										<img
-											src="https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg"
-											alt="Thomas Park"
-											className="brightness-75"
-											draggable="false"
-											width={380}
-											height={215}
-										/>
-										<VideoPlayerIcon className="absolute left-[41%] top-[35%] w-12 h-auto -mt-0.5 mr-3 cursor-pointer fill-white" />
-									</div>
-									<p className="font-sans text-2xl text-marine leading-tight hover:text-orange mt-6 mb-3">
-										Advances in Artificial Intelligence with Cartwheel Co-Founder Andrew Carr
-									</p>
-									<p className="font-proxima text-md text-granite my-4">
-										Andrew Carr (Co-Founder of Cartwheel) discusses how numerous artificial intelligence applications are disrupting businesses and industries.
-									</p>
-								</CategoryCard>
-							</div>
-						</VideoSliderItem>
-
-						<VideoSliderItem>
-							<div className="grid grid-cols-3">
-								<CategoryCard
-									className="col-span-1 text-left px-3 md:px-3 py-0 md:py-0 [&>p]:hover:opacity-100 min-h-[360px]"
-								>
-									<div className="relative">
-										<img
-											src="https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg"
-											alt="Thomas Park"
-											className="brightness-75"
-											draggable="false"
-											width={380}
-											height={215}
-										/>
-										<VideoPlayerIcon className="absolute left-[41%] top-[35%] w-12 h-auto -mt-0.5 mr-3 cursor-pointer fill-white" />
-									</div>
-									<p className="font-sans text-2xl text-marine leading-tight hover:text-orange mt-6 mb-3">
-										Advances in Artificial Intelligence with Cartwheel Co-Founder Andrew Carr
-									</p>
-									<p className="font-proxima text-md text-granite my-4">
-										Andrew Carr (Co-Founder of Cartwheel) discusses how numerous artificial intelligence applications are disrupting businesses and industries.
-									</p>
-								</CategoryCard>
-								<CategoryCard
-									className="col-span-1 text-left px-3 md:px-3 py-0 md:py-0 [&>p]:hover:opacity-100 min-h-[360px]"
-								>
-									<div className="relative">
-										<img
-											src="https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg"
-											alt="Thomas Park"
-											className="brightness-75"
-											draggable="false"
-											width={380}
-											height={215}
-										/>
-										<VideoPlayerIcon className="absolute left-[41%] top-[35%] w-12 h-auto -mt-0.5 mr-3 cursor-pointer fill-white" />
-									</div>
-									<p className="font-sans text-2xl text-marine leading-tight hover:text-orange mt-6 mb-3">
-										Advances in Artificial Intelligence with Cartwheel Co-Founder Andrew Carr
-									</p>
-									<p className="font-proxima text-md text-granite my-4">
-										Andrew Carr (Co-Founder of Cartwheel) discusses how numerous artificial intelligence applications are disrupting businesses and industries.
-									</p>
-								</CategoryCard>
-								<CategoryCard
-									className="col-span-1 text-left px-3 md:px-3 py-0 md:py-0 [&>p]:hover:opacity-100 min-h-[360px]"
-								>
-									<div className="relative">
-										<img
-											src="https://cms-stage-cdn.globalxetfs.com/231121-Tejas_Nvidia-Q3-Earnings.jpg"
-											alt="Thomas Park"
-											className="brightness-75"
-											draggable="false"
-											width={380}
-											height={215}
-										/>
-										<VideoPlayerIcon className="absolute left-[41%] top-[35%] w-12 h-auto -mt-0.5 mr-3 cursor-pointer fill-white" />
-									</div>
-									<p className="font-sans text-2xl text-marine leading-tight hover:text-orange mt-6 mb-3">
-										Advances in Artificial Intelligence with Cartwheel Co-Founder Andrew Carr
-									</p>
-									<p className="font-proxima text-md text-granite my-4">
-										Andrew Carr (Co-Founder of Cartwheel) discusses how numerous artificial intelligence applications are disrupting businesses and industries.
-									</p>
-								</CategoryCard>
-							</div>
-						</VideoSliderItem>
-
-					</VideoSliderItemGroup>
-					<VideoSliderTabGroup>
-						<VideoSliderTab activeIndex={activeIndex} setActiveIndex={setActiveIndex} index={0} />
-						<VideoSliderTab activeIndex={activeIndex} setActiveIndex={setActiveIndex} index={1} />
-					</VideoSliderTabGroup>
-				</VideoSlider>
-			</Card>
+						{ [...Array(2)].map((_, index) => (
+							<VideoSliderItem key={index}>
+								<div className="grid grid-cols-3">
+									{ videos.map((video, index) => (
+										<CategoryCard
+											className="text-left px-3.5 md:px-3.5 py-0 md:py-0 [&>p]:hover:opacity-100 min-h-[360px]"
+										>
+											<div className="relative">
+												<img
+													src={video.image}
+													alt="Thomas Park"
+													className="brightness-75"
+													draggable="false"
+													width={380}
+													height={215}
+												/>
+												<VideoPlayerIcon className="absolute left-[41%] top-[35%] w-12 h-auto -mt-0.5 mr-3 cursor-pointer fill-white" />
+											</div>
+											<p className="font-sans text-2xl text-marine leading-tight hover:text-orange mt-6 mb-3">
+												{video.title}
+											</p>
+											<p className="font-proxima text-md text-granite my-4">
+												{video.description}
+											</p>
+										</CategoryCard>
+									))}
+								</div>
+							</VideoSliderItem>
+						))}
+				</VideoSliderItemGroup>
+				<VideoSliderTabGroup>
+		 			<VideoSliderTab activeIndex={activeIndex} setActiveIndex={setActiveIndex} index={0} />
+		 			<VideoSliderTab activeIndex={activeIndex} setActiveIndex={setActiveIndex} index={1} />
+		 		</VideoSliderTabGroup>
+			</VideoSlider>
+		</Card>
 		);
 	},
 };
