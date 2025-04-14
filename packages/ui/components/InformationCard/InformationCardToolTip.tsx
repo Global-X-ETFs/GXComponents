@@ -29,6 +29,7 @@ const InformationCardToolTip = React.forwardRef<
   InformationCardTooltipProps
 >(({ className, children, delayDuration = 150, ...props }, ref) => {
   const innerRef = React.useRef<HTMLDivElement | null>(null);
+  const hoverTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   React.useImperativeHandle(ref, () => innerRef.current!, []);
 
@@ -53,7 +54,8 @@ const InformationCardToolTip = React.forwardRef<
 
   React.useEffect(() => {
     const handleClickOutside = (event) => {
-      if (innerRef?.current && !innerRef?.current.contains(event.target)) {
+
+      if (innerRef?.current && !innerRef?.current.contains(event.target) && isTouchDevice) {
         setIsOpen(false);
       }
     }
@@ -61,17 +63,37 @@ const InformationCardToolTip = React.forwardRef<
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref]);
+  }, [ref, isTouchDevice]);
 
+  const handleMouseEnter = () => {
+    if (!isTouchDevice) {
+      hoverTimeoutRef.current = setTimeout(() => {
+        setIsOpen(true);
+      }, delayDuration);
+    }
+  }
+  const handleMouseLeave = () => {
+    if (!isTouchDevice) {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+        hoverTimeoutRef.current = null;
+      }
+      setIsOpen(false);
+    }
+  }
 
   return (
     <TooltipProvider>
       <Tooltip 
         delayDuration={!isTouchDevice ? delayDuration : 0}
-        {...(isTouchDevice ? { open: isOpen } : {} )}
+        open={isOpen}
         {...props} 
       >
-        <TooltipTrigger onClick={isTouchDevice ? toggleMobileOpen : () => {}}>
+        <TooltipTrigger 
+          onClick={isTouchDevice ? toggleMobileOpen : undefined} 
+          onMouseEnter={!isTouchDevice ? handleMouseEnter : undefined} 
+          onMouseLeave={!isTouchDevice ? handleMouseLeave : undefined}
+        >
           <InformationCardToolTipTrigger className={className} />
         </TooltipTrigger>
         <TooltipContent

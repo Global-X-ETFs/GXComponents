@@ -1,5 +1,12 @@
 # docs
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated Tooltip Behavior
+  - @global-x-etfs/gx-components@3.2.1
+
 ## 0.1.0
 
 ### Patch Changes
