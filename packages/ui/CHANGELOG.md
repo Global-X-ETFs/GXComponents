@@ -1,5 +1,12 @@
 # @global-x-etfs/gx-components
 
+## 3.2.1
+
+### Patch Changes
+
+- Information Card Tool Tip Adjusts
+  - Update tooltip hanlders to disable hiding on click
+
 ## 3.2.0
 
 ### Patch Changes
