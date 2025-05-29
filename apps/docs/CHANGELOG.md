@@ -1,5 +1,12 @@
 # docs
 
+## 0.1.2
+
+### Patch Changes
+
+- Updating the MenuButton (mobile nav menu)
+  - @global-x-etfs/gx-components@3.2.2
+
 ## 0.1.1
 
 ### Patch Changes
