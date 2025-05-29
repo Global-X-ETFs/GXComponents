@@ -1,5 +1,12 @@
 # @global-x-etfs/gx-components
 
+## 3.2.2
+
+### Patch Changes
+
+- MenuButton.tsx
+  - Updating the hamburger button. Without using the motion library
+
 ## 3.2.1
 
 ### Patch Changes
