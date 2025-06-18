@@ -18,9 +18,7 @@ interface AvatarImage extends HTMLAttributes<HTMLImageElement> {
 
 function AvatarImage({ src, alt, className }: AvatarImage) {
   return (
-    <div className={className}>
-      <img src={src} alt={alt} className={"rounded-full"} />
-    </div>
+    <img src={src} alt={alt} className={cn("rounded-full aspect-square object-cover", className)} />
   );
 }
 
