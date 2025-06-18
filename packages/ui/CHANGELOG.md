@@ -1,5 +1,11 @@
 # @global-x-etfs/gx-components
 
+## 3.2.3
+
+### Patch Changes
+
+- 1b0ad34: Changed the way Avatar component works under the hood. Can now pass a classname directly to the image.
+
 ## 3.2.2
 
 ### Patch Changes
@@ -77,8 +83,8 @@
 ### Patch Changes
 
 - Updating BreakdownCharts
-   - Adding Order Parameters (by weight, alphabetical, and ranking)
-	 - Fixing the display of 0.0 when the value is less than 0.04
+  - Adding Order Parameters (by weight, alphabetical, and ranking)
+  - Fixing the display of 0.0 when the value is less than 0.04
 
 ## 3.0.8
 

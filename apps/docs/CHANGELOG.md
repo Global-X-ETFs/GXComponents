@@ -1,5 +1,13 @@
 # docs
 
+## 0.1.3
+
+### Patch Changes
+
+- 1b0ad34: addde empty variant
+- Updated dependencies [1b0ad34]
+  - @global-x-etfs/gx-components@3.2.3
+
 ## 0.1.2
 
 ### Patch Changes
