@@ -1,41 +1,41 @@
 @font-face {
   font-family: "Brown";
-  src: url("./fonts/lineto-brown-regular.woff") format("woff");
+  src: url("./fonts/BrownLLWeb-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Brown";
-  src: url("./fonts/lineto-brown-bold.woff") format("woff");
+  src: url("./fonts/BrownLLWeb-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Brown";
-  src: url("./fonts/lineto-brown-light.woff") format("woff");
+  src: url("./fonts/BrownLLWeb-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Brown";
-  src: url("./fonts/lineto-brown-thin.woff") format("woff");
+  src: url("./fonts/BrownLLWeb-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Brown";
-  src: url("./fonts/lineto-brown-thinItalic.woff") format("woff");
+  src: url("./fonts/BrownLLWeb-ThinItalic.woff") format("woff");
   font-weight: 100;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Brown";
-  src: url("./fonts/lineto-brown-boldItalic.woff") format("woff");
+  src: url("./fonts/BrownLLWeb-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
 }
