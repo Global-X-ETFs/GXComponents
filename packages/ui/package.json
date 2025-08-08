@@ -1,6 +1,6 @@
 {
   "name": "@global-x-etfs/gx-components",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "sideEffects": false,
   "license": "MIT",
   "type": "module",

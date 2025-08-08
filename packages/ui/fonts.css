@@ -7,8 +7,22 @@
 
 @font-face {
   font-family: "Brown";
+  src: url("./fonts/BrownLLWeb-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brown";
   src: url("./fonts/BrownLLWeb-Bold.woff") format("woff");
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brown";
+  src: url("./fonts/BrownLLWeb-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
