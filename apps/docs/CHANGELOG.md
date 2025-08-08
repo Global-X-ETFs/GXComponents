@@ -1,5 +1,12 @@
 # docs
 
+## 0.1.4
+
+### Patch Changes
+
+- Adding/Updating the Brown font from stg to LL (new license)
+  - @global-x-etfs/gx-components@3.2.4
+
 ## 0.1.3
 
 ### Patch Changes

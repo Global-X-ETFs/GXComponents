@@ -1,5 +1,12 @@
 # @global-x-etfs/gx-components
 
+## 3.2.4
+
+### Patch Changes
+
+- 4d2d4c8: Updating the Brown font according to the new licenses. (from stg to LL)
+  - Also adding Medium and Black font options
+
 ## 3.2.3
 
 ### Patch Changes
