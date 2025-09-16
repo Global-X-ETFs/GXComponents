@@ -1,5 +1,11 @@
 # @global-x-etfs/gx-components
 
+## 3.2.5
+
+### Patch Changes
+
+- 66dc5ee: Adding a new roundedWhite variant to the Select component
+
 ## 3.2.4
 
 ### Patch Changes
