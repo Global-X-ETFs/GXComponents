@@ -43,6 +43,7 @@ const selectLabelVariants = cva("", {
       corp: "text-granite text-md leading-5",
       fund: "flex font-proxima text-sm lg:text-[13px] font-normal text-neutral-100 items-center",
       rounded: "text-marine text-lg",
+      roundedWhite: "text-white text-lg",
     },
   },
   defaultVariants: {
@@ -81,6 +82,9 @@ const selectTriggerVariants = cva("", {
       rounded: `flex items-center justify-center cursor-pointer appearance-none w-full 
       bg-white border border-marine text-marine hover:bg-neutral-700 px-5 py-2 rounded-md 
       focus:outline-none focus:shadow-outline`,
+      roundedWhite: `flex items-center justify-between cursor-pointer appearance-none w-full 
+      bg-transparent border border-white text-white px-5 py-2 rounded-md 
+      focus:outline-none focus:shadow-outline`,
     },
   },
   defaultVariants: {
@@ -107,7 +111,7 @@ const SelectTrigger = React.forwardRef<
     <SelectPrimitive.Icon asChild>
       {variant === "rounded" ? (
         <CaretDownIcon className="text-marine w-4 h-4 ml-1.5" />
-      ) : variant === "videos" ? (
+      ) : variant === "videos" || variant === "roundedWhite" ? (
         <CaretDownIcon className="text-white w-5 h-5 ml-1.5" />
       ) : (
         <CaretSortIcon className="h-4 w-4 opacity-50 text-orange" />
@@ -123,6 +127,7 @@ const selectContentVariants = cva("", {
       corp: "border-0 bg-neutral-700",
       fund: "border bg-neutral-700 shadow-md",
       rounded: "bg-white border border-gray-300 shadow-md rounded-md",
+      roundedWhite: "bg-white border border-gray-300 shadow-md rounded-md",
     },
   },
   defaultVariants: {
@@ -194,6 +199,7 @@ const selectItemVariants = cva("", {
     variant: {
       standard: 'text-granite rounded-sm py-1.5 pl-2 pr-8 text-sm hover:bg-neutral-500',
       rounded: `px-4 py-2 cursor-pointer text-lg text-marine bg-white hover:bg-neutral-700`,
+      roundedWhite: `px-4 py-2 cursor-pointer text-lg text-marine bg-white hover:bg-neutral-700`,
     },
   },
   defaultVariants: {

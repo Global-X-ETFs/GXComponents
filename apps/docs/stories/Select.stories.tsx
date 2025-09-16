@@ -85,3 +85,23 @@ export const ExampleSelectRounded: Story = {
     </div>
   ),
 };
+
+export const ExampleSelectRoundedWhite: Story = {
+  render: () => (
+    <div className="w-full bg-marine p-10">
+      <div className="w-[400px]">
+        <Select>
+          <SelectLabel variant="roundedWhite">Theme</SelectLabel>
+          <SelectTrigger variant="roundedWhite" className="w-1/2">
+            <SelectValue placeholder="Theme" className="justify-left items-start self-start" />
+          </SelectTrigger>
+          <SelectContent variant="roundedWhite">
+            <SelectItem variant="roundedWhite" value="light">Light</SelectItem>
+            <SelectItem variant="roundedWhite" value="dark">Dark</SelectItem>
+            <SelectItem variant="roundedWhite" value="system">System</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+    </div>
+  ),
+};
