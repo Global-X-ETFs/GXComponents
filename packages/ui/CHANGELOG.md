@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- Adding a new roundedWhite variant to the Select component
+- 66dc5ee: Adding a new roundedWhite variant to the Select component
 
 ## 3.2.4
 
