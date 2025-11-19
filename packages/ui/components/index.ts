@@ -81,3 +81,5 @@ export * from "./ImageSlider";
 export * from "./VideoSlider";
 
 export * from "./AlertDialog";
+
+export * from "./ImageZoom";
