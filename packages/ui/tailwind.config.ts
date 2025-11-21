@@ -58,6 +58,7 @@ const sharedConfig: Config = {
         "9xl": "52px",
         "10xl": "72px",
         "11xl": "80px",
+        "12xl": "96px",
       },
       width: {
         2.25: "0.55rem",
