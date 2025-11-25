@@ -1,5 +1,13 @@
 # docs
 
+## 0.1.6
+
+### Patch Changes
+
+- Adding a new ProximaNova Light and Medium fonts
+- Adding the font size 12 (96px)
+  - @global-x-etfs/gx-components@3.2.8
+
 ## 0.1.5
 
 ### Patch Changes
