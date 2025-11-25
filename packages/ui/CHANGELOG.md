@@ -1,5 +1,11 @@
 # @global-x-etfs/gx-components
 
+## 3.2.9
+
+### Patch Changes
+
+- Adding a ProximaNova-CondensedSemibold font
+
 ## 3.2.8
 
 ### Patch Changes
