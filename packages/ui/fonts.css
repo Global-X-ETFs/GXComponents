@@ -63,6 +63,13 @@
 
 @font-face {
   font-family: "ProximaNova";
+  src: url("./fonts/ProximaNova-MediumRegular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova";
   src: url("./fonts/ProximaNova-Semibold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
@@ -108,6 +115,13 @@
   src: url("./fonts/ProximaNova-CondensedSemiboldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600; 
+}
+
+@font-face {
+  font-family: "ProximaNova-Light";
+  src: url("./fonts/ProximaNova-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300; 
 }
 
 @font-face {
