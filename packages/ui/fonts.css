@@ -112,6 +112,13 @@
 
 @font-face {
   font-family: "ProximaNova-Condensed";
+  src: url("./fonts/ProximaNova-CondensedSemibold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600; 
+}
+
+@font-face {
+  font-family: "ProximaNova-Condensed";
   src: url("./fonts/ProximaNova-CondensedSemiboldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600; 
