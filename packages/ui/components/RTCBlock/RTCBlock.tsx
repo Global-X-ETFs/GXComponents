@@ -44,12 +44,12 @@ interface RTCBlockIconProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const RTCBlockIcon = React.forwardRef<HTMLDivElement, RTCBlockIconProps>(
-  ({ children, imageURL, className, fillOrange, ...props }, ref) => {
+  ({ imageURL, className, fillOrange, ...props }, ref) => {
     return (
       <div ref={ref} className="w-32 object-cover mb-5" {...props}>
         <img
           alt="Global RTC Icon"
-          className="max-w-32 max-h-32"
+          className={cn("max-w-32 max-h-32", className)}
           style={fillOrange ? { filter: 'brightness(0) saturate(100%) invert(44%) sepia(76%) saturate(3950%) hue-rotate(0deg) brightness(98%) contrast(109%)' } : {}}
           src={imageURL}
         />
