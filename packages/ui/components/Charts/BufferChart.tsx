@@ -1,5 +1,8 @@
 import React, { useMemo, useRef, useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import { TimeScale } from "chart.js";
+import 'chartjs-adapter-date-fns';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -21,7 +24,8 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  annotationPlugin
+  annotationPlugin,
+  TimeScale
 );
 
 export interface BufferChartDataPoint {
@@ -74,40 +78,25 @@ export function BufferChart({
   tooltipCapTaken = "Cap Taken",
   tooltipRemUp = "Remaining Upside",
 }: BufferChartProps) {
-  const chartRef = useRef<ChartJS<"line">>(null);
+  const chartRef = useRef<ChartJS<"line", { x: Date; y: number | null }[], { label: string }>>(null);
 
-  // Pad the data with empty data points to the last business day of the year
+  // Pad the data with empty data points to the last business day of the year/quarter
   const paddedData = useMemo(() => {
-    if (data.length === 0) return [];
-
-    let paddedData: BufferChartDataPoint[] = [];
-    const cursor = new Date(data[data.length - 1].date);
-    
+    if (!data.length) return [];
+  
+    const sorted = [...data].sort((a, b) => a.date.getTime() - b.date.getTime());
+    const out = [...sorted];
+  
+    const cursor = new Date(sorted[sorted.length - 1].date);
+    cursor.setDate(cursor.getDate() + 1);
+  
     while (cursor <= endDate) {
-      paddedData.unshift({
-        date: new Date(cursor),
-        spx_return: undefined,
-        close: null,
-        buffer_remaining: null,
-        buffer_taken: null,
-        cap_remaining: null,
-        cap_taken: null,
-        downside_before_buffer: null,
-        percent_from_cap: null,
-      });
+      out.push({ date: new Date(cursor), spx_return: null, close: null } as any);
       cursor.setDate(cursor.getDate() + 1);
     }
-
-    data.forEach((point) => {
-      paddedData.push(point);
-    });
-
-    paddedData = paddedData.sort((a, b) => a.date.getTime() - b.date.getTime());
-
-    return paddedData;
-  }, [data]);
-
-
+  
+    return out;
+  }, [data, endDate]);
 
   // Calculate normalized buffer return
   const bufferReturnNormalized = useMemo(() => {
@@ -115,57 +104,65 @@ export function BufferChart({
     const initialCloseValue = paddedData[0].close ?? 0;
 
     return paddedData.map((price) => {
-      if (!price.close) return null;
+      if (price.close === undefined || price.close === null) return null;
       return ((price.close - initialCloseValue) / initialCloseValue) * 100;
     });
   }, [paddedData]);
 
-  console.log(bufferReturnNormalized);
+  const lastRealDate = data.length ? data[data.length - 1].date : null;
 
   const chartData = useMemo(() => {
     return {
-      labels: paddedData.map((point) => point.date.toLocaleDateString()),
       datasets: [
         {
-          type: "line" as const,
           label: "SPX Return",
-          data: paddedData.map((point) => point.spx_return ?? null),
+          data: paddedData.map((p) => {
+            const isLastRealDate = lastRealDate && p.date.getTime() === lastRealDate.getTime();
+            const y = isLastRealDate && p.spx_return === 0 ? null : (p.spx_return ?? null);
+            return {x: p.date, y};
+          }),
           fill: false,
-          backgroundColor: "#FF5400",
           borderColor: "#FF5400",
+          backgroundColor: "#FF5400",
           pointRadius: 0,
           tension: 0,
         },
         {
-          type: "line" as const,
           label: fundTicker,
-          data: bufferReturnNormalized,
+          data: paddedData.map((p, i) => ({ x: p.date, y: bufferReturnNormalized[i] })),
           fill: false,
-          backgroundColor: "#002F37",
           borderColor: "#002F37",
+          backgroundColor: "#002F37",
           pointRadius: 0,
           tension: 0,
         },
       ],
     };
-  }, [paddedData, data, bufferReturnNormalized, fundTicker]);
+  }, [paddedData, bufferReturnNormalized, fundTicker]);
+  
+  
 
-  const options: ChartOptions<"line"> = useMemo(() => {
-    const allValues = [
-      cutoffs.buffer_min,
-      cutoffs.cap_max,
-      ...bufferReturnNormalized,
-      ...paddedData.map((point) => point.spx_return ?? null),
-    ];
-
-    const yMin = Math.floor(Math.min(...allValues)) - 10;
-    const yMax = Math.ceil(Math.max(...allValues)) + 10;
+  const options: ChartOptions<"line"> = useMemo(() => {  
+      const allValues = [
+        cutoffs.buffer_min,
+        cutoffs.cap_max,
+        ...bufferReturnNormalized,
+        ...paddedData.map((p) => p.spx_return),
+      ]
+      
+      const yMin = (allValues.length ? Math.floor(Math.min(...allValues)) : -10) - 10;
+      const yMax = (allValues.length ? Math.ceil(Math.max(...allValues)) : 10) + 10;
+      
     return {
       responsive: true,
       maintainAspectRatio: false,
 
       scales: {
         x: {
+          type: "time",
+          time: {
+            unit: "day",
+          },
           ticks: {
             font: {
               family: "proxima-nova-condensed, sans-serif",
@@ -214,7 +211,7 @@ export function BufferChart({
             {
               type: "label",
               content: `${outcomeCapLabel}: ${(cutoffs.cap_max - cutoffs.cap_min).toFixed(2)}%`,
-              xValue: "end",
+              xValue: endDate.getTime(),
               yValue: cutoffs.cap_max,
               font: {
                 family: "proxima-nova-condensed, sans-serif",
@@ -245,7 +242,6 @@ export function BufferChart({
               type: "line" as const,
               mode: "horizontal",
               value: 0,
-              scaleID: "y-axis-0",
               yMin: 0,
               yMax: 0,
               borderColor: "#8E8E8E",
@@ -290,7 +286,7 @@ export function BufferChart({
             {
               type: "label",
               content: `${outcomeBufferLabel}: ${Math.abs(cutoffs.buffer_min - cutoffs.buffer_max).toFixed(2)}%`,
-              xValue: "end",
+              xValue: endDate.getTime(),
               yValue: cutoffs.buffer_min,
               font: {
                 family: "proxima-nova-condensed, sans-serif",
@@ -321,7 +317,7 @@ export function BufferChart({
         },
       },
     };
-  }, [cutoffs, outcomeCapLabel, outcomeBufferLabel]);
+  }, [cutoffs, outcomeCapLabel, outcomeBufferLabel, endDate, bufferReturnNormalized, paddedData]);
   return (
     <div className="w-full aspect-video">
       <Line ref={chartRef} data={chartData} options={options} />

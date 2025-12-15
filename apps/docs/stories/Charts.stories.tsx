@@ -157,7 +157,7 @@ export const BufferChartStory: StoryObj<typeof BufferChart> = {
     
     return (
       <div className="max-w-[850px] p-8">
-        <Select onValueChange={(value) => setSelectedPeriod(Number(value))}>
+        <Select onValueChange={(value: string) => setSelectedPeriod(Number(value))}>
           <SelectLabel>Select Period</SelectLabel>
           <SelectTrigger>
             <SelectValue defaultValue={selectedPeriod.toString()}>{selectedPeriod}</SelectValue>
@@ -177,7 +177,7 @@ export const BufferChartStory: StoryObj<typeof BufferChart> = {
             cap_min: 0,
             cap_max: 11.43,
           }}
-          endDate={new Date(selectedPeriod, 11, 31)}  
+          endDate={new Date(selectedPeriod, 11, 29)}  
         />
       </div>
     );
