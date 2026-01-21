@@ -67,3 +67,11 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
+
+export const OuterClassName: Story = {
+  args: {
+    variant: "primary",
+    label: "Outer Class Name",
+    outerClassName: "bg-red-500 p-4",
+  },
+};
