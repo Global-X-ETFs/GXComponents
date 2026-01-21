@@ -26,6 +26,7 @@ export interface InputProps
   VariantProps<typeof inputVariants> {
   label?: string;
   labelClassName?: string;
+  outerClassName?: string;
   hintMessage?: string;
   promptMessage?: string;
   errorMessage?: string;
@@ -36,6 +37,7 @@ export interface InputProps
  * Input component
  * @param {string} type - Type of the input (text, password, email, etc...)
  * @param {string} label - Label for the input
+ * @param {string} outerClassName - Class name for the outer container
  * @param {string} hintMessage - Hint message for the input
  * @param {string} promptMessage - Prompt message for the input
  * @param {string} errorMessage - Error message for the input
@@ -46,6 +48,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     {
       className,
       labelClassName,
+      outerClassName,
       variant,
       textTransform,
       label,
@@ -60,7 +63,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     ref,
   ) => {
     return (
-      <div className="relative flex flex-col">
+      <div className={cn("relative flex flex-col", outerClassName)}>
         {label && (
           <div className="text-md py-1 leading-5">
             <label htmlFor={name} className={cn("text-granite", labelClassName)}>{label}</label>
