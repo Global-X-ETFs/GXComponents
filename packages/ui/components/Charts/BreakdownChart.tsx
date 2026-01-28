@@ -185,10 +185,11 @@ export interface BreakdownChartProps {
   data: Record<string, number>;
   order?: "alphabetical" | "rating" | "weight";
   capitalize?: boolean;
+  maxRecords?: number;
 }
 
-export function BreakdownChart({ data, title, order="weight", capitalize=true }: BreakdownChartProps): JSX.Element {
-  const records = prepareData(data, order);
+export function BreakdownChart({ data, title, order="weight", capitalize=true, maxRecords=11 }: BreakdownChartProps): JSX.Element {
+  const records = prepareData(data, order, maxRecords);
   const labels = capitalize ? Object.keys(records).map(capitalizeWords) : Object.keys(records);
   const values = Object.values(records);
 
