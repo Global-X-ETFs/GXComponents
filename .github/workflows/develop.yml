@@ -24,13 +24,15 @@ jobs:
           node-version: 18
           registry-url: 'https://npm.pkg.github.com/'
           scope: '@global-x-etfs'
-          always-auth: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
       - name: Install Dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm install
 
       - name: Build packages/ui
