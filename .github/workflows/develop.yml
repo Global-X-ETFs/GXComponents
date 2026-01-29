@@ -24,13 +24,15 @@ jobs:
           node-version: 18
           registry-url: 'https://npm.pkg.github.com/'
           scope: '@global-x-etfs'
-          always-auth: true
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
       - name: Install Dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm install
 
       - name: Build packages/ui
@@ -50,5 +52,5 @@ jobs:
       - name: Publish packages/ui
         working-directory: packages/ui
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: pnpm publish --no-git-checks --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}" --access restricted
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm publish --no-git-checks --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
