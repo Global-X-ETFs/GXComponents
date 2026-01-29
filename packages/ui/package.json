@@ -4,6 +4,13 @@
   "sideEffects": false,
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Global-X-ETFs/GXComponents.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     ".": "./dist/index.js",
     "./tailwind.config.ts": "./tailwind.config.ts",
