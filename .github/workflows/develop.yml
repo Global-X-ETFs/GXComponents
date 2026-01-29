@@ -51,4 +51,4 @@ jobs:
         working-directory: packages/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm publish --no-git-checks --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}" --access restricted
+        run: pnpm publish --no-git-checks --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
