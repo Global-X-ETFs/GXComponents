@@ -1,0 +1,120 @@
+name: Version Management
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+
+jobs:
+  version-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Get current version
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.version' packages/ui/package.json)
+          echo "current_version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check if version exists on registry
+        id: check_registry
+        run: |
+          if gh api /orgs/global-x-etfs/packages/npm/gx-components/versions \
+            --jq '.[].name' | grep -q "^${{ steps.get_version.outputs.current_version }}$"; then
+            echo "version_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "version_exists=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bump patch version
+        if: steps.check_registry.outputs.version_exists == 'true' && github.actor != 'github-actions[bot]'
+        working-directory: packages/ui
+        run: pnpm version patch --no-git-tag-version
+
+      - name: Get new version
+        if: steps.check_registry.outputs.version_exists == 'true' && github.actor != 'github-actions[bot]'
+        id: new_version
+        run: |
+          NEW_VERSION=$(jq -r '.version' packages/ui/package.json)
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Commit and push version bump
+        if: steps.check_registry.outputs.version_exists == 'true' && github.actor != 'github-actions[bot]'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/ui/package.json
+          git commit -m "chore: auto-bump version to ${{ steps.new_version.outputs.new_version }}"
+          git push
+
+      - name: Comment on PR
+        if: steps.check_registry.outputs.version_exists == 'true' && github.actor != 'github-actions[bot]'
+        run: |
+          gh pr comment ${{ github.event.number }} \
+            --body "Auto-bumped version from ${{ steps.get_version.outputs.current_version }} to ${{ steps.new_version.outputs.new_version }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  prerelease:
+    if: github.event_name == 'push' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18
+          registry-url: 'https://npm.pkg.github.com/'
+          scope: '@global-x-etfs'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build packages/ui
+        working-directory: packages/ui
+        run: pnpm run build
+
+      - name: Configure Git User
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump prerelease version
+        working-directory: packages/ui
+        run: pnpm version prerelease --preid="${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}" --no-git-tag-version
+
+      - name: Publish prerelease
+        working-directory: packages/ui
+        run: pnpm publish --no-git-checks --tag "${GITHUB_REF##*/}-${GITHUB_RUN_NUMBER}"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
