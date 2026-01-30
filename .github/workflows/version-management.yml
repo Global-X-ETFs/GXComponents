@@ -68,8 +68,13 @@ jobs:
       - name: Comment on PR
         if: steps.check_registry.outputs.version_exists == 'true' && github.actor != 'github-actions[bot]'
         run: |
-          gh pr comment ${{ github.event.number }} \
-            --body "Auto-bumped version from ${{ steps.get_version.outputs.current_version }} to ${{ steps.new_version.outputs.new_version }}"
+          gh pr comment ${{ github.event.number }} --body "## Version Auto-Bump
+
+          | Package | Previous | New |
+          | :--- | :---: | :---: |
+          | \`@global-x-etfs/gx-components\` | \`${{ steps.get_version.outputs.current_version }}\` | \`${{ steps.new_version.outputs.new_version }}\` |
+
+          The version was automatically bumped because \`${{ steps.get_version.outputs.current_version }}\` already exists on the registry."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
