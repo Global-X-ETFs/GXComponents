@@ -197,15 +197,19 @@ export function BreakdownChart({ data, title, order="weight", capitalize=true, m
     "#FF5400",
     "#002F37",
     "#8EB1B2",
+    "#3D3935",
+    "#4F4F4F",
     "#606060",
-    "#3d3935",
     "#727272",
     "#8E8E8E",
+    "#9B9B9B",
     "#A9A9A8",
     "#BCBEBC",
+    "#C4C4C4",
     "#D2D3D1",
     "#E5E6E5",
     "#F4F4F4",
+    "#FAFAFA",
   ], []);
 
   const chartData = {
