@@ -103,7 +103,8 @@ export function BufferChart({
   // Calculate normalized buffer return
   const bufferReturnNormalized = useMemo(() => {
     if (paddedData.length === 0) return [];
-    const initialCloseValue = paddedData[0].close ?? 0;
+    const firstCloseOfPeriod = paddedData.find((p) => p.date.getTime() >= startDate.getTime());
+    const initialCloseValue = firstCloseOfPeriod?.close ?? 0;
 
     return paddedData.map((price) => {
       if (price.close === undefined || price.close === null) return null;
@@ -120,7 +121,7 @@ export function BufferChart({
           label: "SPX Return",
           data: paddedData.map((p) => {
             const isLastRealDate = lastRealDate && p.date.getTime() === lastRealDate.getTime();
-            const y = isLastRealDate && p.spx_return === 0 ? null : (p.spx_return ?? null);
+            const y = isLastRealDate && p.spx_return === 0 ? null : p.spx_return
             return {x: p.date, y};
           }),
           fill: false,
@@ -152,8 +153,8 @@ export function BufferChart({
         ...paddedData.map((p) => p.spx_return),
       ]
       
-      const yMin = (allValues.length ? Math.floor(Math.min(...allValues)) : -10) - 10;
-      const yMax = (allValues.length ? Math.ceil(Math.max(...allValues)) : 10) + 10;
+      const yMin = (allValues.length ? Math.floor(Math.min(...allValues)) : -10) - 5;
+      const yMax = (allValues.length ? Math.ceil(Math.max(...allValues)) : 10) + 5;
       
     return {
       responsive: true,
