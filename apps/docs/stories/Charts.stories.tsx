@@ -178,6 +178,7 @@ export const BufferChartStory: StoryObj<typeof BufferChart> = {
             cap_max: 11.43,
           }}
           endDate={new Date(selectedPeriod, 11, 29)}  
+          startDate={new Date(selectedPeriod, 7, 1)}
         />
       </div>
     );

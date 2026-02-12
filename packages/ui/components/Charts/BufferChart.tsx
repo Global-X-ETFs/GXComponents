@@ -50,6 +50,7 @@ export interface BufferChartCutoffs {
 export interface BufferChartProps {
   data: BufferChartDataPoint[];
   cutoffs: BufferChartCutoffs;
+  startDate: Date;
   endDate: Date;
   fundTicker?: string;
   outcomeCapLabel?: string;
@@ -66,6 +67,7 @@ export interface BufferChartProps {
 export function BufferChart({
   data,
   cutoffs,
+  startDate,
   endDate,
   fundTicker = "Fund",
   outcomeCapLabel = "Outcome Period Cap",
@@ -160,6 +162,8 @@ export function BufferChart({
       scales: {
         x: {
           type: "time",
+          min: startDate.getTime(),
+          max: endDate.getTime(),
           time: {
             unit: "day",
           },
@@ -317,7 +321,7 @@ export function BufferChart({
         },
       },
     };
-  }, [cutoffs, outcomeCapLabel, outcomeBufferLabel, endDate, bufferReturnNormalized, paddedData]);
+  }, [cutoffs, outcomeCapLabel, outcomeBufferLabel, startDate, endDate, bufferReturnNormalized, paddedData]);
   return (
     <div className="w-full aspect-video">
       <Line ref={chartRef} data={chartData} options={options} />
