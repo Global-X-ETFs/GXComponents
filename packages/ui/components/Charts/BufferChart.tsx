@@ -129,6 +129,7 @@ export function BufferChart({
           backgroundColor: "#FF5400",
           pointRadius: 0,
           tension: 0,
+          drawTime: "afterDatasetsDraw",
         },
         {
           label: fundTicker,
@@ -138,6 +139,7 @@ export function BufferChart({
           backgroundColor: "#002F37",
           pointRadius: 0,
           tension: 0,
+          drawTime: "afterDatasetsDraw",
         },
       ],
     };
@@ -309,6 +311,7 @@ export function BufferChart({
               yMax: cutoffs.buffer_max,
               backgroundColor: "rgba(255, 84, 0, 0.3)",
               borderWidth: 0,
+              z: -10,
             },
             // Cap Range Box
             {
@@ -317,6 +320,8 @@ export function BufferChart({
               yMax: cutoffs.cap_max,
               backgroundColor: "rgba(0, 47, 55, 0.3)",
               borderWidth: 0,
+              z: -10,
+              drawTime: "beforeDatasetsDraw"
             },
           ],
         },
